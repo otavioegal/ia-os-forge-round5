@@ -1,10 +1,9 @@
-# IA OS Forge — pacote Round 5
+# IA OS Forge — Round 6
 
-Estado: **ROUND 5 — CANDIDATE FOR INDEPENDENT REVIEW**.
+Estado: **ROUND 6 — CANDIDATE FOR CODEX REVIEW**.
 
-Este pacote não é READY FOR BUILD e não autoriza BUILD-00.
-Não contém resultado de teste, drill ou aprovação do Founder.
+Não é READY FOR BUILD e não autoriza BUILD-00.
 
-Comece por [docs/planning/FDP-ROUND5-STATUS-INDEX.md](docs/planning/FDP-ROUND5-STATUS-INDEX.md).
+Índice: [docs/planning/FDP-ROUND6-STATUS-INDEX.md](docs/planning/FDP-ROUND6-STATUS-INDEX.md)
 
-Os documentos v1.1, as fontes e os pareceres do Round 4 estão intactos em `historical/round4/`.
+A v1.2 está preservada em `historical/round5/`. O parecer do Codex que motivou esta rodada não foi alterado.
