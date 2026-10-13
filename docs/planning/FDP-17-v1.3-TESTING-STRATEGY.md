@@ -3,7 +3,7 @@ Status: ROUND 6 — CANDIDATE FOR CODEX REVIEW. DRAFT / NOT APPROVED / NOT READY
 The only normative oracle table is [FDP-TRACEABILITY-MATRIX-v1.3-CANONICAL.md](FDP-TRACEABILITY-MATRIX-v1.3-CANONICAL.md). This document defines how tests are run. It does not redefine the 17 FDP-13 sentences and it does not point at a v1.0, v1.1 or v1.2 matrix.
 
 ## 1. Layers
-Static checks, unit tests, adapter contract tests, Supabase RLS tests, sandbox tests, STUDIO end-to-end tests, security cases, recovery drills and human review are separate layers. All of them use synthetic tenants. None of them has been executed in Round 5.
+Static checks, unit tests, adapter contract tests, Supabase RLS tests, sandbox tests, STUDIO end-to-end tests, security cases, recovery drills and human review are separate layers. All of them use synthetic tenants. None of them has been executed in Round 6.
 
 ## 2. FDP-13 identifiers
 The seventeen P0 identifiers and their literal intents remain:
@@ -28,7 +28,7 @@ The seventeen P0 identifiers and their literal intents remain:
 | COST-01 | hard budget blocks spend | F-015 |
 | STOP-01 | emergency stop halts new work | F-026 |
 
-Supplementary identifiers are defined only in the v1.3 matrix. They are not replacements for the seventeen. The v1.3 set adds LEDGER-01..05, DEPLOY-04..11, HANDOFF-01, AIOX-01, REVIEW-01, CTX-01, BRIDGE-01 and ENGINE-ALLOW-01.
+Supplementary identifiers are defined only in the v1.3 matrix. They are not replacements for the seventeen. The v1.3 set adds LEDGER-01..06, DEPLOY-04..12, HANDOFF-01, AIOX-01, REVIEW-01, CTX-01, BRIDGE-01 and ENGINE-ALLOW-01.
 
 ## 3. What a case file contains
 Each case in the matrix states fixture, steps, pass rule and fail rule. A run, when it eventually exists, adds: test_run_id, commit_hash, policy_version, artifact hash, environment name and owner person. Those run fields are empty in this round.

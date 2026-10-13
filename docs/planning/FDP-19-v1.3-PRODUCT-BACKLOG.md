@@ -24,7 +24,7 @@ Named human owners are PENDING HUMAN ASSIGNMENT. The owner column is a role.
 | F-012 | P1 | Codex and Claude Code adapter contracts | Integration | S03 | F-011 and F-006 | ADAPT-01 |
 | F-013 | P1 | Synkra AIOX adapter with a scoped squad | Integration | S04 | F-012 | ADAPT-02, AIOX-01 |
 | F-014 | P1 | Model router with deny-by-default | Orchestration | S03 stub, S04 full | F-011 | ROUTE-01 |
-| F-015 | P0 | Tool gateway, operation ledger and hard budget | Security | S01 | F-002 | COST-01, LEDGER-01, LEDGER-02, LEDGER-03, LEDGER-04, LEDGER-05, IDEM-01 |
+| F-015 | P0 | Tool gateway, operation ledger and hard budget | Security | S01 | F-002 | COST-01, LEDGER-01, LEDGER-02, LEDGER-03, LEDGER-04, LEDGER-05, LEDGER-06, IDEM-01 |
 | F-016 | P1 | Checkpoint, resume and handoff | Orchestration | S04 | F-004 | HANDOFF-01, ENG-02 |
 | F-017 | P1 | Independent review gate | QA | S04 | F-016 | REVIEW-01 |
 | F-018 | P1 | Customer Operations synthetic demonstration | Product | S05 | F-009 | E2E-01 |
@@ -38,7 +38,7 @@ Named human owners are PENDING HUMAN ASSIGNMENT. The owner column is a role.
 | F-026 | P0 | Emergency stop and safe mode | Security | S01 | F-002 | STOP-01, SAFE-01 |
 | F-027 | P0 | Engine, model and adapter kill switches | Orchestration | S01 | F-026 | KILL-01, ENG-01, ENG-02 |
 | F-028 | P0 | Preview origin and privileged IPC boundary | Desktop | S01 | F-007 | PREVIEW-01 |
-| F-029 | P0 | Deployment approval bound to one release tuple | Release | S01 policy tests, S06 integration | F-002 | DEPLOY-02, DEPLOY-03, DEPLOY-04, DEPLOY-05, DEPLOY-06, DEPLOY-07, DEPLOY-08, DEPLOY-09, DEPLOY-10, DEPLOY-11 |
+| F-029 | P0 | Deployment approval bound to one release tuple | Release | S01 policy tests, S06 integration | F-002 | DEPLOY-02, DEPLOY-03, DEPLOY-04, DEPLOY-05, DEPLOY-06, DEPLOY-07, DEPLOY-08, DEPLOY-09, DEPLOY-10, DEPLOY-11, DEPLOY-12 |
 | F-030 | P0 | Release Agent separated from Coding Engine | Release | S01 denial tests, S06 full path | F-029 | DEPLOY-01, PROD-01 |
 | F-031 | P0 | Append-only audit writer | Data | S01 | F-005 | AUDIT-01 |
 | F-032 | P0 | Lease, heartbeat and fencing | Backend | S01 | F-004 | QUEUE-01, WATCH-01 |

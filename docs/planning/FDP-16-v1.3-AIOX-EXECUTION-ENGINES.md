@@ -25,7 +25,7 @@ Normative key and crash sequences are FDP-16A sections 7, 8, 8A, 8C and 10, stor
 Adapters implement the common methods describe, health, invoke and cancel, and engine adapters declare start_task, resume_task, pause_task, cancel_task, get_status, capture_checkpoint, get_artifacts, get_diff and get_test_results as supported or unsupported (F-012). Silent emulation is forbidden. FDP-15 is still pending approval. Context packs exclude other projects and resolved secrets (F-036). Reviewer and author are different actors (F-017). Merge conflicts pause (F-037). Autonomous, Guided and Restricted modes do not bypass these gates.
 
 ## 7. Security observability contract
-Required audit event names, so tests have something to look for: authz.allowed, authz.denied, budget.denied, budget.reserved, lease.fenced, stop.latched, approval.consumed, injection.ignored.
+Required audit event names, so tests have something to look for: authz.allowed, authz.denied, budget.denied, budget.reserved, budget.settled, budget.released, budget.over_estimate, budget.reconciliation_blocked, operation.dispatched, lease.fenced, stop.latched, approval.consumed, injection.ignored.
 Required span names: forge.api.request, forge.gateway.invoke, forge.adapter.invoke, forge.watchdog.tick.
 Spans must not contain secret values (SEC-01). A dashboard is not on this path (F-021).
 

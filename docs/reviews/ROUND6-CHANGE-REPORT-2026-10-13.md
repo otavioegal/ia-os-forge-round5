@@ -12,12 +12,22 @@ A v1.2 foi copiada para `historical/round5/` e não foi editada.
 ## Mudanças de backlog e oráculos
 - F-012 passa a exigir a superfície completa pendente do FDP-15, com dependência de F-006, sem declarar o FDP-15 aprovado.
 - F-013 deixa de dizer que o AIOX é a única entrada e especifica `FORGE_DIRECT`.
-- F-015 passa a ser dono de LEDGER-01..05, além de COST-01.
+- F-015 passa a ser dono de LEDGER-01..06, além de COST-01. Um recibo sem settlement não é gasto.
 - F-016 passa a ser dono de HANDOFF-01, não de QUEUE-01.
-- F-029 ganha um teste negativo por campo do tuple.
+- F-029 ganha um teste negativo por campo do tuple, inclusive `approver_actor_ref` (DEPLOY-12). O nome `approved_by` foi removido.
 - F-011, F-017, F-023 e F-036 ganham oráculos próprios para requisitos que a v1.2 não cobria.
 - Cada história ganha fonte, estado de aprovação e o que é proposta nova.
 - FDP-20 enumera o conjunto obrigatório de READY_FOR_HUMAN_TEST.
+
+## Aperto antes da entrega ao Codex
+A primeira geração da v1.3 ainda deixava quatro furos que o próprio critério desta rodada não aceitava:
+
+- O tuple citava `approver_actor_ref`, mas F-029 ainda falava em `approved_by` e não havia oráculo para esse campo.
+- DEPLOY-02 usava `409 APPROVAL_DIGEST` enquanto a seção 8B exigia `409 APPROVAL_MISMATCH`.
+- COST-01 aceitava um recibo sem dizer que o gasto só existe em SETTLED. A segunda liquidação e a reserva concorrente não tinham oráculo.
+- O DoD das histórias ainda dizia "Round 5".
+
+Isso foi corrigido no gerador e regenerado. Não é uma rodada nova. Continua sendo a candidata v1.3.
 
 ## O que não mudou
 Stack congelado, nove spikes, 11 estados de Task, AUTHZ-01 em F-001, SEC-01 em F-006, COST-01 só em F-015, classes A/B/C dos runbooks, ausência de BUILD-00 e ausência de testes executados.

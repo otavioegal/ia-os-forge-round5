@@ -199,7 +199,7 @@ Payload fields are in addition to the envelope.
 | Heartbeat | system | lease_id; epoch int64 | epoch matches and lease unexpired | extends expires_at by lease_ttl | 409 FENCED |
 | InvokeCapability | coding_engine via gateway | capability string; operation_ref string; input object; estimated_cost_minor int64 | grant, budget headroom, ledger not blocked, stop latch, safe mode | one transaction inserts operation RESERVED and increments reserved_minor by the estimate; no provider call inside that transaction | 402 BUDGET_EXCEEDED; 403 CAPABILITY_NOT_GRANTED; 409 STOP_LATCH; 409 RECONCILIATION_REQUIRED; 409 SAFE_MODE |
 | DispatchOperation | system | operation_ref | operation is RESERVED and reservation is HELD | status becomes DISPATCHED; money columns do not change | 409 NOT_RESERVED |
-| RecordReceipt | system | operation_ref; receipt string; actual_minor int64 | operation DISPATCHED or RECONCILING | settlement transaction in section 8A | 409 RECEIPT_MISMATCH; 409 OVER_ESTIMATE_BLOCKED; 402 BUDGET_EXCEEDED |
+| RecordReceipt | system | operation_ref; receipt string; actual_minor int64 | operation DISPATCHED, RECONCILING or BLOCKED_RECONCILIATION | settlement transaction in section 8A | 409 RECEIPT_MISMATCH; 409 OVER_ESTIMATE_BLOCKED; 409 ALREADY_SETTLED; 402 BUDGET_EXCEEDED |
 | ReleaseReservation | system | operation_ref; reason | proven no external effect | reserved_minor decreases by the full estimate; spent unchanged; operation RELEASED or CANCELLED | 409 EFFECT_NOT_DISPROVEN |
 | BlockReconciliation | system | operation_ref | no receipt query is available, or the query is inconclusive | operation BLOCKED_RECONCILIATION; reservation stays HELD; redispatch forbidden | none; this is the safe stop |
 | AwaitExternal | system | operation_ref | operation DISPATCHED without receipt | Task RUNNING to WAITING | 409 ILLEGAL_TRANSITION |
@@ -322,12 +322,31 @@ Reservation row fields: `reservation_id` uuid PK, `operation_id` uuid FK, `estim
 
 There is no committed path that spends money without a SETTLED operation, holds a reservation after SETTLED or RELEASED, or settles the same operation_ref twice.
 
+Terminal operation statuses are SETTLED, RELEASED, DENIED and CANCELLED. They reject every later money command with `409 ALREADY_SETTLED` or `409 TERMINAL_OPERATION` and write no second money movement. Non-terminal statuses are RESERVED, DISPATCHED, RECONCILING and BLOCKED_RECONCILIATION. Each committed money transition writes exactly one audit event in the same transaction.
+
+| From | Command | To | Audit event | Money |
+|---|---|---|---|---|
+| none | deny | DENIED | budget.denied | unchanged |
+| none | reserve | RESERVED | budget.reserved | reserved += estimate |
+| RESERVED | DispatchOperation | DISPATCHED | operation.dispatched | unchanged |
+| RESERVED | ReleaseReservation, proven no call | RELEASED | budget.released | reserved -= estimate |
+| RESERVED | cancel before any call | CANCELLED | budget.released | reserved -= estimate |
+| DISPATCHED or RECONCILING | RecordReceipt, actual within limit | SETTLED | budget.settled | spent += actual; reserved -= estimate |
+| DISPATCHED | timeout, or actual that would break the limit | RECONCILING | budget.over_estimate when the limit is the cause | unchanged; reservation stays HELD |
+| DISPATCHED or RECONCILING | ReleaseReservation, proven no effect | RELEASED | budget.released | reserved -= estimate |
+| DISPATCHED or RECONCILING | BlockReconciliation | BLOCKED_RECONCILIATION | budget.reconciliation_blocked | unchanged; reservation stays HELD |
+| BLOCKED_RECONCILIATION | human RecordReceipt with evidence ref | SETTLED | budget.settled | same settlement as above |
+| BLOCKED_RECONCILIATION | human ReleaseReservation with evidence ref | RELEASED | budget.released | reserved -= estimate |
+| SETTLED, RELEASED, DENIED, CANCELLED | any money command | same status | none | unchanged |
+
+A cell not listed is denied. Redispatch is not a transition from DISPATCHED, RECONCILING, BLOCKED_RECONCILIATION or SETTLED.
+
 ## 8B. Deployment tuple
 At the moment of the side effect, Release.Decide compares the request to the approval with exact equality of every field below. The first mismatch returns `409 APPROVAL_MISMATCH` with `mismatch_field` set to that field name, and does not set `consumed_at`.
 
 Compared fields, in this order: `release_id`, `environment_id`, `environment_class`, `source_git_hash`, `artifact_digest`, `graph_revision`, `migration_set_hash`, `policy_version`, `approver_actor_ref`, `approver_scope`.
 
-`environment_id` is the row id from `forge.environments` (FDP-12 §21, lines 422–440). `environment_class` is that row's `type` (FDP-12 §22, lines 444–452). An approval for PRODUCTION environment A does not authorize PRODUCTION environment B. Expiration and replay remain separate denials and are tested by DEPLOY-03. Each other field has its own negative oracle DEPLOY-04 through DEPLOY-11.
+`environment_id` is the row id from `forge.environments` (FDP-12 §21, lines 422–440). `environment_class` is that row's `type` (FDP-12 §22, lines 444–452). An approval for PRODUCTION environment A does not authorize PRODUCTION environment B. Expiration and replay are DEPLOY-03 and are not tuple-field mismatches. Field to negative oracle: `release_id` DEPLOY-04, `environment_id` DEPLOY-05, `environment_class` DEPLOY-06, `source_git_hash` DEPLOY-07, `artifact_digest` DEPLOY-02, `graph_revision` DEPLOY-08, `migration_set_hash` DEPLOY-09, `policy_version` DEPLOY-10, `approver_scope` DEPLOY-11, `approver_actor_ref` DEPLOY-12. Every field mismatch, including the artifact digest, uses `409 APPROVAL_MISMATCH`. There is no separate `APPROVAL_DIGEST` code.
 
 ## 8C. Provider without a receipt query
 Adapter descriptor field `receipt_query` is `SUPPORTED` or `ABSENT`. It is not implied.
@@ -372,4 +391,4 @@ These sequences are requirements for implementation and for tests RETRY-01 and I
 | Outbox published twice | same event_id | consumer dedupes | do not apply the domain write twice |
 
 ## 12. Contract tests
-All NOT RUN. The pass/fail text is only in the v1.3 traceability matrix. Ledger cases are LEDGER-01 through LEDGER-05. Deployment component cases are DEPLOY-02 through DEPLOY-11. Handoff recovery is HANDOFF-01.
+All NOT RUN. The pass/fail text is only in the v1.3 traceability matrix. Ledger cases are LEDGER-01 through LEDGER-06. Deployment component cases are DEPLOY-02 through DEPLOY-12. Handoff recovery is HANDOFF-01.

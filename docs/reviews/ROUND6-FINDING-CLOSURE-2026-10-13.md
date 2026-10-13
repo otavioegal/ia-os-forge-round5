@@ -6,20 +6,20 @@ Este registro não é o parecer do Codex. Nenhum teste de produto foi executado.
 |---|---|
 | ID | HIGH-01 — Ledger financeiro e ciclo de Operation |
 | Causa-raiz | A v1.2 reservava orçamento, mas não definia liquidação, liberação, custo real diferente do estimado, concorrência nem estados terminais. `RECEIPT` não era um protocolo contábil. |
-| Correção | Seção 8A de FDP-16A v1.3: transações de reserva, dispatch, settlement, release e bloqueio. Invariante `spent + reserved <= limit`. `spent` só aumenta no settlement. Uma operation_ref liquida no máximo uma vez. Oráculos LEDGER-01 a LEDGER-05 em F-015. |
+| Correção | Seção 8A de FDP-16A v1.3: transações de reserva, dispatch, settlement, release e bloqueio. Invariante `spent + reserved <= limit`. `spent` só aumenta no settlement. Uma operation_ref liquida no máximo uma vez (`409 ALREADY_SETTLED`). Estados terminais SETTLED, RELEASED, DENIED e CANCELLED, com matriz de transição e um evento de auditoria por transição. COST-01 exige liquidação, não apenas um recibo. LEDGER-06 cobre reserva concorrente. |
 | Arquivo | docs/planning/FDP-16A-v1.3-EXECUTION-CONTRACTS.md; FDP-19A v1.3 F-015; matriz v1.3 |
-| Evidência | FDP-16A seção 8A, linha 305; matriz LEDGER-01..05; F-015 lista esses ids |
-| Verificação | Busca: não resta status terminal `RECEIPT` como fim da contabilidade. O checker exigiu os cinco oráculos e a seção 8A. Resultado: presentes. |
+| Evidência | FDP-16A seção 8A, linha 305; estados terminais linha 325; matriz COST-01 linha 25, LEDGER-01 e LEDGER-06 linha 66 |
+| Verificação | Conferido: não resta status terminal `RECEIPT` como fim da contabilidade. COST-01 falha se existir recibo sem linha SETTLED. LEDGER-01 recusa a segunda liquidação. LEDGER-06 recusa a segunda reserva concorrente. Resultado: presentes e alinhados entre contrato, história e matriz. |
 | Estado | RESOLVIDO |
 
 | Campo | HIGH-02 |
 |---|---|
 | ID | HIGH-02 — DeploymentApproval |
 | Causa-raiz | `environment_id` era um enum de tipo, então dois ambientes PRODUCTION não se distinguiam, e os oráculos só cobriam digest, expiração e replay. |
-| Correção | `environment_id` é uuid da linha `forge.environments` (FDP-12 §21). `environment_class` guarda o tipo (FDP-12 §22). A seção 8B compara o tuple inteiro e devolve `mismatch_field`. Oráculos DEPLOY-04 a DEPLOY-11, um por campo, além de DEPLOY-02 e DEPLOY-03. |
+| Correção | `environment_id` é uuid da linha `forge.environments` (FDP-12 §21). `environment_class` guarda o tipo (FDP-12 §22). A seção 8B compara o tuple inteiro e devolve `409 APPROVAL_MISMATCH` com `mismatch_field`. Não existe coluna `approved_by` nem código `APPROVAL_DIGEST`. Oráculos: DEPLOY-02 digest, DEPLOY-03 expiração/replay, DEPLOY-04 a DEPLOY-11 os demais campos já nomeados, DEPLOY-12 `approver_actor_ref`. |
 | Arquivo | FDP-16A v1.3 seções 3.8 e 8B; F-029; matriz v1.3 |
-| Evidência | FDP-16A linha 325; matriz linha 67 (DEPLOY-05, dois PRODUCTION); F-029 linha 1269 |
-| Verificação | Confirmação de que `environment_id \| enum` não existe mais e de que DEPLOY-04..11 são linhas únicas. |
+| Evidência | FDP-16A linha 349; matriz linha 75 (DEPLOY-12); F-029 linha 1280 |
+| Verificação | Os dez campos comparados têm um oráculo negativo cada. `environment_id \| enum` não existe. Dois humanos diferentes não passam como o mesmo aprovador. |
 | Estado | RESOLVIDO |
 
 | Campo | HIGH-03 |

@@ -48,7 +48,7 @@ With the same user_a token, GET /v1/orgs/org_b/projects, a body that sets organi
 RLS policy SQL hash, HTTP transcript for the three negative shapes, audit_event id, test-run id. Status of tests: NOT RUN.
 
 ### Definition of Done
-Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 5.
+Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 6. No test artifact exists.
 
 ### Gate
 SECURITY FOUNDATION. Side-effecting engines stay disabled until this gate is green.
@@ -94,7 +94,7 @@ user_member with a valid session reads project_p1 (200) and invokes an allowlist
 Three HTTP transcripts, zero adapter invocations in the negative deploy case, audit ids. NOT RUN.
 
 ### Definition of Done
-Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 5.
+Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 6. No test artifact exists.
 
 ### Gate
 SECURITY FOUNDATION.
@@ -139,7 +139,7 @@ POST an edge from project_p1 node to a node in project_p2 returns 422 GRAPH_CROS
 graph_revision, query result hash, denied request transcript. NOT RUN.
 
 ### Definition of Done
-Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 5.
+Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 6. No test artifact exists.
 
 ### Gate
 SPRINT-02 UX/security review. Not a substitute for SECURITY FOUNDATION.
@@ -185,7 +185,7 @@ Update with expected_version = current-1 returns 409 and the status column is un
 Migration SQL, constraint name, conflict transcript. NOT RUN.
 
 ### Definition of Done
-Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 5.
+Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 6. No test artifact exists.
 
 ### Gate
 S01 skeleton before leases (F-032). Full STATE-01 before SPRINT-03.
@@ -229,7 +229,7 @@ app_writer UPDATE or DELETE of that audit_event fails with a database privilege 
 Grant dump, failed SQL state, original payload hash. NOT RUN. Primary closure of AUDIT-01 remains F-031.
 
 ### Definition of Done
-Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 5.
+Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 6. No test artifact exists.
 
 ### Gate
 SECURITY FOUNDATION together with F-031.
@@ -275,7 +275,7 @@ Fixture emits CANARY_SECRET_FORGE_9f3a. Test greps the three sinks and FAILs if 
 Scan report hash, grep transcript showing zero matches, vault 403 body. NOT RUN.
 
 ### Definition of Done
-Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 5.
+Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 6. No test artifact exists.
 
 ### Gate
 SECURITY FOUNDATION.
@@ -321,7 +321,7 @@ Read of project_p1/../../etc/passwd, read through symlink escape_link, and exec 
 Canonical path recorded in the denial, directory listing proving no out-of-root write, audit ids. NOT RUN.
 
 ### Definition of Done
-Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 5.
+Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 6. No test artifact exists.
 
 ### Gate
 SECURITY FOUNDATION.
@@ -366,7 +366,7 @@ Submitting an empty goal returns 422 EMPTY_GOAL and no project mutation. Submitt
 UI transcript or component test, before/after grant count, project row. NOT RUN.
 
 ### Definition of Done
-Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 5.
+Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 6. No test artifact exists.
 
 ### Gate
 SPRINT-02 review.
@@ -410,7 +410,7 @@ Navigating to /studio/project_p2/nodes/secret-screen with a project_p1 session s
 Component test snapshot hashes, denied response. NOT RUN.
 
 ### Definition of Done
-Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 5.
+Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 6. No test artifact exists.
 
 ### Gate
 SPRINT-02 review.
@@ -454,7 +454,7 @@ After the plan body changes to rev_2, StartBuild with the rev_1 approval returns
 Command results and absence of build row. NOT RUN.
 
 ### Definition of Done
-Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 5.
+Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 6. No test artifact exists.
 
 ### Gate
 SPRINT-02, and StartBuild remains blocked until SECURITY FOUNDATION is also green.
@@ -499,7 +499,7 @@ A task that requests capability shell.exec while the grant only has git.diff yie
 route_decision row, adapter call count = 0 on negative. NOT RUN.
 
 ### Definition of Done
-Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 5.
+Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 6. No test artifact exists.
 
 ### Gate
 EXECUTION GATE. No side-effecting engine before SECURITY FOUNDATION.
@@ -545,7 +545,7 @@ Invoke with capability network.unbounded returns UNSUPPORTED, exit path does not
 Contract report per adapter id. NOT RUN.
 
 ### Definition of Done
-Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 5.
+Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 6. No test artifact exists.
 
 ### Gate
 EXECUTION GATE.
@@ -591,7 +591,7 @@ The same squad invoking deploy.release or a p2 task id receives CAPABILITY_NOT_G
 Attempt rows scoped to p1, denial transcript. NOT RUN.
 
 ### Definition of Done
-Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 5.
+Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 6. No test artifact exists.
 
 ### Gate
 REVIEW + TEST READINESS.
@@ -635,7 +635,7 @@ S03 path with an empty grant: no model id is sent to the adapter (field omitted 
 Provider call count and grant diff. NOT RUN.
 
 ### Definition of Done
-Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 5.
+Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 6. No test artifact exists.
 
 ### Gate
 EXECUTION GATE for the stub; full router at SPRINT-04.
@@ -647,18 +647,20 @@ Owner role: Security
 Named person: PENDING HUMAN ASSIGNMENT
 Sprint: S01
 Dependencies: F-002
-Tests: COST-01, LEDGER-01, LEDGER-02, LEDGER-03, LEDGER-04, LEDGER-05, IDEM-01
+Tests: COST-01, LEDGER-01, LEDGER-02, LEDGER-03, LEDGER-04, LEDGER-05, LEDGER-06, IDEM-01
 Effort: PENDING CALIBRATION. Relative class XL. Reason: Reservation accounting, ledger uniqueness and gateway denial are the spend-safety core. This is the largest P0 story.
 Source:
 - Inherited: FDP-13 §191 line 2287, COST-01 hard budget blocks spend. Approval state of FDP-06/10/12/13: reference extracts preserved from prior rounds; this repository has no Founder signature page, so they are not newly approved here.
 - FDP-14 is not the source of this story. Founder confirmation of FDP-14 remains pending.
 - FDP-15 remains pending Founder approval. A citation of it is not an approval.
-- New in v1.3: the settlement, release, over-actual and crash protocol in FDP-16A §8A, and LEDGER-01..05. That protocol is a Round 6 proposal required to make COST-01 implementable. It is not a new budget policy.
+- New in v1.3: the settlement, release, over-actual, crash and concurrency protocol in FDP-16A §8A, LEDGER-01..06, and the rule that a receipt is not spend until settlement. That protocol is a Round 6 proposal required to make COST-01 implementable. It is not a new budget policy.
 
 ### Requirements
 - COST-01 is owned here, not by the dashboard. Budget fields are integers in minor units.
 - Reservation is denied when spent_minor + reserved_minor + estimated_new_minor exceeds budget_limit_minor, and the denial happens before any external call.
 - The operation unique key is (project_id, task_id, operation_ref, capability, normalized_input_digest) and does not include attempt_id.
+- A receipt is not spend. Spend exists only after the section 8A settlement transaction. A second settlement of the same operation_ref is rejected.
+- Two concurrent reserves of the same key create one reservation. The loser does not move money.
 - TERM-01 execution in the sandbox remains owned by F-007. This story additionally denies a terminal capability that the grant does not include, at the gateway, with no process spawn.
 
 ### Definition of Ready — technical
@@ -671,16 +673,16 @@ Source:
 Not met. Named person is PENDING HUMAN ASSIGNMENT. Hours and timebox are PENDING CALIBRATION. Do not mark this story READY for sprint execution until those exist.
 
 ### Positive acceptance
-estimated_new_minor = 50 is reserved, reserved becomes 150, a stub provider is called once, and a receipt row is stored.
+estimated_new_minor = 50 is reserved, so reserved becomes 150 and spent stays 800. The stub is called once with actual 50. Settlement then sets status SETTLED, spent becomes 850 and reserved returns to 100.
 
 ### Negative acceptance
-estimated_new_minor = 200 is denied with 402 BUDGET_EXCEEDED, spent stays 800, reserved stays 100, and the stub provider call count stays 0. LEDGER-01 settles an actual of 30 after an estimate of 50: spent increases by 30 and reserved returns the whole 50. LEDGER-02 refuses to settle an actual that would break the limit and does not call the provider again. LEDGER-03 releases the full reservation when the provider proves no effect. LEDGER-04 after a crash before dispatch does not create a second reservation. LEDGER-05 with receipt_query ABSENT enters BLOCKED_RECONCILIATION and does not redispatch. FAIL if any of those money or call outcomes is different.
+estimated_new_minor = 200 is denied with 402 BUDGET_EXCEEDED, spent stays 800, reserved stays 100, and the stub provider call count stays 0. LEDGER-01 settles an actual of 30 after an estimate of 50: spent increases by 30 and reserved returns the whole 50; a second receipt returns 409 ALREADY_SETTLED. LEDGER-02 refuses to settle an actual that would break the limit, leaves status RECONCILING, and does not call the provider again. LEDGER-03 releases the full reservation when the provider proves no effect. LEDGER-04 after a crash before dispatch does not create a second reservation. LEDGER-05 with receipt_query ABSENT enters BLOCKED_RECONCILIATION and does not redispatch. LEDGER-06 commits only one of two concurrent reserves. FAIL if any of those money or call outcomes is different.
 
 ### Evidence required when a run eventually exists
 Ledger rows, provider counter, budget columns before/after. NOT RUN.
 
 ### Definition of Done
-Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 5.
+Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 6. No test artifact exists.
 
 ### Gate
 SECURITY FOUNDATION. F-021 must not be treated as this control.
@@ -724,7 +726,7 @@ Resume with a checkpoint whose git_ref digest does not match returns 409 CHECKPO
 Attempt rows, grant diff, checkpoint digest. NOT RUN.
 
 ### Definition of Done
-Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 5.
+Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 6. No test artifact exists.
 
 ### Gate
 REVIEW + TEST READINESS.
@@ -768,7 +770,7 @@ author_a posting an approval for their own attempt returns 403 and does not set 
 Review row and denied command. NOT RUN.
 
 ### Definition of Done
-Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 5.
+Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 6. No test artifact exists.
 
 ### Gate
 REVIEW + TEST READINESS.
@@ -812,7 +814,7 @@ Pointing the demo configuration at a host named as production returns DEMO_PRODU
 E2E trace, ticket ids compared to fixture manifest. NOT RUN.
 
 ### Definition of Done
-Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 5.
+Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 6. No test artifact exists.
 
 ### Gate
 PRODUCT MVP. Does not authorize production.
@@ -856,7 +858,7 @@ A pipeline definition that sets the security job to skip is rejected by the plan
 Pipeline definition hash and a dry-run graph. NOT RUN. This story does not claim the jobs have executed.
 
 ### Definition of Done
-Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 5.
+Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 6. No test artifact exists.
 
 ### Gate
 PRODUCT MVP support. Security job presence is required before READY_FOR_HUMAN_TEST.
@@ -901,7 +903,7 @@ Rollback to a digest that was never released returns 404 UNKNOWN_DIGEST and leav
 Release rows and routing record. Drill evidence: NOT PRODUCED.
 
 ### Definition of Done
-Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 5.
+Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 6. No test artifact exists.
 
 ### Gate
 RELEASE READINESS specification. Production remains blocked until a real drill passes.
@@ -945,7 +947,7 @@ With the dashboard endpoint forced to 500, a gateway reservation of 200 minor un
 Screenshot or JSON of the view, plus the gateway transcript taken while the view is failing. NOT RUN.
 
 ### Definition of Done
-Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 5.
+Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 6. No test artifact exists.
 
 ### Gate
 Not part of SECURITY FOUNDATION. Cannot satisfy COST-01.
@@ -989,7 +991,7 @@ A score row cannot be posted by the same actor that produced the attempt (403 EV
 Score rows and unchanged task status. NOT RUN.
 
 ### Definition of Done
-Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 5.
+Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 6. No test artifact exists.
 
 ### Gate
 P2. Not a release blocker.
@@ -1033,7 +1035,7 @@ The same token used against a second project root or via a symlink outside the r
 Bridge audit and denial. NOT RUN.
 
 ### Definition of Done
-Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 5.
+Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 6. No test artifact exists.
 
 ### Gate
 P2 optional. Not in the MVP critical path.
@@ -1077,7 +1079,7 @@ Without a grant, invoke returns CAPABILITY_NOT_GRANTED and makes no outbound cal
 Call counter and scan result. NOT RUN.
 
 ### Definition of Done
-Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 5.
+Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 6. No test artifact exists.
 
 ### Gate
 P2. Absence does not block SECURITY FOUNDATION or the demo.
@@ -1112,7 +1114,7 @@ Source:
 Not met. Named person is PENDING HUMAN ASSIGNMENT. Hours and timebox are PENDING CALIBRATION. Do not mark this story READY for sprint execution until those exist.
 
 ### Positive acceptance
-Not applicable until a Change Decision exists. There is no positive implementation acceptance in Round 5.
+Not applicable until a Change Decision exists. There is no positive implementation acceptance in Round 6.
 
 ### Negative acceptance
 A pull request that adds a Kubernetes manifest or claims PERF-01 passed is out of policy and must be rejected in review. FAIL for planning purposes if the sprint plan schedules this story.
@@ -1121,7 +1123,7 @@ A pull request that adds a Kubernetes manifest or claims PERF-01 passed is out o
 None expected. NOT RUN. Not a hidden MVP requirement.
 
 ### Definition of Done
-Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 5.
+Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 6. No test artifact exists.
 
 ### Gate
 Deferred. Founder decision required before any scheduling.
@@ -1165,7 +1167,7 @@ InvokeCapability for a side-effect capability while stopped returns 409 STOP_LAT
 Latch row before/after, provider counter. NOT RUN.
 
 ### Definition of Done
-Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 5.
+Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 6. No test artifact exists.
 
 ### Gate
 SECURITY FOUNDATION.
@@ -1210,7 +1212,7 @@ After the switch is set killed, invoke returns KILLED and process count delta is
 Switch audit, grant table diff, process observation. NOT RUN.
 
 ### Definition of Done
-Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 5.
+Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 6. No test artifact exists.
 
 ### Gate
 SECURITY FOUNDATION.
@@ -1254,7 +1256,7 @@ From the preview origin, calls to ipc.vault.read, ipc.tools.invoke and ipc.termi
 IPC trace with origin and denial. NOT RUN.
 
 ### Definition of Done
-Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 5.
+Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 6. No test artifact exists.
 
 ### Gate
 SECURITY FOUNDATION.
@@ -1266,18 +1268,19 @@ Owner role: Release
 Named person: PENDING HUMAN ASSIGNMENT
 Sprint: S01 policy tests, S06 integration
 Dependencies: F-002
-Tests: DEPLOY-02, DEPLOY-03, DEPLOY-04, DEPLOY-05, DEPLOY-06, DEPLOY-07, DEPLOY-08, DEPLOY-09, DEPLOY-10, DEPLOY-11
+Tests: DEPLOY-02, DEPLOY-03, DEPLOY-04, DEPLOY-05, DEPLOY-06, DEPLOY-07, DEPLOY-08, DEPLOY-09, DEPLOY-10, DEPLOY-11, DEPLOY-12
 Effort: PENDING CALIBRATION. Relative class L. Reason: The tuple check is P0 policy even before a real deployer exists; S06 wires it to the release pipeline.
 Source:
 - Inherited: FDP-13 §216 item 22, line 2668, approval bound to a specific release and environment. Environment identity is FDP-12 §21 lines 422–440, distinct from type in §22 lines 444–452. Approval state of FDP-06/10/12/13: reference extracts preserved from prior rounds; this repository has no Founder signature page, so they are not newly approved here.
 - FDP-14 is not the source of this story. Founder confirmation of FDP-14 remains pending.
 - FDP-15 remains pending Founder approval. A citation of it is not an approval.
-- New in v1.3: environment_id as uuid plus one negative oracle per tuple field. Digest-only testing from v1.2 is no longer the whole control.
+- New in v1.3: environment_id as uuid, environment_class as the type, approver_actor_ref instead of an approved_by alias, and one negative oracle per compared field including DEPLOY-12. Digest-only testing from v1.2 is no longer the whole control.
 
 ### Requirements
-- DeploymentApproval fields match FDP-16A: release_id, source_git_hash, artifact_digest, graph_revision, migration_set_hash, environment_id, policy_version, expires_at, consumed_at, approved_by.
-- DEPLOY-02: a digest other than artifact_digest is denied.
-- DEPLOY-03: an expired approval and a second use of a consumed approval are denied.
+- DeploymentApproval fields match FDP-16A section 3.8. Compared fields are release_id, environment_id, environment_class, source_git_hash, artifact_digest, graph_revision, migration_set_hash, policy_version, approver_actor_ref and approver_scope. There is no approved_by column.
+- expires_at and consumed_at are columns, but they are not tuple-equality fields. DEPLOY-03 covers expiry and replay.
+- Each compared field has one negative oracle: artifact_digest is DEPLOY-02; release_id, environment_id, environment_class, source_git_hash, graph_revision, migration_set_hash, policy_version and approver_scope are DEPLOY-04 through DEPLOY-11; approver_actor_ref is DEPLOY-12.
+- Every field mismatch returns 409 APPROVAL_MISMATCH with mismatch_field set to that field name. consumed_at stays null. APPROVAL_DIGEST is not a second code.
 - S01 delivers the decision function and its tests with a fake deployer. S06 calls that same function from the release agent. The function is not redefined.
 
 ### Definition of Ready — technical
@@ -1293,13 +1296,13 @@ Not met. Named person is PENDING HUMAN ASSIGNMENT. Hours and timebox are PENDING
 The matching tuple, unexpired and unconsumed, returns allow once and sets consumed_at in the same transaction.
 
 ### Negative acceptance
-Mismatched digest returns 409 APPROVAL_DIGEST. Expired approval returns 409 APPROVAL_EXPIRED. Replaying the consumed id returns 409 APPROVAL_REPLAY. None of the three starts a deploy side effect. FAIL if consumed_at is unset on the success path or set on a denial.
+A different artifact_digest, release_id, environment_id, environment_class, source_git_hash, graph_revision, migration_set_hash, policy_version, approver_actor_ref or approver_scope each returns 409 APPROVAL_MISMATCH with that mismatch_field and leaves consumed_at null. Expired approval returns 409 APPROVAL_EXPIRED. Replaying the consumed id returns 409 APPROVAL_REPLAY. None of these starts a deploy side effect. FAIL if consumed_at is unset on the success path or set on a denial.
 
 ### Evidence required when a run eventually exists
 Decision transcripts and row state. NOT RUN.
 
 ### Definition of Done
-Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 5.
+Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 6. No test artifact exists.
 
 ### Gate
 SECURITY FOUNDATION for the decision function. Release integration at S06.
@@ -1343,7 +1346,7 @@ coding_engine with a valid approval still receives 403 CODING_ENGINE_CANNOT_DEPL
 Handler result and stub flag. NOT RUN.
 
 ### Definition of Done
-Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 5.
+Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 6. No test artifact exists.
 
 ### Gate
 SECURITY FOUNDATION for denial. Publishing remains unauthorized.
@@ -1387,7 +1390,7 @@ UPDATE, DELETE and TRUNCATE as app_writer fail. A user in org_a selecting an eve
 SQL states, hashes. NOT RUN.
 
 ### Definition of Done
-Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 5.
+Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 6. No test artifact exists.
 
 ### Gate
 SECURITY FOUNDATION.
@@ -1431,7 +1434,7 @@ The second concurrent claimant gets 409 LEASE_HELD. A heartbeat with epoch 0 aft
 Lease rows, transaction ids. NOT RUN.
 
 ### Definition of Done
-Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 5.
+Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 6. No test artifact exists.
 
 ### Gate
 SECURITY FOUNDATION.
@@ -1478,7 +1481,7 @@ Each hostile fixture leaves grant count, policy_version and provider call count 
 Per-id transcript. NOT RUN. Closing one id does not close the others.
 
 ### Definition of Done
-Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 5.
+Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 6. No test artifact exists.
 
 ### Gate
 SECURITY FOUNDATION.
@@ -1522,7 +1525,7 @@ Second attempt with op_1 sees the receipt, does not call the provider, counter s
 Counter log and ledger rows. NOT RUN.
 
 ### Definition of Done
-Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 5.
+Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 6. No test artifact exists.
 
 ### Gate
 SECURITY FOUNDATION.
@@ -1566,7 +1569,7 @@ A -> B -> A is rejected with 422 DAG_CYCLE and no task is left RUNNING. When B i
 Compiler result and task status rows. NOT RUN.
 
 ### Definition of Done
-Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 5.
+Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 6. No test artifact exists.
 
 ### Gate
 EXECUTION GATE.
@@ -1611,7 +1614,7 @@ The canary CANARY_SECRET_FORGE_9f3a and the foreign note's unique marker FOREIGN
 Pack hash and negative grep. NOT RUN.
 
 ### Definition of Done
-Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 5.
+Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 6. No test artifact exists.
 
 ### Gate
 EXECUTION GATE.
@@ -1655,7 +1658,7 @@ The conflict fixture does not produce a merge commit. A merge call whose actor i
 Git commit presence and audit. NOT RUN.
 
 ### Definition of Done
-Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 5.
+Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 6. No test artifact exists.
 
 ### Gate
 REVIEW + TEST READINESS.
@@ -1699,7 +1702,7 @@ POST a claim body {"text":"done"} without a bundle. Status remains REVIEWING or 
 Status before/after and bundle id. NOT RUN.
 
 ### Definition of Done
-Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 5.
+Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 6. No test artifact exists.
 
 ### Gate
 REVIEW + TEST READINESS.
@@ -1743,7 +1746,7 @@ Omitting one required task, or calling PATCH /builds/{id} {"ready_for_human_test
 Derivation inputs and flag value. NOT RUN.
 
 ### Definition of Done
-Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 5.
+Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 6. No test artifact exists.
 
 ### Gate
 REVIEW + TEST READINESS. Not production approval.
@@ -1787,7 +1790,7 @@ The truncated package returns SIGNATURE_INVALID, the running build id is unchang
 Signature result, build id, journal hash. NOT RUN.
 
 ### Definition of Done
-Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 5.
+Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 6. No test artifact exists.
 
 ### Gate
 RELEASE READINESS for desktop. Not a cloud production approval.
@@ -1833,7 +1836,7 @@ If the second reproducibility run ends BLOCKED while the first ended COMPLETED, 
 Metric rows with inputs. NOT RUN. Thresholds: not measured, not invented.
 
 ### Definition of Done
-Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 5.
+Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 6. No test artifact exists.
 
 ### Gate
 PRODUCT MVP evidence. Threshold decisions are an open human pendency.

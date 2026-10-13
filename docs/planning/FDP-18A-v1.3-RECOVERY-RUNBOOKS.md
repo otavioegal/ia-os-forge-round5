@@ -6,7 +6,7 @@ The round-4 finding was that runbooks depended on staging numbers while being de
 
 - Class A — required before BUILD as specification. Written below. An implementer can build the hooks without a measured SLO.
 - Class B — required before production, filled only from staging measurements. Currently empty on purpose. Inventing a number here is a defect.
-- Class C — a staging drill that must be executed before production. Not executed. Round 5 does not attach a drill report.
+- Class C — a staging drill that must be executed before production. Not executed. Round 6 does not attach a drill report.
 
 ## Class A — common procedure requirements
 Each runbook has an operator role, a detector that is a named signal rather than a number, an authorized action, a verification set and a failure branch. Concrete shell commands belong to versioned operator scripts that do not exist yet; until those scripts exist, the action is described as an intent the Release or Security role performs through the approved workflow, not as an ad-hoc command.

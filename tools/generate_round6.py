@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
-"""Generate IA OS Forge Round 5 v1.2 planning documents. Does not execute product code."""
+"""Generate IA OS Forge Round 6 v1.3 planning documents. Does not execute product code."""
 from pathlib import Path
-import json
 
-ROOT = Path("/workspace/artifacts/ia-os-forge-round6")
+ROOT = Path(__file__).resolve().parents[1]
 PLAN = ROOT / "docs/planning"
 REV = ROOT / "docs/reviews"
 
@@ -241,17 +240,19 @@ story(id="F-014", pri="P1", title="Model router with deny-by-default", owner="Or
       evidence="Provider call count and grant diff. NOT RUN.",
       gate="EXECUTION GATE for the stub; full router at SPRINT-04."),
 story(id="F-015", pri="P0", title="Tool gateway, operation ledger and hard budget", owner="Security", sprint="S01",
-      deps="F-002", tests=["COST-01", "LEDGER-01", "LEDGER-02", "LEDGER-03", "LEDGER-04", "LEDGER-05", "IDEM-01"], cls="XL",
+      deps="F-002", tests=["COST-01", "LEDGER-01", "LEDGER-02", "LEDGER-03", "LEDGER-04", "LEDGER-05", "LEDGER-06", "IDEM-01"], cls="XL",
       why="Reservation accounting, ledger uniqueness and gateway denial are the spend-safety core. This is the largest P0 story.",
       reqs=[
           "COST-01 is owned here, not by the dashboard. Budget fields are integers in minor units.",
           "Reservation is denied when spent_minor + reserved_minor + estimated_new_minor exceeds budget_limit_minor, and the denial happens before any external call.",
           "The operation unique key is (project_id, task_id, operation_ref, capability, normalized_input_digest) and does not include attempt_id.",
+          "A receipt is not spend. Spend exists only after the section 8A settlement transaction. A second settlement of the same operation_ref is rejected.",
+          "Two concurrent reserves of the same key create one reservation. The loser does not move money.",
           "TERM-01 execution in the sandbox remains owned by F-007. This story additionally denies a terminal capability that the grant does not include, at the gateway, with no process spawn.",
       ],
       dor=["Fixture build with budget_limit_minor = 1000, spent = 800, reserved = 100.", "Person PENDING HUMAN ASSIGNMENT."],
-      pos="estimated_new_minor = 50 is reserved, reserved becomes 150, a stub provider is called once, and a receipt row is stored.",
-      neg="estimated_new_minor = 200 is denied with 402 BUDGET_EXCEEDED, spent stays 800, reserved stays 100, and the stub provider call count stays 0. LEDGER-01 settles an actual of 30 after an estimate of 50: spent increases by 30 and reserved returns the whole 50. LEDGER-02 refuses to settle an actual that would break the limit and does not call the provider again. LEDGER-03 releases the full reservation when the provider proves no effect. LEDGER-04 after a crash before dispatch does not create a second reservation. LEDGER-05 with receipt_query ABSENT enters BLOCKED_RECONCILIATION and does not redispatch. FAIL if any of those money or call outcomes is different.",
+      pos="estimated_new_minor = 50 is reserved, so reserved becomes 150 and spent stays 800. The stub is called once with actual 50. Settlement then sets status SETTLED, spent becomes 850 and reserved returns to 100.",
+      neg="estimated_new_minor = 200 is denied with 402 BUDGET_EXCEEDED, spent stays 800, reserved stays 100, and the stub provider call count stays 0. LEDGER-01 settles an actual of 30 after an estimate of 50: spent increases by 30 and reserved returns the whole 50; a second receipt returns 409 ALREADY_SETTLED. LEDGER-02 refuses to settle an actual that would break the limit, leaves status RECONCILING, and does not call the provider again. LEDGER-03 releases the full reservation when the provider proves no effect. LEDGER-04 after a crash before dispatch does not create a second reservation. LEDGER-05 with receipt_query ABSENT enters BLOCKED_RECONCILIATION and does not redispatch. LEDGER-06 commits only one of two concurrent reserves. FAIL if any of those money or call outcomes is different.",
       evidence="Ledger rows, provider counter, budget columns before/after. NOT RUN.",
       gate="SECURITY FOUNDATION. F-021 must not be treated as this control."),
 story(id="F-016", pri="P1", title="Checkpoint, resume and handoff", owner="Orchestration", sprint="S04",
@@ -380,7 +381,7 @@ story(id="F-025", pri="P3", title="Expanded managed cloud service", owner="Produ
           "The frozen MVP stack is not replaced by Kubernetes, Kafka, Temporal, Redis or Neo4j under this story.",
       ],
       dor=["Change Decision id: absent.", "This story is not Ready."],
-      pos="Not applicable until a Change Decision exists. There is no positive implementation acceptance in Round 5.",
+      pos="Not applicable until a Change Decision exists. There is no positive implementation acceptance in Round 6.",
       neg="A pull request that adds a Kubernetes manifest or claims PERF-01 passed is out of policy and must be rejected in review. FAIL for planning purposes if the sprint plan schedules this story.",
       evidence="None expected. NOT RUN. Not a hidden MVP requirement.",
       gate="Deferred. Founder decision required before any scheduling."),
@@ -424,17 +425,18 @@ story(id="F-028", pri="P0", title="Preview origin and privileged IPC boundary", 
       evidence="IPC trace with origin and denial. NOT RUN.",
       gate="SECURITY FOUNDATION."),
 story(id="F-029", pri="P0", title="Deployment approval bound to one release tuple", owner="Release", sprint="S01 policy tests, S06 integration",
-      deps="F-002", tests=["DEPLOY-02", "DEPLOY-03", "DEPLOY-04", "DEPLOY-05", "DEPLOY-06", "DEPLOY-07", "DEPLOY-08", "DEPLOY-09", "DEPLOY-10", "DEPLOY-11"], cls="L",
+      deps="F-002", tests=["DEPLOY-02", "DEPLOY-03", "DEPLOY-04", "DEPLOY-05", "DEPLOY-06", "DEPLOY-07", "DEPLOY-08", "DEPLOY-09", "DEPLOY-10", "DEPLOY-11", "DEPLOY-12"], cls="L",
       why="The tuple check is P0 policy even before a real deployer exists; S06 wires it to the release pipeline.",
       reqs=[
-          "DeploymentApproval fields match FDP-16A: release_id, source_git_hash, artifact_digest, graph_revision, migration_set_hash, environment_id, policy_version, expires_at, consumed_at, approved_by.",
-          "DEPLOY-02: a digest other than artifact_digest is denied.",
-          "DEPLOY-03: an expired approval and a second use of a consumed approval are denied.",
+          "DeploymentApproval fields match FDP-16A section 3.8. Compared fields are release_id, environment_id, environment_class, source_git_hash, artifact_digest, graph_revision, migration_set_hash, policy_version, approver_actor_ref and approver_scope. There is no approved_by column.",
+          "expires_at and consumed_at are columns, but they are not tuple-equality fields. DEPLOY-03 covers expiry and replay.",
+          "Each compared field has one negative oracle: artifact_digest is DEPLOY-02; release_id, environment_id, environment_class, source_git_hash, graph_revision, migration_set_hash, policy_version and approver_scope are DEPLOY-04 through DEPLOY-11; approver_actor_ref is DEPLOY-12.",
+          "Every field mismatch returns 409 APPROVAL_MISMATCH with mismatch_field set to that field name. consumed_at stays null. APPROVAL_DIGEST is not a second code.",
           "S01 delivers the decision function and its tests with a fake deployer. S06 calls that same function from the release agent. The function is not redefined.",
       ],
       dor=["Fixture approval with expires_at in the past and one with expires_at in the future.", "Person PENDING HUMAN ASSIGNMENT."],
       pos="The matching tuple, unexpired and unconsumed, returns allow once and sets consumed_at in the same transaction.",
-      neg="Mismatched digest returns 409 APPROVAL_DIGEST. Expired approval returns 409 APPROVAL_EXPIRED. Replaying the consumed id returns 409 APPROVAL_REPLAY. None of the three starts a deploy side effect. FAIL if consumed_at is unset on the success path or set on a denial.",
+      neg="A different artifact_digest, release_id, environment_id, environment_class, source_git_hash, graph_revision, migration_set_hash, policy_version, approver_actor_ref or approver_scope each returns 409 APPROVAL_MISMATCH with that mismatch_field and leaves consumed_at null. Expired approval returns 409 APPROVAL_EXPIRED. Replaying the consumed id returns 409 APPROVAL_REPLAY. None of these starts a deploy side effect. FAIL if consumed_at is unset on the success path or set on a denial.",
       evidence="Decision transcripts and row state. NOT RUN.",
       gate="SECURITY FOUNDATION for the decision function. Release integration at S06."),
 story(id="F-030", pri="P0", title="Release Agent separated from Coding Engine", owner="Release", sprint="S01 denial tests, S06 full path",
@@ -812,7 +814,7 @@ Payload fields are in addition to the envelope.
 | Heartbeat | system | lease_id; epoch int64 | epoch matches and lease unexpired | extends expires_at by lease_ttl | 409 FENCED |
 | InvokeCapability | coding_engine via gateway | capability string; operation_ref string; input object; estimated_cost_minor int64 | grant, budget headroom, ledger not blocked, stop latch, safe mode | one transaction inserts operation RESERVED and increments reserved_minor by the estimate; no provider call inside that transaction | 402 BUDGET_EXCEEDED; 403 CAPABILITY_NOT_GRANTED; 409 STOP_LATCH; 409 RECONCILIATION_REQUIRED; 409 SAFE_MODE |
 | DispatchOperation | system | operation_ref | operation is RESERVED and reservation is HELD | status becomes DISPATCHED; money columns do not change | 409 NOT_RESERVED |
-| RecordReceipt | system | operation_ref; receipt string; actual_minor int64 | operation DISPATCHED or RECONCILING | settlement transaction in section 8A | 409 RECEIPT_MISMATCH; 409 OVER_ESTIMATE_BLOCKED; 402 BUDGET_EXCEEDED |
+| RecordReceipt | system | operation_ref; receipt string; actual_minor int64 | operation DISPATCHED, RECONCILING or BLOCKED_RECONCILIATION | settlement transaction in section 8A | 409 RECEIPT_MISMATCH; 409 OVER_ESTIMATE_BLOCKED; 409 ALREADY_SETTLED; 402 BUDGET_EXCEEDED |
 | ReleaseReservation | system | operation_ref; reason | proven no external effect | reserved_minor decreases by the full estimate; spent unchanged; operation RELEASED or CANCELLED | 409 EFFECT_NOT_DISPROVEN |
 | BlockReconciliation | system | operation_ref | no receipt query is available, or the query is inconclusive | operation BLOCKED_RECONCILIATION; reservation stays HELD; redispatch forbidden | none; this is the safe stop |
 | AwaitExternal | system | operation_ref | operation DISPATCHED without receipt | Task RUNNING to WAITING | 409 ILLEGAL_TRANSITION |
@@ -935,12 +937,31 @@ Reservation row fields: `reservation_id` uuid PK, `operation_id` uuid FK, `estim
 
 There is no committed path that spends money without a SETTLED operation, holds a reservation after SETTLED or RELEASED, or settles the same operation_ref twice.
 
+Terminal operation statuses are SETTLED, RELEASED, DENIED and CANCELLED. They reject every later money command with `409 ALREADY_SETTLED` or `409 TERMINAL_OPERATION` and write no second money movement. Non-terminal statuses are RESERVED, DISPATCHED, RECONCILING and BLOCKED_RECONCILIATION. Each committed money transition writes exactly one audit event in the same transaction.
+
+| From | Command | To | Audit event | Money |
+|---|---|---|---|---|
+| none | deny | DENIED | budget.denied | unchanged |
+| none | reserve | RESERVED | budget.reserved | reserved += estimate |
+| RESERVED | DispatchOperation | DISPATCHED | operation.dispatched | unchanged |
+| RESERVED | ReleaseReservation, proven no call | RELEASED | budget.released | reserved -= estimate |
+| RESERVED | cancel before any call | CANCELLED | budget.released | reserved -= estimate |
+| DISPATCHED or RECONCILING | RecordReceipt, actual within limit | SETTLED | budget.settled | spent += actual; reserved -= estimate |
+| DISPATCHED | timeout, or actual that would break the limit | RECONCILING | budget.over_estimate when the limit is the cause | unchanged; reservation stays HELD |
+| DISPATCHED or RECONCILING | ReleaseReservation, proven no effect | RELEASED | budget.released | reserved -= estimate |
+| DISPATCHED or RECONCILING | BlockReconciliation | BLOCKED_RECONCILIATION | budget.reconciliation_blocked | unchanged; reservation stays HELD |
+| BLOCKED_RECONCILIATION | human RecordReceipt with evidence ref | SETTLED | budget.settled | same settlement as above |
+| BLOCKED_RECONCILIATION | human ReleaseReservation with evidence ref | RELEASED | budget.released | reserved -= estimate |
+| SETTLED, RELEASED, DENIED, CANCELLED | any money command | same status | none | unchanged |
+
+A cell not listed is denied. Redispatch is not a transition from DISPATCHED, RECONCILING, BLOCKED_RECONCILIATION or SETTLED.
+
 ## 8B. Deployment tuple
 At the moment of the side effect, Release.Decide compares the request to the approval with exact equality of every field below. The first mismatch returns `409 APPROVAL_MISMATCH` with `mismatch_field` set to that field name, and does not set `consumed_at`.
 
 Compared fields, in this order: `release_id`, `environment_id`, `environment_class`, `source_git_hash`, `artifact_digest`, `graph_revision`, `migration_set_hash`, `policy_version`, `approver_actor_ref`, `approver_scope`.
 
-`environment_id` is the row id from `forge.environments` (FDP-12 §21, lines 422–440). `environment_class` is that row's `type` (FDP-12 §22, lines 444–452). An approval for PRODUCTION environment A does not authorize PRODUCTION environment B. Expiration and replay remain separate denials and are tested by DEPLOY-03. Each other field has its own negative oracle DEPLOY-04 through DEPLOY-11.
+`environment_id` is the row id from `forge.environments` (FDP-12 §21, lines 422–440). `environment_class` is that row's `type` (FDP-12 §22, lines 444–452). An approval for PRODUCTION environment A does not authorize PRODUCTION environment B. Expiration and replay are DEPLOY-03 and are not tuple-field mismatches. Field to negative oracle: `release_id` DEPLOY-04, `environment_id` DEPLOY-05, `environment_class` DEPLOY-06, `source_git_hash` DEPLOY-07, `artifact_digest` DEPLOY-02, `graph_revision` DEPLOY-08, `migration_set_hash` DEPLOY-09, `policy_version` DEPLOY-10, `approver_scope` DEPLOY-11, `approver_actor_ref` DEPLOY-12. Every field mismatch, including the artifact digest, uses `409 APPROVAL_MISMATCH`. There is no separate `APPROVAL_DIGEST` code.
 
 ## 8C. Provider without a receipt query
 Adapter descriptor field `receipt_query` is `SUPPORTED` or `ABSENT`. It is not implied.
@@ -985,7 +1006,7 @@ These sequences are requirements for implementation and for tests RETRY-01 and I
 | Outbox published twice | same event_id | consumer dedupes | do not apply the domain write twice |
 
 ## 12. Contract tests
-All NOT RUN. The pass/fail text is only in the v1.3 traceability matrix. Ledger cases are LEDGER-01 through LEDGER-05. Deployment component cases are DEPLOY-02 through DEPLOY-11. Handoff recovery is HANDOFF-01.
+All NOT RUN. The pass/fail text is only in the v1.3 traceability matrix. Ledger cases are LEDGER-01 through LEDGER-06. Deployment component cases are DEPLOY-02 through DEPLOY-12. Handoff recovery is HANDOFF-01.
 """)
     return "\n".join(lines)
 
@@ -1018,7 +1039,7 @@ Normative key and crash sequences are FDP-16A sections 7, 8, 8A, 8C and 10, stor
 Adapters implement the common methods describe, health, invoke and cancel, and engine adapters declare start_task, resume_task, pause_task, cancel_task, get_status, capture_checkpoint, get_artifacts, get_diff and get_test_results as supported or unsupported (F-012). Silent emulation is forbidden. FDP-15 is still pending approval. Context packs exclude other projects and resolved secrets (F-036). Reviewer and author are different actors (F-017). Merge conflicts pause (F-037). Autonomous, Guided and Restricted modes do not bypass these gates.
 
 ## 7. Security observability contract
-Required audit event names, so tests have something to look for: authz.allowed, authz.denied, budget.denied, budget.reserved, lease.fenced, stop.latched, approval.consumed, injection.ignored.
+Required audit event names, so tests have something to look for: authz.allowed, authz.denied, budget.denied, budget.reserved, budget.settled, budget.released, budget.over_estimate, budget.reconciliation_blocked, operation.dispatched, lease.fenced, stop.latched, approval.consumed, injection.ignored.
 Required span names: forge.api.request, forge.gateway.invoke, forge.adapter.invoke, forge.watchdog.tick.
 Spans must not contain secret values (SEC-01). A dashboard is not on this path (F-021).
 
@@ -1039,7 +1060,7 @@ def fdp17() -> str:
 The only normative oracle table is [FDP-TRACEABILITY-MATRIX-v1.3-CANONICAL.md](FDP-TRACEABILITY-MATRIX-v1.3-CANONICAL.md). This document defines how tests are run. It does not redefine the 17 FDP-13 sentences and it does not point at a v1.0, v1.1 or v1.2 matrix.
 
 ## 1. Layers
-Static checks, unit tests, adapter contract tests, Supabase RLS tests, sandbox tests, STUDIO end-to-end tests, security cases, recovery drills and human review are separate layers. All of them use synthetic tenants. None of them has been executed in Round 5.
+Static checks, unit tests, adapter contract tests, Supabase RLS tests, sandbox tests, STUDIO end-to-end tests, security cases, recovery drills and human review are separate layers. All of them use synthetic tenants. None of them has been executed in Round 6.
 
 ## 2. FDP-13 identifiers
 The seventeen P0 identifiers and their literal intents remain:
@@ -1048,7 +1069,7 @@ The seventeen P0 identifiers and their literal intents remain:
 |---|---|---|
 """ + "\n".join(f"| {i} | {intent} | {story} |" for i, intent, story in P0) + """
 
-Supplementary identifiers are defined only in the v1.3 matrix. They are not replacements for the seventeen. The v1.3 set adds LEDGER-01..05, DEPLOY-04..11, HANDOFF-01, AIOX-01, REVIEW-01, CTX-01, BRIDGE-01 and ENGINE-ALLOW-01.
+Supplementary identifiers are defined only in the v1.3 matrix. They are not replacements for the seventeen. The v1.3 set adds LEDGER-01..06, DEPLOY-04..12, HANDOFF-01, AIOX-01, REVIEW-01, CTX-01, BRIDGE-01 and ENGINE-ALLOW-01.
 
 ## 3. What a case file contains
 Each case in the matrix states fixture, steps, pass rule and fail rule. A run, when it eventually exists, adds: test_run_id, commit_hash, policy_version, artifact hash, environment name and owner person. Those run fields are empty in this round.
@@ -1105,7 +1126,7 @@ The round-4 finding was that runbooks depended on staging numbers while being de
 
 - Class A — required before BUILD as specification. Written below. An implementer can build the hooks without a measured SLO.
 - Class B — required before production, filled only from staging measurements. Currently empty on purpose. Inventing a number here is a defect.
-- Class C — a staging drill that must be executed before production. Not executed. Round 5 does not attach a drill report.
+- Class C — a staging drill that must be executed before production. Not executed. Round 6 does not attach a drill report.
 
 ## Class A — common procedure requirements
 Each runbook has an operator role, a detector that is a named signal rather than a number, an authorized action, a verification set and a failure branch. Concrete shell commands belong to versioned operator scripts that do not exist yet; until those scripts exist, the action is described as an intent the Release or Security role performs through the approved workflow, not as an ad-hoc command.
@@ -1177,7 +1198,7 @@ SOURCES = {
 "F-012": f"- Inherited: method list from FDP-06 lines 353–361 and the pending FDP-15 §8 lines 227–232: start_task, resume_task, pause_task, cancel_task, get_status, capture_checkpoint, get_artifacts, get_diff, get_test_results, plus describe, health, invoke and cancel. {REF}\n- {PENDING14}\n- {PENDING15}\n- New in v1.3: the story no longer drops methods from that pending list. Approval of FDP-15 is still not claimed.",
 "F-013": f"- Inherited: FDP-06 §15 line 372, AIOX is the preferred framework; §17 around line 407, it must not be a single point of failure. {REF}\n- {PENDING14}\n- {PENDING15}\n- New in v1.3: FORGE_DIRECT fallback and the explicit rejection of the v1.2 sentence that called AIOX the only orchestrator entry.",
 "F-014": f"- Inherited: FDP-13 §216 item 12, model routing respects data classification, around line 2658. Deny-by-default is a v1.2 proposal, not a quoted source sentence. {REF}\n- {PENDING14}\n- {PENDING15}\n- New in v1.3: none.",
-"F-015": f"- Inherited: FDP-13 §191 line 2287, COST-01 hard budget blocks spend. {REF}\n- {PENDING14}\n- {PENDING15}\n- New in v1.3: the settlement, release, over-actual and crash protocol in FDP-16A §8A, and LEDGER-01..05. That protocol is a Round 6 proposal required to make COST-01 implementable. It is not a new budget policy.",
+"F-015": f"- Inherited: FDP-13 §191 line 2287, COST-01 hard budget blocks spend. {REF}\n- {PENDING14}\n- {PENDING15}\n- New in v1.3: the settlement, release, over-actual, crash and concurrency protocol in FDP-16A §8A, LEDGER-01..06, and the rule that a receipt is not spend until settlement. That protocol is a Round 6 proposal required to make COST-01 implementable. It is not a new budget policy.",
 "F-016": f"- Inherited: handoff keeps scope, FDP-13 §191 line 2282 ENG-02. Checkpoint continuity is FDP-06 start/resume/capture_checkpoint, lines 353–361. {REF}\n- {PENDING14}\n- {PENDING15}\n- New in v1.3: HANDOFF-01. QUEUE-01 is no longer cited as if it tested checkpoint corruption.",
 "F-017": f"- Inherited: reviewer separation is a standing rule in the execution contract, not a new privilege model. {REF}\n- {PENDING14}\n- {PENDING15}\n- New in v1.3: REVIEW-01, so self-approval and High findings are not left only in MERGE-01.",
 "F-018": f"- Inherited: no extract requires the Customer Operations vertical by id. It is the v1.2 MVP vertical proposal. {REF}\n- {PENDING14}\n- {PENDING15}\n- New in v1.3: none. Synthetic data remains mandatory because production systems are out of scope.",
@@ -1191,7 +1212,7 @@ SOURCES = {
 "F-026": f"- Inherited: FDP-13 §191 line 2288 STOP-01, and §216 item 20. {REF}\n- {PENDING14}\n- {PENDING15}\n- New in v1.3: none.",
 "F-027": f"- Inherited: FDP-13 §191 lines 2281–2282 ENG-01 and ENG-02. {REF}\n- {PENDING14}\n- {PENDING15}\n- New in v1.3: none of the control meaning.",
 "F-028": f"- Inherited: FDP-13 §191 line 2283 PREVIEW-01, and §216 item 15. {REF}\n- {PENDING14}\n- {PENDING15}\n- New in v1.3: none.",
-"F-029": f"- Inherited: FDP-13 §216 item 22, line 2668, approval bound to a specific release and environment. Environment identity is FDP-12 §21 lines 422–440, distinct from type in §22 lines 444–452. {REF}\n- {PENDING14}\n- {PENDING15}\n- New in v1.3: environment_id as uuid plus one negative oracle per tuple field. Digest-only testing from v1.2 is no longer the whole control.",
+"F-029": f"- Inherited: FDP-13 §216 item 22, line 2668, approval bound to a specific release and environment. Environment identity is FDP-12 §21 lines 422–440, distinct from type in §22 lines 444–452. {REF}\n- {PENDING14}\n- {PENDING15}\n- New in v1.3: environment_id as uuid, environment_class as the type, approver_actor_ref instead of an approved_by alias, and one negative oracle per compared field including DEPLOY-12. Digest-only testing from v1.2 is no longer the whole control.",
 "F-030": f"- Inherited: FDP-13 §216 items 16–17, coding agents do not own production credentials and deploy goes through a release path, around lines 2662–2663. {REF}\n- {PENDING14}\n- {PENDING15}\n- New in v1.3: none.",
 "F-031": f"- Inherited: FDP-13 §191 line 2286 AUDIT-01, and §216 item 19. {REF}\n- {PENDING14}\n- {PENDING15}\n- New in v1.3: none.",
 "F-032": f"- Inherited: lease and fencing are the v1.2 execution proposal that makes queue claims safe. The extracts do not fix the 30000 ms default. {REF}\n- {PENDING14}\n- {PENDING15}\n- New in v1.3: watchdog must not expire CREATED or QUEUED. The numeric lease default remains a planning default, not a measurement.",
@@ -1252,7 +1273,7 @@ Not met. Named person is PENDING HUMAN ASSIGNMENT. Hours and timebox are PENDING
 {s['evidence']}
 
 ### Definition of Done
-Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 5.
+Independent review recorded, the tests listed above each have a positive and a negative artifact, no open Critical or High finding against this story, and the gate below is the one a reviewer must name. DoD is not satisfied in Round 6. No test artifact exists.
 
 ### Gate
 {s['gate']}
@@ -1398,7 +1419,7 @@ ORACLES = {
     "Approval bound to digest Da. Request presents digest Db.",
     "Call the decision function.",
     "PASS if digest Da is allowed once.",
-    "PASS if digest Db returns 409 APPROVAL_DIGEST and consumed_at stays null. FAIL if a deploy intent row is written for Db.",
+    "PASS if digest Db returns 409 APPROVAL_MISMATCH with mismatch_field artifact_digest and consumed_at stays null. FAIL if a deploy intent row is written for Db.",
 ),
 "AUDIT-01": (
     "One audit_event inserted by app_writer.",
@@ -1408,9 +1429,9 @@ ORACLES = {
 ),
 "COST-01": (
     "limit 1000, spent 800, reserved 100, minor units.",
-    "Reserve 50, then in a fresh fixture reserve 200.",
-    "PASS if 50 is reserved, the stub provider is called once, and a receipt exists.",
-    "PASS if 200 returns 402 BUDGET_EXCEEDED, spent and reserved are unchanged, and the provider call count is 0. FAIL if the provider is called or the counters move.",
+    "Reserve 50 and settle the stub receipt at actual 50. Then, on a fresh fixture with the same starting counters, reserve 200.",
+    "PASS if 50 is reserved, the provider is called once, status becomes SETTLED, spent becomes 850 and reserved returns to 100.",
+    "PASS if 200 returns 402 BUDGET_EXCEEDED, spent and reserved are unchanged, and the provider call count is 0. FAIL if the provider is called on the denial or if a receipt exists without a SETTLED row.",
 ),
 "STOP-01": (
     "Build with stop_latch false, then StopBuild by security_operator.",
@@ -1624,15 +1645,15 @@ ORACLES = {
 ),
 "LEDGER-01": (
     "Estimate 50, actual 30, limit high enough. Starting spent 800, reserved 100, plus this reservation.",
-    "Reserve, dispatch, then RecordReceipt with actual_minor 30.",
-    "PASS if one provider call happened.",
-    "PASS if spent increases by 30 only, reserved no longer includes the 50, and the operation is SETTLED once. FAIL if the leftover 20 stays reserved or spent increases by 50.",
+    "Reserve, dispatch, RecordReceipt with actual_minor 30, then RecordReceipt again.",
+    "PASS if one provider call happened, spent increases by 30 only, reserved no longer includes the 50, and the operation is SETTLED once.",
+    "PASS if the second RecordReceipt returns 409 ALREADY_SETTLED and spent does not change again. FAIL if the leftover 20 stays reserved, spent increases by 50, or the second receipt changes spent.",
 ),
 "LEDGER-02": (
     "Limit 1000, spent 800, reserved 100, this estimate 50, actual 200. Headroom after replacing the estimate is not enough.",
     "Reserve 50, dispatch, then present actual 200.",
     "PASS if the reservation is HELD before the receipt.",
-    "PASS if settlement is refused, spent stays 800, the reservation stays HELD, and the provider is not called again. FAIL if spent becomes 1000 or 1050.",
+    "PASS if settlement is refused, status stays RECONCILING, spent stays 800, the reservation stays HELD, and the provider is not called again. FAIL if spent becomes 1000 or 1050, or if status becomes SETTLED.",
 ),
 "LEDGER-03": (
     "A reserved and dispatched operation whose provider returns an explicit no-effect error.",
@@ -1651,6 +1672,12 @@ ORACLES = {
     "Run reconciliation.",
     "PASS if no second provider call is made.",
     "PASS if status is BLOCKED_RECONCILIATION, the reservation stays HELD, and a blind redispatch is rejected. FAIL if money is released by guess or a second call is made.",
+),
+"LEDGER-06": (
+    "Two workers submit the same project, task, operation_ref, capability and digest at the same time. Estimate 50. Starting spent 800, reserved 100.",
+    "Start both reserve transactions.",
+    "PASS if exactly one operation row and one HELD reservation commit, and reserved_minor increases by 50 once.",
+    "PASS if the loser receives the unique-index denial and does not change spent or reserved. FAIL if two HELD rows exist for that key or reserved increases by 100.",
 ),
 "DEPLOY-04": (
     "Approval for release_id R1. Request uses R2 and otherwise matches.",
@@ -1699,6 +1726,12 @@ ORACLES = {
     "Call Release.Decide.",
     "PASS if the scoped approver succeeds for env_a.",
     "PASS if the other scope returns mismatch_field approver_scope. FAIL if any human identity is sufficient.",
+),
+"DEPLOY-12": (
+    "Two unconsumed approvals, both stored with approver_actor_ref human_a. The second request matches the second approval except that it presents human_b. human_b is a real human. A coding_engine value is not a valid stored approver.",
+    "Call Release.Decide with human_a on the first approval. Call Release.Decide with human_b on the second approval.",
+    "PASS if the human_a request is allowed once and sets consumed_at on the first row only.",
+    "PASS if human_b returns 409 APPROVAL_MISMATCH with mismatch_field approver_actor_ref and the second consumed_at stays null. FAIL if a different human is treated as the same approver or if the denial is only APPROVAL_REPLAY.",
 ),
 "REVIEW-01": (
     "author_a and reviewer_b. One review has a High finding.",
@@ -1821,9 +1854,9 @@ Each row has fixture, execution steps, a positive rule and a negative rule. A st
         "ADAPT-02": "F-013", "ROUTE-01": "F-014", "GRAPH-01": "F-003", "STATE-01": "F-004",
         "E2E-01": "F-018", "TEST-01": "F-019", "COST-DASH-01": "F-021", "EVAL-01": "F-022",
         "PERF-01": "F-025", "ADAPT-03": "F-024",
-        "LEDGER-01": "F-015", "LEDGER-02": "F-015", "LEDGER-03": "F-015", "LEDGER-04": "F-015", "LEDGER-05": "F-015",
+        "LEDGER-01": "F-015", "LEDGER-02": "F-015", "LEDGER-03": "F-015", "LEDGER-04": "F-015", "LEDGER-05": "F-015", "LEDGER-06": "F-015",
         "DEPLOY-04": "F-029", "DEPLOY-05": "F-029", "DEPLOY-06": "F-029", "DEPLOY-07": "F-029",
-        "DEPLOY-08": "F-029", "DEPLOY-09": "F-029", "DEPLOY-10": "F-029", "DEPLOY-11": "F-029",
+        "DEPLOY-08": "F-029", "DEPLOY-09": "F-029", "DEPLOY-10": "F-029", "DEPLOY-11": "F-029", "DEPLOY-12": "F-029",
         "HANDOFF-01": "F-016", "AIOX-01": "F-013", "REVIEW-01": "F-017", "CTX-01": "F-036",
         "BRIDGE-01": "F-023", "ENGINE-ALLOW-01": "F-011",
     })
