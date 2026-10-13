@@ -31,3 +31,11 @@ Não foi a via em que o humano chama RecordReceipt. Foi a via em que o humano s�
 - docs/reviews/ROUND7-CONSISTENCY-REPORT-2026-10-13.md
 - docs/reviews/ROUND7-OPEN-PENDENCIES-2026-10-13.md
 - tools/check_round7_consistency.py
+
+## Errata — 2026-10-13
+A frase da abertura, “Commit auditado pelo Codex: `4e5783974ca27595c9592e2e6ac55ab23fcbeb5a`”, permanece como foi publicada na Rodada 7. Ela não foi apagada. Está errada como identificação do commit auditado.
+
+`4e5783974ca27595c9592e2e6ac55ab23fcbeb5a` é o commit da baseline Round 6. O commit da baseline v1.4 que o parecer `docs/reviews/PARECER-CODEX-ROUND7-2026-10-13.md` declara ter auditado é `decef2809b61d3f1fe84bef74a5162d782cc6231`.
+
+Esta errata não reescreve o restante do relatório.
+
