@@ -1882,6 +1882,10 @@ COST-01 appears once, primary story F-015. F-021's id is COST-DASH-01 only.
 
 
 def main():
+    raise SystemExit(
+        "Refusing to regenerate. This script writes the Round 6 v1.3 set. "
+        "The Round 7 candidate is v1.4 and must not be overwritten by it."
+    )
     write(PLAN / "FDP-16A-v1.3-EXECUTION-CONTRACTS.md", contracts())
     write(PLAN / "FDP-16-v1.3-AIOX-EXECUTION-ENGINES.md", fdp16())
     write(PLAN / "FDP-17-v1.3-TESTING-STRATEGY.md", fdp17())

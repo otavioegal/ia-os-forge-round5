@@ -1,9 +1,9 @@
-# IA OS Forge — Round 6
+# IA OS Forge — Round 7
 
-Estado: **ROUND 6 — CANDIDATE FOR CODEX REVIEW**.
+Estado: **ROUND 7 — CANDIDATE FOR CODEX REVIEW**.
 
 Não é READY FOR BUILD e não autoriza BUILD-00.
 
-Índice: [docs/planning/FDP-ROUND6-STATUS-INDEX.md](docs/planning/FDP-ROUND6-STATUS-INDEX.md)
+Índice: [docs/planning/FDP-ROUND7-STATUS-INDEX.md](docs/planning/FDP-ROUND7-STATUS-INDEX.md)
 
-A v1.2 está preservada em `historical/round5/`. O parecer do Codex que motivou esta rodada não foi alterado.
+A v1.3 está preservada em `historical/round6/`. O parecer do Codex Round 6 não foi alterado.

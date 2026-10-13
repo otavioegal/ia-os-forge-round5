@@ -7,7 +7,7 @@
 |---|---|---|---|---|
 | 5 | v1.2 | [Codex Round 5](PARECER-CODEX-ROUND5-2026-10-13.md) | FAIL; 6 HIGH, 5 MEDIUM | Grok Round 6 |
 | 6 | v1.3; commit `4e57839` | [Codex Round 6](PARECER-CODEX-ROUND6-2026-10-13.md) | FAIL; HIGH-01 parcial + NEW-HIGH-07 aberto | [Prompt Grok Round 7](PROMPT-GROK-ROUND7-LEDGER-CLOSURE.md) |
-| 7 | v1.4 ainda não entregue | NÃO EMITIDO | AGUARDANDO BUILDER | Corrigir apenas ledger concorrente e reconciliação manual; depois Codex |
+| 7 | v1.4 candidata nesta árvore | NÃO EMITIDO | ROUND 7 — CANDIDATE FOR CODEX REVIEW | Codex revisa o commit. Não é PASS. |
 
 ## Regra operacional
 
