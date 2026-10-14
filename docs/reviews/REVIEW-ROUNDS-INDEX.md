@@ -36,4 +36,6 @@ Pacote v0.1: [docs/planning/conversational-mvp/CMP-00-PACKAGE-INDEX.md](../plann
 
 Parecer: [PARECER-CODEX-CMP-v0.1-2026-10-13.md](PARECER-CODEX-CMP-v0.1-2026-10-13.md), commit auditado `cad1ac6d6bb8a970165ebd17ce1bff13d98af806`. Veredito: **PASS WITH CONDITIONS**. Não é PASS simples. Não integra o delta à baseline. Não autoriza BUILD-00.
 
-Correção v0.2, ainda não auditada: [docs/planning/conversational-mvp-v0.2/CMP-STATUS-INDEX.md](../planning/conversational-mvp-v0.2/CMP-STATUS-INDEX.md). Estado: **DELTA CONVERSATIONAL-MVP v0.2 — CANDIDATE FOR CODEX REVIEW**. Não declarar PASS. FDP-14, FDP-15 e BUILD-00 permanecem pendentes. A voz exigida pelo Founder continua obrigatória no MVP.
+Correção v0.2: [docs/planning/conversational-mvp-v0.2/CMP-STATUS-INDEX.md](../planning/conversational-mvp-v0.2/CMP-STATUS-INDEX.md). Parecer: [PARECER-CODEX-CMP-v0.2-2026-10-13.md](PARECER-CODEX-CMP-v0.2-2026-10-13.md), SHA `99474da514419a26ac8471c50c33697ade2a1cde`. Veredito: **PASS WITH CONDITIONS**. MEDIUM-01, MEDIUM-02, MEDIUM-03 e LOW-01 fechados documentalmente. HIGH-01 residual no oráculo CMP-O-28. Não é PASS simples. Não autoriza BUILD-00.
+
+Emenda v0.3, ainda não auditada: [docs/planning/conversational-mvp-v0.3/CMP-STATUS-INDEX.md](../planning/conversational-mvp-v0.3/CMP-STATUS-INDEX.md). Estado: **DELTA CONVERSATIONAL-MVP v0.3 — CANDIDATE FOR CODEX REVIEW**. Não declarar PASS. FDP-14, FDP-15 e BUILD-00 permanecem pendentes. A voz exigida pelo Founder continua obrigatória no MVP.

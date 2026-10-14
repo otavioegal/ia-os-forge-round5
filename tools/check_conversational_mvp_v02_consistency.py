@@ -248,7 +248,9 @@ for oid in oracles:
 
 allowed_prefix = (
     "docs/planning/conversational-mvp-v0.2/",
+    "docs/planning/conversational-mvp-v0.3/",
     "tools/check_conversational_mvp_v02_consistency.py",
+    "tools/check_conversational_mvp_v03_consistency.py",
     "tools/check_conversational_mvp_consistency.py",
     "README.md",
     "docs/reviews/REVIEW-ROUNDS-INDEX.md",
