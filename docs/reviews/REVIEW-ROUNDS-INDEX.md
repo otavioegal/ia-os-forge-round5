@@ -32,6 +32,8 @@ Nenhum PASS documental equivale a aprovação humana, readiness operacional ou a
 
 Não é Round 11. Não altera a baseline v1.7 nem o parecer Round 10.
 
-Pacote: [docs/planning/conversational-mvp/CMP-00-PACKAGE-INDEX.md](../planning/conversational-mvp/CMP-00-PACKAGE-INDEX.md).
+Pacote v0.1: [docs/planning/conversational-mvp/CMP-00-PACKAGE-INDEX.md](../planning/conversational-mvp/CMP-00-PACKAGE-INDEX.md).
 
-Estado: **DELTA CONVERSATIONAL-MVP v0.1 — CANDIDATE FOR CODEX REVIEW**. O Codex ainda não auditou este incremento. Não declarar PASS. FDP-14, FDP-15 e BUILD-00 permanecem como na seção anterior. A decisão funcional de voz do Founder não aprova esses gates.
+Parecer: [PARECER-CODEX-CMP-v0.1-2026-10-13.md](PARECER-CODEX-CMP-v0.1-2026-10-13.md), commit auditado `cad1ac6d6bb8a970165ebd17ce1bff13d98af806`. Veredito: **PASS WITH CONDITIONS**. Não é PASS simples. Não integra o delta à baseline. Não autoriza BUILD-00.
+
+Correção v0.2, ainda não auditada: [docs/planning/conversational-mvp-v0.2/CMP-STATUS-INDEX.md](../planning/conversational-mvp-v0.2/CMP-STATUS-INDEX.md). Estado: **DELTA CONVERSATIONAL-MVP v0.2 — CANDIDATE FOR CODEX REVIEW**. Não declarar PASS. FDP-14, FDP-15 e BUILD-00 permanecem pendentes. A voz exigida pelo Founder continua obrigatória no MVP.

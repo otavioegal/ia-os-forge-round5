@@ -195,7 +195,9 @@ if dirty_pre:
 
 allowed_prefix = (
     "docs/planning/conversational-mvp/",
+    "docs/planning/conversational-mvp-v0.2/",
     "tools/check_conversational_mvp_consistency.py",
+    "tools/check_conversational_mvp_v02_consistency.py",
     "README.md",
     "docs/reviews/REVIEW-ROUNDS-INDEX.md",
 )
