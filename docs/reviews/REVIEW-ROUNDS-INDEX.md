@@ -27,3 +27,11 @@ A única observação aberta é `LOW-01` editorial: `FDP-17-v1.7-TESTING-STRATEG
 - Testes, spikes, produtos, banco, providers, staging, B/C runbooks, drills: NÃO EXECUTADOS / GATES POSTERIORES.
 
 Nenhum PASS documental equivale a aprovação humana, readiness operacional ou autorização para implementar. Preservar integralmente o commit auditado e os pareceres históricos. Não criar novas rodadas para correções puramente editoriais.
+
+## Delta conversacional — fora da tabela de rodadas
+
+Não é Round 11. Não altera a baseline v1.7 nem o parecer Round 10.
+
+Pacote: [docs/planning/conversational-mvp/CMP-00-PACKAGE-INDEX.md](../planning/conversational-mvp/CMP-00-PACKAGE-INDEX.md).
+
+Estado: **DELTA CONVERSATIONAL-MVP v0.1 — CANDIDATE FOR CODEX REVIEW**. O Codex ainda não auditou este incremento. Não declarar PASS. FDP-14, FDP-15 e BUILD-00 permanecem como na seção anterior. A decisão funcional de voz do Founder não aprova esses gates.
