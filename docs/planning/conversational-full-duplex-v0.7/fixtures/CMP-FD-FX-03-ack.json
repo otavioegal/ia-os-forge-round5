@@ -1,0 +1,203 @@
+{
+  "schema": "cmp.fd.fx03.ack.v0.7",
+  "coverage": "fixture_decision_rows_only",
+  "note": "Static decision rows only. Not every media event. Not a protocol execution, not an oracle run, not a product test, not BUILD-00. FX03-NO-ACK is explicit: both ACK fields null is NO_ACK, not an omitted event and not ACK_STREAM_UNALLOCATED.",
+  "half_duplex_allowed": false,
+  "allocated_stream_ids": {
+    "input": "11111111-1111-4111-8111-111111111111",
+    "output": "22222222-2222-4222-8222-222222222222",
+    "control": "33333333-3333-4333-8333-333333333333"
+  },
+  "cases": [
+    {
+      "case_id": "FX03-ACK-ZERO",
+      "kind": "negative",
+      "ack_of_sequence": 0,
+      "ack_stream_id": "11111111-1111-4111-8111-111111111111",
+      "stream_id": "33333333-3333-4333-8333-333333333333",
+      "peer_ack_high_water_before": 0,
+      "emitted_high_water": 2,
+      "expected_code": "ACK_SEQUENCE_ZERO",
+      "peer_ack_high_water_after": 0,
+      "writes_high_water": false,
+      "zero_effect": true,
+      "zero_money": true,
+      "opens_mic": false
+    },
+    {
+      "case_id": "FX03-ACK-ZERO-AFTER-PROGRESS",
+      "kind": "negative",
+      "ack_of_sequence": 0,
+      "ack_stream_id": "11111111-1111-4111-8111-111111111111",
+      "stream_id": "33333333-3333-4333-8333-333333333333",
+      "peer_ack_high_water_before": 2,
+      "emitted_high_water": 2,
+      "expected_code": "ACK_SEQUENCE_ZERO",
+      "peer_ack_high_water_after": 2,
+      "writes_high_water": false,
+      "zero_effect": true,
+      "zero_money": true,
+      "opens_mic": false
+    },
+    {
+      "case_id": "FX03-RACE-1-THEN-2",
+      "kind": "race",
+      "ack_stream_id": "11111111-1111-4111-8111-111111111111",
+      "commit_order": [
+        1,
+        2
+      ],
+      "initial_peer_ack_high_water": 0,
+      "emitted_high_water": 2,
+      "expected_final": 2,
+      "expected_steps": [
+        "ACK_ACCEPT",
+        "ACK_ACCEPT"
+      ],
+      "decreases": false
+    },
+    {
+      "case_id": "FX03-RACE-2-THEN-1",
+      "kind": "race",
+      "ack_stream_id": "11111111-1111-4111-8111-111111111111",
+      "commit_order": [
+        2,
+        1
+      ],
+      "initial_peer_ack_high_water": 0,
+      "emitted_high_water": 2,
+      "expected_final": 2,
+      "expected_steps": [
+        "ACK_ACCEPT",
+        "ACK_REGRESSION"
+      ],
+      "decreases": false
+    },
+    {
+      "case_id": "FX03-REGRESSION",
+      "kind": "negative",
+      "ack_of_sequence": 1,
+      "ack_stream_id": "11111111-1111-4111-8111-111111111111",
+      "stream_id": "33333333-3333-4333-8333-333333333333",
+      "peer_ack_high_water_before": 2,
+      "emitted_high_water": 2,
+      "expected_code": "ACK_REGRESSION",
+      "peer_ack_high_water_after": 2,
+      "writes_high_water": false,
+      "zero_effect": true
+    },
+    {
+      "case_id": "FX03-DUPLICATE",
+      "kind": "negative",
+      "ack_of_sequence": 2,
+      "ack_stream_id": "11111111-1111-4111-8111-111111111111",
+      "stream_id": "33333333-3333-4333-8333-333333333333",
+      "peer_ack_high_water_before": 2,
+      "emitted_high_water": 2,
+      "expected_code": "ACK_DUPLICATE",
+      "peer_ack_high_water_after": 2,
+      "writes_high_water": false,
+      "zero_new_effect": true
+    },
+    {
+      "case_id": "FX03-FUTURE",
+      "kind": "negative",
+      "ack_of_sequence": 9,
+      "ack_stream_id": "11111111-1111-4111-8111-111111111111",
+      "stream_id": "33333333-3333-4333-8333-333333333333",
+      "peer_ack_high_water_before": 0,
+      "emitted_high_water": 2,
+      "expected_code": "ACK_FUTURE",
+      "peer_ack_high_water_after": 0,
+      "writes_high_water": false,
+      "zero_effect": true
+    },
+    {
+      "case_id": "FX03-CROSS-VALID",
+      "kind": "positive",
+      "ack_of_sequence": 2,
+      "ack_stream_id": "11111111-1111-4111-8111-111111111111",
+      "stream_id": "33333333-3333-4333-8333-333333333333",
+      "peer_ack_high_water_before": 0,
+      "emitted_high_water": 2,
+      "expected_code": "ACK_ACCEPT",
+      "peer_ack_high_water_after": 2,
+      "writes_high_water": true,
+      "zero_money": true,
+      "opens_mic": false
+    },
+    {
+      "case_id": "FX03-UNALLOCATED",
+      "kind": "negative",
+      "ack_of_sequence": 1,
+      "ack_stream_id": "99999999-9999-4999-8999-999999999999",
+      "stream_id": "33333333-3333-4333-8333-333333333333",
+      "peer_ack_high_water_before": 0,
+      "emitted_high_water": 2,
+      "expected_code": "ACK_STREAM_UNALLOCATED",
+      "peer_ack_high_water_after": 0,
+      "writes_high_water": false,
+      "opaque": true,
+      "zero_effect": true
+    },
+    {
+      "case_id": "FX03-PAIR-INVALID",
+      "kind": "negative",
+      "ack_of_sequence": 1,
+      "ack_stream_id": null,
+      "stream_id": "33333333-3333-4333-8333-333333333333",
+      "peer_ack_high_water_before": 0,
+      "emitted_high_water": 2,
+      "expected_code": "ACK_SCOPE_MISMATCH",
+      "peer_ack_high_water_after": 0,
+      "writes_high_water": false,
+      "zero_effect": true
+    },
+    {
+      "case_id": "FX03-NO-ACK",
+      "kind": "no_ack",
+      "ack_of_sequence": null,
+      "ack_stream_id": null,
+      "stream_id": "33333333-3333-4333-8333-333333333333",
+      "peer_ack_high_water_before": 2,
+      "emitted_high_water": 2,
+      "expected_code": "NO_ACK",
+      "peer_ack_high_water_after": 2,
+      "writes_high_water": false,
+      "zero_effect": true,
+      "zero_money": true,
+      "opens_mic": false,
+      "not_unallocated": true
+    },
+    {
+      "case_id": "FX03-ACK-SCOPE-MISMATCH-SEQUENCE-ONLY",
+      "kind": "negative",
+      "ack_of_sequence": 1,
+      "ack_stream_id": null,
+      "stream_id": "33333333-3333-4333-8333-333333333333",
+      "peer_ack_high_water_before": 2,
+      "emitted_high_water": 2,
+      "expected_code": "ACK_SCOPE_MISMATCH",
+      "peer_ack_high_water_after": 2,
+      "writes_high_water": false,
+      "zero_effect": true,
+      "zero_money": true,
+      "opens_mic": false
+    },
+    {
+      "case_id": "FX03-ACK-SCOPE-MISMATCH-STREAM-ONLY",
+      "kind": "negative",
+      "ack_of_sequence": null,
+      "ack_stream_id": "11111111-1111-4111-8111-111111111111",
+      "stream_id": "33333333-3333-4333-8333-333333333333",
+      "peer_ack_high_water_before": 2,
+      "emitted_high_water": 2,
+      "expected_code": "ACK_SCOPE_MISMATCH",
+      "peer_ack_high_water_after": 2,
+      "writes_high_water": false,
+      "zero_effect": true,
+      "zero_money": true,
+      "opens_mic": false
+    }
+  ]
+}
