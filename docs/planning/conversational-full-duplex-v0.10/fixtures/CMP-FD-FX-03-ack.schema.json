@@ -1,0 +1,391 @@
+{
+  "id": "cmp.fd.fx03.schema.v0.10",
+  "authority": "required and allowed names live here. The checker loads this file and must not treat a missing required name as a later exception.",
+  "objects": {
+    "document": {
+      "required": [
+        "schema",
+        "coverage",
+        "half_duplex_allowed",
+        "ledger",
+        "note",
+        "channel",
+        "primary_session_id",
+        "allocated_by_session",
+        "participants",
+        "initial_keys",
+        "cases",
+        "proves_product"
+      ],
+      "allowed": [
+        "schema",
+        "coverage",
+        "half_duplex_allowed",
+        "ledger",
+        "note",
+        "channel",
+        "primary_session_id",
+        "allocated_by_session",
+        "participants",
+        "initial_keys",
+        "cases",
+        "proves_product"
+      ]
+    },
+    "channel": {
+      "required": [
+        "organization_id",
+        "project_id"
+      ],
+      "allowed": [
+        "organization_id",
+        "project_id"
+      ]
+    },
+    "initial_key": {
+      "required": [
+        "organization_id",
+        "project_id",
+        "session_id",
+        "ack_stream_id",
+        "receiver_participant_id",
+        "peer_ack_high_water",
+        "emitted_high_water"
+      ],
+      "allowed": [
+        "organization_id",
+        "project_id",
+        "session_id",
+        "ack_stream_id",
+        "receiver_participant_id",
+        "peer_ack_high_water",
+        "emitted_high_water"
+      ]
+    },
+    "negative": {
+      "required": [
+        "ack_of_sequence",
+        "ack_stream_id",
+        "case_id",
+        "command_id",
+        "counter_delta",
+        "event_id",
+        "expected_code",
+        "expected_stage",
+        "kind",
+        "opaque",
+        "opens_mic",
+        "organization_id",
+        "peer_ack_high_water_after",
+        "peer_ack_high_water_before",
+        "project_id",
+        "receiver_participant_id",
+        "session_id",
+        "stream_id",
+        "writes_high_water",
+        "zero_effect",
+        "zero_money",
+        "zero_new_effect"
+      ],
+      "allowed": [
+        "ack_of_sequence",
+        "ack_stream_id",
+        "case_id",
+        "command_id",
+        "counter_delta",
+        "event_id",
+        "expected_code",
+        "expected_stage",
+        "kind",
+        "opaque",
+        "opens_mic",
+        "organization_id",
+        "peer_ack_high_water_after",
+        "peer_ack_high_water_before",
+        "project_id",
+        "receiver_participant_id",
+        "session_id",
+        "stream_id",
+        "writes_high_water",
+        "zero_effect",
+        "zero_money",
+        "zero_new_effect",
+        "expected_original_outcome_body",
+        "expected_original_outcome_code",
+        "expected_outcome_digest",
+        "expected_stored_error_code",
+        "expected_stored_outcome_code",
+        "expected_transport_status",
+        "setup",
+        "water_override",
+        "witness_ack_stream_id",
+        "witness_organization_id",
+        "witness_project_id",
+        "witness_receiver_participant_id",
+        "witness_session_id"
+      ],
+      "groups": [
+        [
+          "expected_original_outcome_code",
+          "expected_original_outcome_body",
+          "expected_outcome_digest"
+        ],
+        [
+          "expected_stored_outcome_code",
+          "expected_stored_error_code"
+        ],
+        [
+          "witness_organization_id",
+          "witness_project_id",
+          "witness_session_id",
+          "witness_ack_stream_id",
+          "witness_receiver_participant_id"
+        ]
+      ]
+    },
+    "positive": {
+      "required": [
+        "ack_of_sequence",
+        "ack_stream_id",
+        "case_id",
+        "command_id",
+        "counter_delta",
+        "event_id",
+        "expected_code",
+        "expected_stage",
+        "kind",
+        "opaque",
+        "opens_mic",
+        "organization_id",
+        "peer_ack_high_water_after",
+        "peer_ack_high_water_before",
+        "project_id",
+        "receiver_participant_id",
+        "session_id",
+        "stream_id",
+        "writes_high_water",
+        "zero_effect",
+        "zero_money",
+        "zero_new_effect"
+      ],
+      "allowed": [
+        "ack_of_sequence",
+        "ack_stream_id",
+        "case_id",
+        "command_id",
+        "counter_delta",
+        "event_id",
+        "expected_code",
+        "expected_stage",
+        "kind",
+        "opaque",
+        "opens_mic",
+        "organization_id",
+        "peer_ack_high_water_after",
+        "peer_ack_high_water_before",
+        "project_id",
+        "receiver_participant_id",
+        "session_id",
+        "stream_id",
+        "writes_high_water",
+        "zero_effect",
+        "zero_money",
+        "zero_new_effect"
+      ]
+    },
+    "interleave": {
+      "required": [
+        "case_id",
+        "concurrency",
+        "kind",
+        "not_a_postgresql_test",
+        "steps"
+      ],
+      "allowed": [
+        "case_id",
+        "concurrency",
+        "kind",
+        "not_a_postgresql_test",
+        "steps"
+      ]
+    },
+    "step": {
+      "required": [
+        "ack_of_sequence",
+        "ack_stream_id",
+        "stream_id",
+        "organization_id",
+        "project_id",
+        "session_id",
+        "receiver_participant_id",
+        "command_id",
+        "event_id",
+        "step_id",
+        "expected_code",
+        "expected_stage",
+        "expected_target_water",
+        "writes_high_water",
+        "counter_delta"
+      ],
+      "allowed": [
+        "ack_of_sequence",
+        "ack_stream_id",
+        "stream_id",
+        "organization_id",
+        "project_id",
+        "session_id",
+        "receiver_participant_id",
+        "command_id",
+        "event_id",
+        "step_id",
+        "expected_code",
+        "expected_stage",
+        "expected_target_water",
+        "writes_high_water",
+        "counter_delta"
+      ]
+    },
+    "sequential_replay": {
+      "required": [
+        "ack_stream_id",
+        "case_id",
+        "commit_order",
+        "concurrency",
+        "decreases",
+        "expected_final",
+        "expected_steps",
+        "kind",
+        "not_a_postgresql_test",
+        "opens_mic",
+        "organization_id",
+        "project_id",
+        "receiver_participant_id",
+        "session_id",
+        "stream_id",
+        "zero_money"
+      ],
+      "allowed": [
+        "ack_stream_id",
+        "case_id",
+        "commit_order",
+        "concurrency",
+        "decreases",
+        "expected_final",
+        "expected_steps",
+        "kind",
+        "not_a_postgresql_test",
+        "opens_mic",
+        "organization_id",
+        "project_id",
+        "receiver_participant_id",
+        "session_id",
+        "stream_id",
+        "zero_money"
+      ]
+    },
+    "rollback_model": {
+      "required": [
+        "attempt",
+        "case_id",
+        "command_stored_after_rollback",
+        "executed_database",
+        "kind",
+        "opens_mic",
+        "oracle_status",
+        "zero_money",
+        "zero_new_effect_after_rollback"
+      ],
+      "allowed": [
+        "attempt",
+        "case_id",
+        "command_stored_after_rollback",
+        "executed_database",
+        "kind",
+        "opens_mic",
+        "oracle_status",
+        "zero_money",
+        "zero_new_effect_after_rollback"
+      ]
+    },
+    "setup": {
+      "required": [
+        "ack_of_sequence",
+        "ack_stream_id",
+        "stream_id",
+        "organization_id",
+        "project_id",
+        "session_id",
+        "receiver_participant_id",
+        "command_id",
+        "event_id",
+        "expected_code"
+      ],
+      "allowed": [
+        "ack_of_sequence",
+        "ack_stream_id",
+        "stream_id",
+        "organization_id",
+        "project_id",
+        "session_id",
+        "receiver_participant_id",
+        "command_id",
+        "event_id",
+        "expected_code"
+      ]
+    },
+    "attempt": {
+      "required": [
+        "ack_of_sequence",
+        "ack_stream_id",
+        "stream_id",
+        "organization_id",
+        "project_id",
+        "session_id",
+        "receiver_participant_id",
+        "command_id",
+        "event_id"
+      ],
+      "allowed": [
+        "ack_of_sequence",
+        "ack_stream_id",
+        "stream_id",
+        "organization_id",
+        "project_id",
+        "session_id",
+        "receiver_participant_id",
+        "command_id",
+        "event_id"
+      ]
+    },
+    "replay_receiver_removed": {
+      "required": [
+        "case_id",
+        "fresh",
+        "kind",
+        "replay",
+        "setup"
+      ],
+      "allowed": [
+        "case_id",
+        "fresh",
+        "kind",
+        "replay",
+        "setup"
+      ]
+    },
+    "replay_cross_tenant": {
+      "required": [
+        "case_id",
+        "kind",
+        "probe",
+        "setup"
+      ],
+      "allowed": [
+        "case_id",
+        "kind",
+        "probe",
+        "setup"
+      ]
+    }
+  }
+}
