@@ -28,7 +28,7 @@ The seventeen P0 identifiers and their literal intents remain:
 | COST-01 | hard budget blocks spend | F-015 |
 | STOP-01 | emergency stop halts new work | F-026 |
 
-Supplementary identifiers are defined only in the v1.6 matrix. They are not replacements for the seventeen. The set adds LEDGER-01..18, DEPLOY-04..12, HANDOFF-01, AIOX-01, REVIEW-01, CTX-01, BRIDGE-01 and ENGINE-ALLOW-01. LEDGER-07, LEDGER-09 and LEDGER-10 remain mechanical races. LEDGER-08 is a proof conflict with a persisted pending row. LEDGER-11 and LEDGER-12 are manual reconciliation against a ProviderEffectProof. LEDGER-13..15 cover receipt precedence, Approve/Apply idempotency and over-estimate pending cost. LEDGER-16 is Confirm replay and revocation. LEDGER-17 is two pending rows before a movement. LEDGER-18 is late evidence after a movement.
+Supplementary identifiers are defined only in the v1.7 matrix. They are not replacements for the seventeen. The set adds LEDGER-01..18, DEPLOY-04..12, HANDOFF-01, AIOX-01, REVIEW-01, CTX-01, BRIDGE-01 and ENGINE-ALLOW-01. LEDGER-07, LEDGER-09 and LEDGER-10 remain mechanical races. LEDGER-08 is a proof conflict with a persisted pending row. LEDGER-11 and LEDGER-12 are manual reconciliation against a ProviderEffectProof. LEDGER-13..15 cover receipt precedence, Approve/Apply idempotency and over-estimate pending cost. LEDGER-16 is Confirm replay and revocation. LEDGER-17 is two pending rows before a movement. LEDGER-18 is late evidence after a movement.
 
 ## 3. What a case file contains
 Each case in the matrix states fixture, steps, pass rule and fail rule. A run, when it eventually exists, adds: test_run_id, commit_hash, policy_version, artifact hash, environment name and owner person. Those run fields are empty in this round.
