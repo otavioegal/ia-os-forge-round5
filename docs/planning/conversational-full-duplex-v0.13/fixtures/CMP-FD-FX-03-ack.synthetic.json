@@ -1,0 +1,251 @@
+{
+  "id": "cmp.fd.fx03.synthetic.v0.13",
+  "proves_product": false,
+  "oracle_status": "NOT_RUN",
+  "purpose": "schema mutation hosts only. Not decision rows. Not an oracle. Not PostgreSQL.",
+  "cases": [
+    {
+      "case_id": "SYN-POSITIVE-ALL-OPTIONAL",
+      "kind": "positive",
+      "ack_of_sequence": 2,
+      "ack_stream_id": "11111111-1111-4111-8111-111111111111",
+      "stream_id": "33333333-3333-4333-8333-333333333333",
+      "organization_id": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa",
+      "project_id": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+      "session_id": "dddddddd-dddd-4ddd-8ddd-dddddddddddd",
+      "receiver_participant_id": "eeeeeeee-eeee-4eee-8eee-eeeeeeeeeeee",
+      "command_id": "e48e442b-cc96-429d-8d82-bc36b20d2e0e",
+      "event_id": "42229148-625c-40d7-8a47-e5a462c77f4f",
+      "peer_ack_high_water_before": 0,
+      "peer_ack_high_water_after": 2,
+      "expected_code": "ACK_ACCEPT",
+      "expected_stage": "accept",
+      "writes_high_water": true,
+      "zero_effect": false,
+      "zero_new_effect": false,
+      "zero_money": true,
+      "opens_mic": false,
+      "opaque": false,
+      "counter_delta": {
+        "money_movements": 0,
+        "mic_opens": 0,
+        "transport_effects": 1,
+        "outbox_appends": 1,
+        "financial_audits": 0,
+        "command_commit_rows": 1
+      },
+      "expected_original_outcome_code": 200,
+      "expected_original_outcome_body": {
+        "error_code": "ACK_SCOPE_MISMATCH",
+        "opaque": false,
+        "retryable": false,
+        "terminal": true,
+        "peer_ack_high_water": 0
+      },
+      "expected_outcome_digest": "1e741691d96e9aff0bc681ab417f18d202d73aaa321f605984dcd78826f99420",
+      "expected_transport_status": 200,
+      "water_override": 2,
+      "witness_organization_id": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa",
+      "witness_project_id": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+      "witness_session_id": "dddddddd-dddd-4ddd-8ddd-dddddddddddd",
+      "witness_ack_stream_id": "11111111-1111-4111-8111-111111111111",
+      "witness_receiver_participant_id": "eeeeeeee-eeee-4eee-8eee-eeeeeeeeeeee",
+      "expected_stored_outcome_code": 200,
+      "expected_stored_error_code": "ACK_ACCEPT",
+      "setup": [
+        {
+          "ack_of_sequence": 2,
+          "ack_stream_id": "11111111-1111-4111-8111-111111111111",
+          "stream_id": "33333333-3333-4333-8333-333333333333",
+          "organization_id": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa",
+          "project_id": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+          "session_id": "dddddddd-dddd-4ddd-8ddd-dddddddddddd",
+          "receiver_participant_id": "eeeeeeee-eeee-4eee-8eee-eeeeeeeeeeee",
+          "command_id": "f528cc55-a45a-4bf9-8d18-6182a87b6761",
+          "event_id": "1a0eec28-b87b-4247-8576-355d922edf4b",
+          "expected_code": "ACK_ACCEPT"
+        },
+        {
+          "ack_of_sequence": 2,
+          "ack_stream_id": "11111111-1111-4111-8111-111111111111",
+          "stream_id": "33333333-3333-4333-8333-333333333333",
+          "organization_id": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa",
+          "project_id": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+          "session_id": "dddddddd-dddd-4ddd-8ddd-dddddddddddd",
+          "receiver_participant_id": "eeeeeeee-eeee-4eee-8eee-eeeeeeeeeeee",
+          "command_id": "22222222-2222-4222-8222-222222222222",
+          "event_id": "33333333-3333-4333-8333-333333333333",
+          "expected_code": "ACK_ACCEPT"
+        }
+      ]
+    },
+    {
+      "kind": "negative",
+      "zero_effect": true,
+      "zero_new_effect": true,
+      "zero_money": true,
+      "opens_mic": false,
+      "opaque": false,
+      "writes_high_water": false,
+      "counter_delta": {
+        "money_movements": 0,
+        "mic_opens": 0,
+        "transport_effects": 0,
+        "outbox_appends": 0,
+        "financial_audits": 0,
+        "command_commit_rows": 0
+      },
+      "case_id": "SYN-NEGATIVE-ALL-OPTIONAL",
+      "ack_of_sequence": 2,
+      "ack_stream_id": "11111111-1111-4111-8111-111111111111",
+      "stream_id": "33333333-3333-4333-8333-333333333333",
+      "organization_id": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa",
+      "project_id": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+      "session_id": "dddddddd-dddd-4ddd-8ddd-dddddddddddd",
+      "receiver_participant_id": "eeeeeeee-eeee-4eee-8eee-eeeeeeeeeeee",
+      "command_id": "f528cc55-a45a-4bf9-8d18-6182a87b6761",
+      "event_id": "1a0eec28-b87b-4247-8576-355d922edf4b",
+      "setup": [
+        {
+          "ack_of_sequence": 2,
+          "ack_stream_id": "11111111-1111-4111-8111-111111111111",
+          "stream_id": "33333333-3333-4333-8333-333333333333",
+          "organization_id": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa",
+          "project_id": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+          "session_id": "dddddddd-dddd-4ddd-8ddd-dddddddddddd",
+          "receiver_participant_id": "eeeeeeee-eeee-4eee-8eee-eeeeeeeeeeee",
+          "command_id": "f528cc55-a45a-4bf9-8d18-6182a87b6761",
+          "event_id": "1a0eec28-b87b-4247-8576-355d922edf4b",
+          "expected_code": "ACK_ACCEPT"
+        },
+        {
+          "ack_of_sequence": 2,
+          "ack_stream_id": "11111111-1111-4111-8111-111111111111",
+          "stream_id": "33333333-3333-4333-8333-333333333333",
+          "organization_id": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa",
+          "project_id": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+          "session_id": "dddddddd-dddd-4ddd-8ddd-dddddddddddd",
+          "receiver_participant_id": "eeeeeeee-eeee-4eee-8eee-eeeeeeeeeeee",
+          "command_id": "22222222-2222-4222-8222-222222222222",
+          "event_id": "33333333-3333-4333-8333-333333333333",
+          "expected_code": "ACK_ACCEPT"
+        }
+      ],
+      "peer_ack_high_water_before": 2,
+      "peer_ack_high_water_after": 2,
+      "expected_code": "IDEMPOTENT_REPLAY",
+      "expected_stage": "replay",
+      "expected_transport_status": 200,
+      "expected_original_outcome_code": 200,
+      "expected_original_outcome_body": {
+        "error_code": "ACK_SCOPE_MISMATCH",
+        "opaque": false,
+        "retryable": false,
+        "terminal": true,
+        "peer_ack_high_water": 0
+      },
+      "expected_outcome_digest": "1e741691d96e9aff0bc681ab417f18d202d73aaa321f605984dcd78826f99420",
+      "water_override": 2,
+      "witness_organization_id": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa",
+      "witness_project_id": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+      "witness_session_id": "dddddddd-dddd-4ddd-8ddd-dddddddddddd",
+      "witness_ack_stream_id": "11111111-1111-4111-8111-111111111111",
+      "witness_receiver_participant_id": "eeeeeeee-eeee-4eee-8eee-eeeeeeeeeeee",
+      "expected_stored_outcome_code": 200,
+      "expected_stored_error_code": "ACK_ACCEPT"
+    },
+    {
+      "case_id": "SYN-RECEIVER-REMOVED-SETUP-2",
+      "kind": "replay_receiver_removed",
+      "setup": [
+        {
+          "ack_of_sequence": 9,
+          "ack_stream_id": "11111111-1111-4111-8111-111111111111",
+          "stream_id": "33333333-3333-4333-8333-333333333333",
+          "organization_id": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa",
+          "project_id": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+          "session_id": "dddddddd-dddd-4ddd-8ddd-dddddddddddd",
+          "receiver_participant_id": "eeeeeeee-eeee-4eee-8eee-eeeeeeeeeeee",
+          "command_id": "464de01b-dbd8-4043-8660-18a933aa9e45",
+          "event_id": "3087bc5e-4db2-433e-84c9-4a365443d9ac",
+          "expected_code": "ACK_FUTURE"
+        },
+        {
+          "ack_of_sequence": 2,
+          "ack_stream_id": "11111111-1111-4111-8111-111111111111",
+          "stream_id": "33333333-3333-4333-8333-333333333333",
+          "organization_id": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa",
+          "project_id": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+          "session_id": "dddddddd-dddd-4ddd-8ddd-dddddddddddd",
+          "receiver_participant_id": "eeeeeeee-eeee-4eee-8eee-eeeeeeeeeeee",
+          "command_id": "22222222-2222-4222-8222-222222222222",
+          "event_id": "33333333-3333-4333-8333-333333333333",
+          "expected_code": "ACK_ACCEPT"
+        }
+      ],
+      "replay": {
+        "ack_of_sequence": 9,
+        "ack_stream_id": "11111111-1111-4111-8111-111111111111",
+        "stream_id": "33333333-3333-4333-8333-333333333333",
+        "organization_id": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa",
+        "project_id": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+        "session_id": "dddddddd-dddd-4ddd-8ddd-dddddddddddd",
+        "receiver_participant_id": "eeeeeeee-eeee-4eee-8eee-eeeeeeeeeeee",
+        "command_id": "464de01b-dbd8-4043-8660-18a933aa9e45",
+        "event_id": "3087bc5e-4db2-433e-84c9-4a365443d9ac"
+      },
+      "fresh": {
+        "ack_of_sequence": 1,
+        "ack_stream_id": "11111111-1111-4111-8111-111111111111",
+        "stream_id": "33333333-3333-4333-8333-333333333333",
+        "organization_id": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa",
+        "project_id": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+        "session_id": "dddddddd-dddd-4ddd-8ddd-dddddddddddd",
+        "receiver_participant_id": "eeeeeeee-eeee-4eee-8eee-eeeeeeeeeeee",
+        "command_id": "d1b6eff1-bae2-4e57-843e-25bd8b0c247a",
+        "event_id": "524e30d5-c349-46d6-8c6d-214844cbb92e"
+      }
+    },
+    {
+      "case_id": "SYN-CROSS-TENANT-SETUP-2",
+      "kind": "replay_cross_tenant",
+      "setup": [
+        {
+          "ack_of_sequence": 9,
+          "ack_stream_id": "11111111-1111-4111-8111-111111111111",
+          "stream_id": "33333333-3333-4333-8333-333333333333",
+          "organization_id": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa",
+          "project_id": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+          "session_id": "dddddddd-dddd-4ddd-8ddd-dddddddddddd",
+          "receiver_participant_id": "eeeeeeee-eeee-4eee-8eee-eeeeeeeeeeee",
+          "command_id": "e48e442b-cc96-429d-8d82-bc36b20d2e0e",
+          "event_id": "42229148-625c-40d7-8a47-e5a462c77f4f",
+          "expected_code": "ACK_FUTURE"
+        },
+        {
+          "ack_of_sequence": 2,
+          "ack_stream_id": "11111111-1111-4111-8111-111111111111",
+          "stream_id": "33333333-3333-4333-8333-333333333333",
+          "organization_id": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa",
+          "project_id": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+          "session_id": "dddddddd-dddd-4ddd-8ddd-dddddddddddd",
+          "receiver_participant_id": "eeeeeeee-eeee-4eee-8eee-eeeeeeeeeeee",
+          "command_id": "22222222-2222-4222-8222-222222222222",
+          "event_id": "33333333-3333-4333-8333-333333333333",
+          "expected_code": "ACK_ACCEPT"
+        }
+      ],
+      "probe": {
+        "ack_of_sequence": 9,
+        "ack_stream_id": "11111111-1111-4111-8111-111111111111",
+        "stream_id": "33333333-3333-4333-8333-333333333333",
+        "organization_id": "cccccccc-cccc-4ccc-8ccc-cccccccccccc",
+        "project_id": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+        "session_id": "dddddddd-dddd-4ddd-8ddd-dddddddddddd",
+        "receiver_participant_id": "eeeeeeee-eeee-4eee-8eee-eeeeeeeeeeee",
+        "command_id": "e48e442b-cc96-429d-8d82-bc36b20d2e0e",
+        "event_id": "f180e97f-a1b5-4072-85d9-201b030a9ad1"
+      }
+    }
+  ]
+}
