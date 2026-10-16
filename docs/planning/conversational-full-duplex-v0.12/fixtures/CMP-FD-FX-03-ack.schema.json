@@ -1,0 +1,1128 @@
+{
+  "id": "cmp.fd.fx03.schema.v0.12",
+  "authority": "required names, allowed names and field types live here. A missing name is FAIL_SCHEMA. A wrong type is FAIL_TYPE or FAIL_UUID before any ACK decision. v0.12 does not change these rules. Coverage is not this file: the checker must exercise every declared rule or fail.",
+  "objects": {
+    "document": {
+      "required": [
+        "schema",
+        "coverage",
+        "half_duplex_allowed",
+        "ledger",
+        "note",
+        "channel",
+        "primary_session_id",
+        "allocated_by_session",
+        "participants",
+        "initial_keys",
+        "cases",
+        "proves_product"
+      ],
+      "allowed": [
+        "schema",
+        "coverage",
+        "half_duplex_allowed",
+        "ledger",
+        "note",
+        "channel",
+        "primary_session_id",
+        "allocated_by_session",
+        "participants",
+        "initial_keys",
+        "cases",
+        "proves_product"
+      ],
+      "fields": {
+        "schema": {
+          "type": "string",
+          "minLength": 1,
+          "const": "cmp.fd.fx03.ack.v0.12"
+        },
+        "coverage": {
+          "type": "string",
+          "minLength": 1,
+          "const": "fixture_decision_rows_only"
+        },
+        "half_duplex_allowed": {
+          "type": "bool",
+          "const": false
+        },
+        "ledger": {
+          "type": "string",
+          "minLength": 1,
+          "const": "forge.command_commit+forge.event.v1"
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1
+        },
+        "channel": {
+          "type": "object",
+          "ref": "channel"
+        },
+        "primary_session_id": {
+          "type": "uuid"
+        },
+        "allocated_by_session": {
+          "type": "uuid_map"
+        },
+        "participants": {
+          "type": "uuid_map"
+        },
+        "initial_keys": {
+          "type": "array",
+          "minItems": 6,
+          "items": {
+            "type": "object",
+            "ref": "initial_key"
+          }
+        },
+        "cases": {
+          "type": "array",
+          "minItems": 1
+        },
+        "proves_product": {
+          "type": "bool",
+          "const": false
+        }
+      }
+    },
+    "channel": {
+      "required": [
+        "organization_id",
+        "project_id"
+      ],
+      "allowed": [
+        "organization_id",
+        "project_id"
+      ],
+      "fields": {
+        "organization_id": {
+          "type": "uuid"
+        },
+        "project_id": {
+          "type": "uuid"
+        }
+      }
+    },
+    "initial_key": {
+      "required": [
+        "organization_id",
+        "project_id",
+        "session_id",
+        "ack_stream_id",
+        "receiver_participant_id",
+        "peer_ack_high_water",
+        "emitted_high_water"
+      ],
+      "allowed": [
+        "organization_id",
+        "project_id",
+        "session_id",
+        "ack_stream_id",
+        "receiver_participant_id",
+        "peer_ack_high_water",
+        "emitted_high_water"
+      ],
+      "fields": {
+        "organization_id": {
+          "type": "uuid"
+        },
+        "project_id": {
+          "type": "uuid"
+        },
+        "session_id": {
+          "type": "uuid"
+        },
+        "ack_stream_id": {
+          "type": "uuid"
+        },
+        "receiver_participant_id": {
+          "type": "uuid"
+        },
+        "peer_ack_high_water": {
+          "type": "int"
+        },
+        "emitted_high_water": {
+          "type": "int"
+        }
+      }
+    },
+    "negative": {
+      "required": [
+        "ack_of_sequence",
+        "ack_stream_id",
+        "case_id",
+        "command_id",
+        "counter_delta",
+        "event_id",
+        "expected_code",
+        "expected_stage",
+        "kind",
+        "opaque",
+        "opens_mic",
+        "organization_id",
+        "peer_ack_high_water_after",
+        "peer_ack_high_water_before",
+        "project_id",
+        "receiver_participant_id",
+        "session_id",
+        "stream_id",
+        "writes_high_water",
+        "zero_effect",
+        "zero_money",
+        "zero_new_effect"
+      ],
+      "allowed": [
+        "ack_of_sequence",
+        "ack_stream_id",
+        "case_id",
+        "command_id",
+        "counter_delta",
+        "event_id",
+        "expected_code",
+        "expected_stage",
+        "kind",
+        "opaque",
+        "opens_mic",
+        "organization_id",
+        "peer_ack_high_water_after",
+        "peer_ack_high_water_before",
+        "project_id",
+        "receiver_participant_id",
+        "session_id",
+        "stream_id",
+        "writes_high_water",
+        "zero_effect",
+        "zero_money",
+        "zero_new_effect",
+        "expected_original_outcome_body",
+        "expected_original_outcome_code",
+        "expected_outcome_digest",
+        "expected_stored_error_code",
+        "expected_stored_outcome_code",
+        "expected_transport_status",
+        "setup",
+        "water_override",
+        "witness_ack_stream_id",
+        "witness_organization_id",
+        "witness_project_id",
+        "witness_receiver_participant_id",
+        "witness_session_id"
+      ],
+      "groups": [
+        [
+          "expected_original_outcome_code",
+          "expected_original_outcome_body",
+          "expected_outcome_digest"
+        ],
+        [
+          "expected_stored_outcome_code",
+          "expected_stored_error_code"
+        ],
+        [
+          "witness_organization_id",
+          "witness_project_id",
+          "witness_session_id",
+          "witness_ack_stream_id",
+          "witness_receiver_participant_id"
+        ]
+      ],
+      "fields": {
+        "ack_of_sequence": {
+          "type": "nullable_int"
+        },
+        "ack_stream_id": {
+          "type": "nullable_uuid"
+        },
+        "stream_id": {
+          "type": "uuid"
+        },
+        "organization_id": {
+          "type": "uuid"
+        },
+        "project_id": {
+          "type": "uuid"
+        },
+        "session_id": {
+          "type": "uuid"
+        },
+        "receiver_participant_id": {
+          "type": "uuid"
+        },
+        "command_id": {
+          "type": "uuid"
+        },
+        "event_id": {
+          "type": "uuid"
+        },
+        "case_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "expected_code": {
+          "type": "string",
+          "minLength": 1
+        },
+        "expected_stage": {
+          "type": "string",
+          "minLength": 1
+        },
+        "peer_ack_high_water_before": {
+          "type": "int"
+        },
+        "peer_ack_high_water_after": {
+          "type": "int"
+        },
+        "writes_high_water": {
+          "type": "bool"
+        },
+        "zero_effect": {
+          "type": "bool"
+        },
+        "zero_new_effect": {
+          "type": "bool"
+        },
+        "zero_money": {
+          "type": "bool",
+          "const": true
+        },
+        "opens_mic": {
+          "type": "bool",
+          "const": false
+        },
+        "opaque": {
+          "type": "bool"
+        },
+        "counter_delta": {
+          "type": "object",
+          "ref": "counter"
+        },
+        "water_override": {
+          "type": "int"
+        },
+        "setup": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "ref": "setup"
+          }
+        },
+        "expected_transport_status": {
+          "type": "int"
+        },
+        "expected_original_outcome_code": {
+          "type": "int"
+        },
+        "expected_original_outcome_body": {
+          "type": "object",
+          "required": [
+            "error_code"
+          ],
+          "allowed": [
+            "error_code",
+            "opaque",
+            "retryable",
+            "terminal",
+            "peer_ack_high_water"
+          ],
+          "fields": {
+            "error_code": {
+              "type": "string",
+              "minLength": 1
+            },
+            "opaque": {
+              "type": "bool"
+            },
+            "retryable": {
+              "type": "bool"
+            },
+            "terminal": {
+              "type": "bool"
+            },
+            "peer_ack_high_water": {
+              "type": "int"
+            }
+          }
+        },
+        "expected_outcome_digest": {
+          "type": "sha256"
+        },
+        "expected_stored_outcome_code": {
+          "type": "int"
+        },
+        "expected_stored_error_code": {
+          "type": "string",
+          "minLength": 1
+        },
+        "witness_organization_id": {
+          "type": "uuid"
+        },
+        "witness_project_id": {
+          "type": "uuid"
+        },
+        "witness_session_id": {
+          "type": "uuid"
+        },
+        "witness_ack_stream_id": {
+          "type": "uuid"
+        },
+        "witness_receiver_participant_id": {
+          "type": "uuid"
+        },
+        "kind": {
+          "type": "string",
+          "minLength": 1,
+          "const": "negative"
+        }
+      }
+    },
+    "positive": {
+      "required": [
+        "ack_of_sequence",
+        "ack_stream_id",
+        "case_id",
+        "command_id",
+        "counter_delta",
+        "event_id",
+        "expected_code",
+        "expected_stage",
+        "kind",
+        "opaque",
+        "opens_mic",
+        "organization_id",
+        "peer_ack_high_water_after",
+        "peer_ack_high_water_before",
+        "project_id",
+        "receiver_participant_id",
+        "session_id",
+        "stream_id",
+        "writes_high_water",
+        "zero_effect",
+        "zero_money",
+        "zero_new_effect"
+      ],
+      "allowed": [
+        "ack_of_sequence",
+        "ack_stream_id",
+        "stream_id",
+        "organization_id",
+        "project_id",
+        "session_id",
+        "receiver_participant_id",
+        "command_id",
+        "event_id",
+        "case_id",
+        "expected_code",
+        "expected_stage",
+        "peer_ack_high_water_before",
+        "peer_ack_high_water_after",
+        "writes_high_water",
+        "zero_effect",
+        "zero_new_effect",
+        "zero_money",
+        "opens_mic",
+        "opaque",
+        "counter_delta",
+        "water_override",
+        "setup",
+        "expected_transport_status",
+        "expected_original_outcome_code",
+        "expected_original_outcome_body",
+        "expected_outcome_digest",
+        "expected_stored_outcome_code",
+        "expected_stored_error_code",
+        "witness_organization_id",
+        "witness_project_id",
+        "witness_session_id",
+        "witness_ack_stream_id",
+        "witness_receiver_participant_id",
+        "kind"
+      ],
+      "fields": {
+        "ack_of_sequence": {
+          "type": "nullable_int"
+        },
+        "ack_stream_id": {
+          "type": "nullable_uuid"
+        },
+        "stream_id": {
+          "type": "uuid"
+        },
+        "organization_id": {
+          "type": "uuid"
+        },
+        "project_id": {
+          "type": "uuid"
+        },
+        "session_id": {
+          "type": "uuid"
+        },
+        "receiver_participant_id": {
+          "type": "uuid"
+        },
+        "command_id": {
+          "type": "uuid"
+        },
+        "event_id": {
+          "type": "uuid"
+        },
+        "case_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "expected_code": {
+          "type": "string",
+          "minLength": 1
+        },
+        "expected_stage": {
+          "type": "string",
+          "minLength": 1
+        },
+        "peer_ack_high_water_before": {
+          "type": "int"
+        },
+        "peer_ack_high_water_after": {
+          "type": "int"
+        },
+        "writes_high_water": {
+          "type": "bool"
+        },
+        "zero_effect": {
+          "type": "bool"
+        },
+        "zero_new_effect": {
+          "type": "bool"
+        },
+        "zero_money": {
+          "type": "bool",
+          "const": true
+        },
+        "opens_mic": {
+          "type": "bool",
+          "const": false
+        },
+        "opaque": {
+          "type": "bool"
+        },
+        "counter_delta": {
+          "type": "object",
+          "ref": "counter"
+        },
+        "water_override": {
+          "type": "int"
+        },
+        "setup": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "ref": "setup"
+          }
+        },
+        "expected_transport_status": {
+          "type": "int"
+        },
+        "expected_original_outcome_code": {
+          "type": "int"
+        },
+        "expected_original_outcome_body": {
+          "type": "object",
+          "required": [
+            "error_code"
+          ],
+          "allowed": [
+            "error_code",
+            "opaque",
+            "retryable",
+            "terminal",
+            "peer_ack_high_water"
+          ],
+          "fields": {
+            "error_code": {
+              "type": "string",
+              "minLength": 1
+            },
+            "opaque": {
+              "type": "bool"
+            },
+            "retryable": {
+              "type": "bool"
+            },
+            "terminal": {
+              "type": "bool"
+            },
+            "peer_ack_high_water": {
+              "type": "int"
+            }
+          }
+        },
+        "expected_outcome_digest": {
+          "type": "sha256"
+        },
+        "expected_stored_outcome_code": {
+          "type": "int"
+        },
+        "expected_stored_error_code": {
+          "type": "string",
+          "minLength": 1
+        },
+        "witness_organization_id": {
+          "type": "uuid"
+        },
+        "witness_project_id": {
+          "type": "uuid"
+        },
+        "witness_session_id": {
+          "type": "uuid"
+        },
+        "witness_ack_stream_id": {
+          "type": "uuid"
+        },
+        "witness_receiver_participant_id": {
+          "type": "uuid"
+        },
+        "kind": {
+          "type": "string",
+          "minLength": 1,
+          "const": "positive"
+        }
+      }
+    },
+    "interleave": {
+      "required": [
+        "case_id",
+        "concurrency",
+        "kind",
+        "not_a_postgresql_test",
+        "steps"
+      ],
+      "allowed": [
+        "case_id",
+        "concurrency",
+        "kind",
+        "not_a_postgresql_test",
+        "steps"
+      ],
+      "fields": {
+        "case_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "type": "string",
+          "minLength": 1,
+          "const": "interleave"
+        },
+        "concurrency": {
+          "type": "bool",
+          "const": false
+        },
+        "not_a_postgresql_test": {
+          "type": "bool",
+          "const": true
+        },
+        "steps": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "ref": "step"
+          }
+        }
+      }
+    },
+    "step": {
+      "required": [
+        "ack_of_sequence",
+        "ack_stream_id",
+        "stream_id",
+        "organization_id",
+        "project_id",
+        "session_id",
+        "receiver_participant_id",
+        "command_id",
+        "event_id",
+        "step_id",
+        "expected_code",
+        "expected_stage",
+        "expected_target_water",
+        "writes_high_water",
+        "counter_delta"
+      ],
+      "allowed": [
+        "ack_of_sequence",
+        "ack_stream_id",
+        "stream_id",
+        "organization_id",
+        "project_id",
+        "session_id",
+        "receiver_participant_id",
+        "command_id",
+        "event_id",
+        "step_id",
+        "expected_code",
+        "expected_stage",
+        "expected_target_water",
+        "writes_high_water",
+        "counter_delta"
+      ],
+      "fields": {
+        "ack_of_sequence": {
+          "type": "nullable_int"
+        },
+        "ack_stream_id": {
+          "type": "nullable_uuid"
+        },
+        "stream_id": {
+          "type": "uuid"
+        },
+        "organization_id": {
+          "type": "uuid"
+        },
+        "project_id": {
+          "type": "uuid"
+        },
+        "session_id": {
+          "type": "uuid"
+        },
+        "receiver_participant_id": {
+          "type": "uuid"
+        },
+        "command_id": {
+          "type": "uuid"
+        },
+        "event_id": {
+          "type": "uuid"
+        },
+        "step_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "expected_code": {
+          "type": "string",
+          "minLength": 1
+        },
+        "expected_stage": {
+          "type": "string",
+          "minLength": 1
+        },
+        "expected_target_water": {
+          "type": "int"
+        },
+        "writes_high_water": {
+          "type": "bool"
+        },
+        "counter_delta": {
+          "type": "object",
+          "ref": "counter"
+        }
+      }
+    },
+    "sequential_replay": {
+      "required": [
+        "ack_stream_id",
+        "case_id",
+        "commit_order",
+        "concurrency",
+        "decreases",
+        "expected_final",
+        "expected_steps",
+        "kind",
+        "not_a_postgresql_test",
+        "opens_mic",
+        "organization_id",
+        "project_id",
+        "receiver_participant_id",
+        "session_id",
+        "stream_id",
+        "zero_money"
+      ],
+      "allowed": [
+        "ack_stream_id",
+        "case_id",
+        "commit_order",
+        "concurrency",
+        "decreases",
+        "expected_final",
+        "expected_steps",
+        "kind",
+        "not_a_postgresql_test",
+        "opens_mic",
+        "organization_id",
+        "project_id",
+        "receiver_participant_id",
+        "session_id",
+        "stream_id",
+        "zero_money"
+      ],
+      "fields": {
+        "case_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "type": "string",
+          "minLength": 1,
+          "const": "sequential_replay"
+        },
+        "concurrency": {
+          "type": "bool",
+          "const": false
+        },
+        "not_a_postgresql_test": {
+          "type": "bool",
+          "const": true
+        },
+        "ack_stream_id": {
+          "type": "uuid"
+        },
+        "stream_id": {
+          "type": "uuid"
+        },
+        "organization_id": {
+          "type": "uuid"
+        },
+        "project_id": {
+          "type": "uuid"
+        },
+        "session_id": {
+          "type": "uuid"
+        },
+        "receiver_participant_id": {
+          "type": "uuid"
+        },
+        "commit_order": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "int"
+          }
+        },
+        "expected_final": {
+          "type": "int"
+        },
+        "expected_steps": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "decreases": {
+          "type": "bool",
+          "const": false
+        },
+        "zero_money": {
+          "type": "bool",
+          "const": true
+        },
+        "opens_mic": {
+          "type": "bool",
+          "const": false
+        }
+      },
+      "same_length": [
+        [
+          "commit_order",
+          "expected_steps"
+        ]
+      ]
+    },
+    "rollback_model": {
+      "required": [
+        "attempt",
+        "case_id",
+        "command_stored_after_rollback",
+        "executed_database",
+        "kind",
+        "opens_mic",
+        "oracle_status",
+        "zero_money",
+        "zero_new_effect_after_rollback"
+      ],
+      "allowed": [
+        "attempt",
+        "case_id",
+        "command_stored_after_rollback",
+        "executed_database",
+        "kind",
+        "opens_mic",
+        "oracle_status",
+        "zero_money",
+        "zero_new_effect_after_rollback"
+      ],
+      "fields": {
+        "case_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "type": "string",
+          "minLength": 1,
+          "const": "rollback_model"
+        },
+        "attempt": {
+          "type": "object",
+          "ref": "attempt"
+        },
+        "command_stored_after_rollback": {
+          "type": "bool",
+          "const": false
+        },
+        "zero_new_effect_after_rollback": {
+          "type": "bool",
+          "const": true
+        },
+        "zero_money": {
+          "type": "bool",
+          "const": true
+        },
+        "opens_mic": {
+          "type": "bool",
+          "const": false
+        },
+        "executed_database": {
+          "type": "bool",
+          "const": false
+        },
+        "oracle_status": {
+          "type": "string",
+          "minLength": 1,
+          "const": "NOT_RUN"
+        }
+      }
+    },
+    "setup": {
+      "required": [
+        "ack_of_sequence",
+        "ack_stream_id",
+        "stream_id",
+        "organization_id",
+        "project_id",
+        "session_id",
+        "receiver_participant_id",
+        "command_id",
+        "event_id",
+        "expected_code"
+      ],
+      "allowed": [
+        "ack_of_sequence",
+        "ack_stream_id",
+        "stream_id",
+        "organization_id",
+        "project_id",
+        "session_id",
+        "receiver_participant_id",
+        "command_id",
+        "event_id",
+        "expected_code"
+      ],
+      "fields": {
+        "ack_of_sequence": {
+          "type": "nullable_int"
+        },
+        "ack_stream_id": {
+          "type": "nullable_uuid"
+        },
+        "stream_id": {
+          "type": "uuid"
+        },
+        "organization_id": {
+          "type": "uuid"
+        },
+        "project_id": {
+          "type": "uuid"
+        },
+        "session_id": {
+          "type": "uuid"
+        },
+        "receiver_participant_id": {
+          "type": "uuid"
+        },
+        "command_id": {
+          "type": "uuid"
+        },
+        "event_id": {
+          "type": "uuid"
+        },
+        "expected_code": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "attempt": {
+      "required": [
+        "ack_of_sequence",
+        "ack_stream_id",
+        "stream_id",
+        "organization_id",
+        "project_id",
+        "session_id",
+        "receiver_participant_id",
+        "command_id",
+        "event_id"
+      ],
+      "allowed": [
+        "ack_of_sequence",
+        "ack_stream_id",
+        "stream_id",
+        "organization_id",
+        "project_id",
+        "session_id",
+        "receiver_participant_id",
+        "command_id",
+        "event_id"
+      ],
+      "fields": {
+        "ack_of_sequence": {
+          "type": "nullable_int"
+        },
+        "ack_stream_id": {
+          "type": "nullable_uuid"
+        },
+        "stream_id": {
+          "type": "uuid"
+        },
+        "organization_id": {
+          "type": "uuid"
+        },
+        "project_id": {
+          "type": "uuid"
+        },
+        "session_id": {
+          "type": "uuid"
+        },
+        "receiver_participant_id": {
+          "type": "uuid"
+        },
+        "command_id": {
+          "type": "uuid"
+        },
+        "event_id": {
+          "type": "uuid"
+        }
+      }
+    },
+    "replay_receiver_removed": {
+      "required": [
+        "case_id",
+        "fresh",
+        "kind",
+        "replay",
+        "setup"
+      ],
+      "allowed": [
+        "case_id",
+        "fresh",
+        "kind",
+        "replay",
+        "setup"
+      ],
+      "fields": {
+        "case_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "type": "string",
+          "minLength": 1,
+          "const": "replay_receiver_removed"
+        },
+        "setup": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "ref": "setup"
+          }
+        },
+        "replay": {
+          "type": "object",
+          "ref": "attempt"
+        },
+        "fresh": {
+          "type": "object",
+          "ref": "attempt"
+        }
+      }
+    },
+    "replay_cross_tenant": {
+      "required": [
+        "case_id",
+        "kind",
+        "probe",
+        "setup"
+      ],
+      "allowed": [
+        "case_id",
+        "kind",
+        "probe",
+        "setup"
+      ],
+      "fields": {
+        "case_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "type": "string",
+          "minLength": 1,
+          "const": "replay_cross_tenant"
+        },
+        "setup": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "ref": "setup"
+          }
+        },
+        "probe": {
+          "type": "object",
+          "ref": "attempt"
+        }
+      }
+    },
+    "counter": {
+      "required": [
+        "money_movements",
+        "mic_opens",
+        "transport_effects",
+        "outbox_appends",
+        "financial_audits",
+        "command_commit_rows"
+      ],
+      "allowed": [
+        "money_movements",
+        "mic_opens",
+        "transport_effects",
+        "outbox_appends",
+        "financial_audits",
+        "command_commit_rows"
+      ],
+      "fields": {
+        "money_movements": {
+          "type": "int"
+        },
+        "mic_opens": {
+          "type": "int"
+        },
+        "transport_effects": {
+          "type": "int"
+        },
+        "outbox_appends": {
+          "type": "int"
+        },
+        "financial_audits": {
+          "type": "int"
+        },
+        "command_commit_rows": {
+          "type": "int"
+        }
+      }
+    }
+  }
+}
