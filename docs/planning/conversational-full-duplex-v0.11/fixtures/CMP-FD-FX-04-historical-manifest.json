@@ -1,0 +1,1311 @@
+{
+  "schema": "cmp.fd.historical-manifest.v0.11",
+  "base_sha": "a5d7e8fc85cb5b5f0605937b43075ce1a0c19e08",
+  "parent_sha": "2e947d0222f184a3735ead6422b2fc054ea231df",
+  "scope": [
+    "docs/planning/conversational-full-duplex/",
+    "docs/planning/conversational-full-duplex-v0.2/",
+    "docs/planning/conversational-full-duplex-v0.3/",
+    "docs/planning/conversational-full-duplex-v0.4/",
+    "docs/planning/conversational-full-duplex-v0.5/",
+    "docs/planning/conversational-full-duplex-v0.6/",
+    "docs/planning/conversational-full-duplex-v0.7/",
+    "docs/planning/conversational-full-duplex-v0.8/",
+    "docs/planning/conversational-full-duplex-v0.9/",
+    "docs/planning/conversational-full-duplex-v0.10/"
+  ],
+  "method": "planning sha256, git blob id and byte length are read from both commits. Each parecer is read with git cat-file. v0.2 stays NOT_VERIFIED until human approval.",
+  "v0_1_included": true,
+  "v0_5_v0_6_statement": "v0.5/v0.6 candidatos, sem parecer independente incorporado",
+  "nomenclature_limit": "O parecer v0.2 tem cabeçalho FAIL e veredito final FAIL — DOCUMENT-ONLY, com o corpo duplicado. Nenhum dos dois é escolhido. A data do nome do arquivo não identifica a versão.",
+  "v0_2_resolution": {
+    "status": "PENDING_HUMAN_APPROVAL",
+    "approval": "PENDING",
+    "authority": "somente ato humano do Founder ou do autor do parecer. Esta pasta não escolhe o veredito e não edita o original.",
+    "verdict_status": "NOT_VERIFIED",
+    "header_verdict": "FAIL",
+    "final_verdict": "FAIL — DOCUMENT-ONLY",
+    "chosen_verdict": null,
+    "blob_path": "docs/reviews/PARECER-CODEX-FULL-DUPLEX-v0.2-2026-10-13.md",
+    "git_blob": "2d992a9cf0ab38d639b95f69df1571eb97f444b4",
+    "sha256": "575e149c3e29203c9c5b7c6532f15b06af6c562551372077502eaf50b246daef",
+    "duplicate_header_count": 2
+  },
+  "files": [
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.10/CMP-FD-00-INDEX.md",
+      "base_git_blob": "4d0c0b7fdfe8a4e751627d0654ad3baa77b958be",
+      "parent_git_blob": "4d0c0b7fdfe8a4e751627d0654ad3baa77b958be",
+      "base_sha256": "0cd6f3a25313f85b9834fafbb5e7368da30ecbb0a46f3602f40b23facbf6e12f",
+      "parent_sha256": "0cd6f3a25313f85b9834fafbb5e7368da30ecbb0a46f3602f40b23facbf6e12f",
+      "bytes": 1998
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.10/CMP-FD-02-ACK-REPLAY.md",
+      "base_git_blob": "af6d216f6289dd147f08c0ed5eb6a4c4c9d0b548",
+      "parent_git_blob": "af6d216f6289dd147f08c0ed5eb6a4c4c9d0b548",
+      "base_sha256": "a6b442b8e53504744466bdc192656e669ddfa921b19a643e18f1e08ec2852f71",
+      "parent_sha256": "a6b442b8e53504744466bdc192656e669ddfa921b19a643e18f1e08ec2852f71",
+      "bytes": 812
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.10/CMP-FD-07-ORACLES.md",
+      "base_git_blob": "5cc293e836795bc55302652f40187168e08109dc",
+      "parent_git_blob": "5cc293e836795bc55302652f40187168e08109dc",
+      "base_sha256": "026d53b8055b78dd7857c7ec9897ad0bb3e97db53f8da8e4b6e8641aa580fe16",
+      "parent_sha256": "026d53b8055b78dd7857c7ec9897ad0bb3e97db53f8da8e4b6e8641aa580fe16",
+      "bytes": 1110
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.10/CMP-FD-08-TRACEABILITY.md",
+      "base_git_blob": "97e1890bca495b874161d141bded69e3cff9db90",
+      "parent_git_blob": "97e1890bca495b874161d141bded69e3cff9db90",
+      "base_sha256": "c51aba5006e0701b55ed0c77856ab7952f8d981d6021e36c562417c254ffc892",
+      "parent_sha256": "c51aba5006e0701b55ed0c77856ab7952f8d981d6021e36c562417c254ffc892",
+      "bytes": 1324
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.10/CMP-FD-09-CHANGE-REPORT.md",
+      "base_git_blob": "88af59bf17299d41e62a84d4d4a3eafe3484fb32",
+      "parent_git_blob": "88af59bf17299d41e62a84d4d4a3eafe3484fb32",
+      "base_sha256": "d838f043ab710402413a1a1bbc215994da570fad97662467ddb97aa4a3f4193f",
+      "parent_sha256": "d838f043ab710402413a1a1bbc215994da570fad97662467ddb97aa4a3f4193f",
+      "bytes": 966
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.10/CMP-FD-10-FINDING-DISPOSITION.md",
+      "base_git_blob": "d7d7767f12fd9d076cc74da168e905276ad340b3",
+      "parent_git_blob": "d7d7767f12fd9d076cc74da168e905276ad340b3",
+      "base_sha256": "29549dcd812460520984694ea4bdc03184e0ee8e36f00ac0f6c18a7ce51f85d5",
+      "parent_sha256": "29549dcd812460520984694ea4bdc03184e0ee8e36f00ac0f6c18a7ce51f85d5",
+      "bytes": 2495
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.10/CMP-FD-11-OPEN-QUESTIONS.md",
+      "base_git_blob": "80c1d717ccc3a41733dcd03784a7123fad526e4e",
+      "parent_git_blob": "80c1d717ccc3a41733dcd03784a7123fad526e4e",
+      "base_sha256": "65c8bdcb46c8241282c506e29c0a321289c66e95ca7ac307a303809404f05696",
+      "parent_sha256": "65c8bdcb46c8241282c506e29c0a321289c66e95ca7ac307a303809404f05696",
+      "bytes": 1382
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.10/CMP-FD-12-CONSISTENCY-REPORT.md",
+      "base_git_blob": "f6e5af94d6613efd2720ad3fc7c9d31856f3c7cd",
+      "parent_git_blob": "f6e5af94d6613efd2720ad3fc7c9d31856f3c7cd",
+      "base_sha256": "c373fe56b8a9988d7ec38ba02b6509a961924505ec4e9db02961a7fab5e1e3f4",
+      "parent_sha256": "c373fe56b8a9988d7ec38ba02b6509a961924505ec4e9db02961a7fab5e1e3f4",
+      "bytes": 5804
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.10/CMP-FD-13-CONCURRENCY-SPEC.md",
+      "base_git_blob": "f9402ab5c3eec65018d12cfb87c583a45093683e",
+      "parent_git_blob": "f9402ab5c3eec65018d12cfb87c583a45093683e",
+      "base_sha256": "8476364ae08a0207513d9179337f4b14b8610aa1bd1923120052e93c93c4f739",
+      "parent_sha256": "8476364ae08a0207513d9179337f4b14b8610aa1bd1923120052e93c93c4f739",
+      "bytes": 974
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.10/CMP-FD-14-HISTORICAL-CHAIN.md",
+      "base_git_blob": "6de551299fa1204aed5f93e67938d77f37aecc27",
+      "parent_git_blob": "6de551299fa1204aed5f93e67938d77f37aecc27",
+      "base_sha256": "dec6bacb247a7d2ca08d2f9a6ce3e3fb1bdd2f2ff86644d7da9e2172186ef8b5",
+      "parent_sha256": "dec6bacb247a7d2ca08d2f9a6ce3e3fb1bdd2f2ff86644d7da9e2172186ef8b5",
+      "bytes": 1643
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.10/CMP-FD-15-SCHEMA.md",
+      "base_git_blob": "4d8e7428a41c4eeffb8aba3c5785e444b8af8b8e",
+      "parent_git_blob": "4d8e7428a41c4eeffb8aba3c5785e444b8af8b8e",
+      "base_sha256": "2a544ab54604f17a547b857e9e85bc1abc1136a427b088e19b6465ca5f4314c2",
+      "parent_sha256": "2a544ab54604f17a547b857e9e85bc1abc1136a427b088e19b6465ca5f4314c2",
+      "bytes": 1028
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.10/fixtures/CMP-FD-FX-03-ack.json",
+      "base_git_blob": "14e29bf0a00d9539298058fbc868b766c391a472",
+      "parent_git_blob": "14e29bf0a00d9539298058fbc868b766c391a472",
+      "base_sha256": "6716c14e9f5a387c07773e58f3efe1dad4b618689e30262fb76ba607f40b1258",
+      "parent_sha256": "6716c14e9f5a387c07773e58f3efe1dad4b618689e30262fb76ba607f40b1258",
+      "bytes": 46209
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.10/fixtures/CMP-FD-FX-03-ack.schema.json",
+      "base_git_blob": "9a0315f86de8bd1ed27aabe033251c75c5d06044",
+      "parent_git_blob": "9a0315f86de8bd1ed27aabe033251c75c5d06044",
+      "base_sha256": "d567ddc1d146c23ff31076f024984168bc9eb8ddeff9e8cb9b7565510d634140",
+      "parent_sha256": "d567ddc1d146c23ff31076f024984168bc9eb8ddeff9e8cb9b7565510d634140",
+      "bytes": 8865
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.10/fixtures/CMP-FD-FX-04-historical-manifest.json",
+      "base_git_blob": "40cba0e3c330e84f5a37c7677b13511c2f04414c",
+      "parent_git_blob": "40cba0e3c330e84f5a37c7677b13511c2f04414c",
+      "base_sha256": "ad3f8cd0e0748bb5c35e7cda5cb5b2704a0f2d85475e42d04d6dafe5844ef971",
+      "parent_sha256": "ad3f8cd0e0748bb5c35e7cda5cb5b2704a0f2d85475e42d04d6dafe5844ef971",
+      "bytes": 61173
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.10/tools/check_fd_fx03_ack.py",
+      "base_git_blob": "4b30872699f6870fb800ba21c89c8baacf7980eb",
+      "parent_git_blob": "4b30872699f6870fb800ba21c89c8baacf7980eb",
+      "base_sha256": "d8b01f87da5b72c7bfb41798a0761be513d57d7338eb9892d2df545dda2ae9ca",
+      "parent_sha256": "d8b01f87da5b72c7bfb41798a0761be513d57d7338eb9892d2df545dda2ae9ca",
+      "bytes": 48292
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.10/tools/check_fd_historical_manifest.py",
+      "base_git_blob": "a1be39b908183091b961c53716cb0a8fb00d3340",
+      "parent_git_blob": "a1be39b908183091b961c53716cb0a8fb00d3340",
+      "base_sha256": "e53e603646edc8804f7ddaff67f91ae8a201d965b741b211b49bc4e445bb89fc",
+      "parent_sha256": "e53e603646edc8804f7ddaff67f91ae8a201d965b741b211b49bc4e445bb89fc",
+      "bytes": 12872
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.2/CMP-FD-00-INDEX.md",
+      "base_git_blob": "88489d94437e96f485fd346e467fadf39f9b62b7",
+      "parent_git_blob": "88489d94437e96f485fd346e467fadf39f9b62b7",
+      "base_sha256": "2d92317c20a252c595ddd9795bf9f9ca0ba9da53d9ec5199705202bab4e565fe",
+      "parent_sha256": "2d92317c20a252c595ddd9795bf9f9ca0ba9da53d9ec5199705202bab4e565fe",
+      "bytes": 4346
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.2/CMP-FD-01-LEDGER-DELTA.md",
+      "base_git_blob": "39ecc43931a2c04b81e82eff3cf141d9dbd19896",
+      "parent_git_blob": "39ecc43931a2c04b81e82eff3cf141d9dbd19896",
+      "base_sha256": "7afc63ca515a6d876377a7ad68b5512fd3e4ff619291b0ac579968bb4246b10c",
+      "parent_sha256": "7afc63ca515a6d876377a7ad68b5512fd3e4ff619291b0ac579968bb4246b10c",
+      "bytes": 17209
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.2/CMP-FD-02-MEDIA-CONTRACT.md",
+      "base_git_blob": "6f6ca67f85353f5107e68efee4c063efa892ba29",
+      "parent_git_blob": "6f6ca67f85353f5107e68efee4c063efa892ba29",
+      "base_sha256": "460424a531d4af77aeb3ab5333c90d1f0454d5888e50941b566b5f271b61647d",
+      "parent_sha256": "460424a531d4af77aeb3ab5333c90d1f0454d5888e50941b566b5f271b61647d",
+      "bytes": 14972
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.2/CMP-FD-03-LIFECYCLE.md",
+      "base_git_blob": "91c4055c15ecfbfbdab404688a13fd49c3c7ef37",
+      "parent_git_blob": "91c4055c15ecfbfbdab404688a13fd49c3c7ef37",
+      "base_sha256": "e7ffa51e01acc48a82e7523d0495af1da0bf8ef36379b4b92f2609aaa89b183d",
+      "parent_sha256": "e7ffa51e01acc48a82e7523d0495af1da0bf8ef36379b4b92f2609aaa89b183d",
+      "bytes": 6570
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.2/CMP-FD-04-POLICY-SECURITY-PRIVACY.md",
+      "base_git_blob": "586fa129459276ee7e299da23bd88f0ec5bce240",
+      "parent_git_blob": "586fa129459276ee7e299da23bd88f0ec5bce240",
+      "base_sha256": "67fe50e2e6403f5068fb496ff98b6cd2d45b3c110699b29689ce34b6d5943b4b",
+      "parent_sha256": "67fe50e2e6403f5068fb496ff98b6cd2d45b3c110699b29689ce34b6d5943b4b",
+      "bytes": 7451
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.2/CMP-FD-05-UX.md",
+      "base_git_blob": "6d70fc6f944d9ca4b74991d62be7eff32d101af9",
+      "parent_git_blob": "6d70fc6f944d9ca4b74991d62be7eff32d101af9",
+      "base_sha256": "432898f353c7320e610dffaa00ffc5a9af846cf2e1f8ad3e802aa4b75117b949",
+      "parent_sha256": "432898f353c7320e610dffaa00ffc5a9af846cf2e1f8ad3e802aa4b75117b949",
+      "bytes": 3411
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.2/CMP-FD-06-OBSERVABILITY.md",
+      "base_git_blob": "c9138529756fed6f149e5817acb72feb886c5995",
+      "parent_git_blob": "c9138529756fed6f149e5817acb72feb886c5995",
+      "base_sha256": "b85fc84db5b62a38e5df3896bc18e7c0c07462b49e888f66f7145c7a26849dcb",
+      "parent_sha256": "b85fc84db5b62a38e5df3896bc18e7c0c07462b49e888f66f7145c7a26849dcb",
+      "bytes": 3603
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.2/CMP-FD-07-STORIES-ORACLES-FIXTURES.md",
+      "base_git_blob": "042345c10bed2939e1d59216eaa293354ff72498",
+      "parent_git_blob": "042345c10bed2939e1d59216eaa293354ff72498",
+      "base_sha256": "ae91f43d82a52d587e4fab4889fec83f6877cf087107a83c0c957cd3659baf07",
+      "parent_sha256": "ae91f43d82a52d587e4fab4889fec83f6877cf087107a83c0c957cd3659baf07",
+      "bytes": 18757
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.2/CMP-FD-08-TRACEABILITY.md",
+      "base_git_blob": "c37b91c76b0fec38258c184e859a33b16809a5f1",
+      "parent_git_blob": "c37b91c76b0fec38258c184e859a33b16809a5f1",
+      "base_sha256": "ca40eb2aef2d5528d7a37373d123e8563121ae7d853fc7fc77b44a448271f355",
+      "parent_sha256": "ca40eb2aef2d5528d7a37373d123e8563121ae7d853fc7fc77b44a448271f355",
+      "bytes": 3067
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.2/CMP-FD-09-CHANGE-REPORT.md",
+      "base_git_blob": "891c3e680acf368f5011398739226e4c14aae527",
+      "parent_git_blob": "891c3e680acf368f5011398739226e4c14aae527",
+      "base_sha256": "51bf5e465ebc0dd95a9acc55a9b2e9c99bd92a648f881b5750a61f6e64a44273",
+      "parent_sha256": "51bf5e465ebc0dd95a9acc55a9b2e9c99bd92a648f881b5750a61f6e64a44273",
+      "bytes": 1813
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.2/CMP-FD-10-FINDING-DISPOSITION.md",
+      "base_git_blob": "92fc4969a159cf2015d00aca31e86f454e78f456",
+      "parent_git_blob": "92fc4969a159cf2015d00aca31e86f454e78f456",
+      "base_sha256": "e1faa654e7c816db1a650835b650b4ee6eaf0cc976984dade25cf9cd9b8d1948",
+      "parent_sha256": "e1faa654e7c816db1a650835b650b4ee6eaf0cc976984dade25cf9cd9b8d1948",
+      "bytes": 2253
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.2/CMP-FD-11-OPEN-QUESTIONS.md",
+      "base_git_blob": "a9790057bfe080e2e40a3a02151f8036d7ec1488",
+      "parent_git_blob": "a9790057bfe080e2e40a3a02151f8036d7ec1488",
+      "base_sha256": "b46dc946b4003b789dc64e19f5a2ed237682d9930e9f7dbd48e4581577232f4b",
+      "parent_sha256": "b46dc946b4003b789dc64e19f5a2ed237682d9930e9f7dbd48e4581577232f4b",
+      "bytes": 1953
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.2/CMP-FD-12-CONSISTENCY-REPORT.md",
+      "base_git_blob": "852e258b2e17300c2a55f416364147cafa66d4b9",
+      "parent_git_blob": "852e258b2e17300c2a55f416364147cafa66d4b9",
+      "base_sha256": "63d5ad89c872e80510ec1ba3b36e88777f49f248b2c5c8ffef1743c200760f82",
+      "parent_sha256": "63d5ad89c872e80510ec1ba3b36e88777f49f248b2c5c8ffef1743c200760f82",
+      "bytes": 3109
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.3/CMP-FD-00-INDEX.md",
+      "base_git_blob": "5ad55f5786d6fbf2096bcbb86fab594b3aadb9cd",
+      "parent_git_blob": "5ad55f5786d6fbf2096bcbb86fab594b3aadb9cd",
+      "base_sha256": "784f2fa9649449fc9fd81cd4ff32bd754b84ce10373423af84155fc4c36aa57c",
+      "parent_sha256": "784f2fa9649449fc9fd81cd4ff32bd754b84ce10373423af84155fc4c36aa57c",
+      "bytes": 3277
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.3/CMP-FD-01-LEDGER-AND-BUDGET-AUTHORITY.md",
+      "base_git_blob": "73052c6953b212cb18f9ed21e633547ef0c15bd7",
+      "parent_git_blob": "73052c6953b212cb18f9ed21e633547ef0c15bd7",
+      "base_sha256": "7f4508bffb3f1e3988ae68a53b9ef11e0c7dca78b8076e448edb222d20bfe5a6",
+      "parent_sha256": "7f4508bffb3f1e3988ae68a53b9ef11e0c7dca78b8076e448edb222d20bfe5a6",
+      "bytes": 17105
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.3/CMP-FD-02-MEDIA-EVENT-SCHEMAS.md",
+      "base_git_blob": "aaa91182c0a9a68410f1c0ffb0ab9e7a41c4500b",
+      "parent_git_blob": "aaa91182c0a9a68410f1c0ffb0ab9e7a41c4500b",
+      "base_sha256": "3ac4e6c87d1317e652ae9330540311fdccd4550a4bf41228199f41353d9c08f0",
+      "parent_sha256": "3ac4e6c87d1317e652ae9330540311fdccd4550a4bf41228199f41353d9c08f0",
+      "bytes": 17524
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.3/CMP-FD-03-LIFECYCLE.md",
+      "base_git_blob": "d25cda1f51c6d0b99eff18dfde175827463c8bc6",
+      "parent_git_blob": "d25cda1f51c6d0b99eff18dfde175827463c8bc6",
+      "base_sha256": "4c6f76cc97a49da30f6f1369b0c75a7466cdffd90a50216dc63bcb8508926db1",
+      "parent_sha256": "4c6f76cc97a49da30f6f1369b0c75a7466cdffd90a50216dc63bcb8508926db1",
+      "bytes": 6836
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.3/CMP-FD-04-POLICY-SECURITY-PRIVACY.md",
+      "base_git_blob": "36cf5785bf45566fd012affea25dd44bce099cae",
+      "parent_git_blob": "36cf5785bf45566fd012affea25dd44bce099cae",
+      "base_sha256": "c113a971268e56122df15b858c7d6bf9f008a2bba3ace94c9963d1f2fa7d7fb3",
+      "parent_sha256": "c113a971268e56122df15b858c7d6bf9f008a2bba3ace94c9963d1f2fa7d7fb3",
+      "bytes": 7657
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.3/CMP-FD-05-UX.md",
+      "base_git_blob": "4350f4b9750b081e019c8e208a8a9ba82164b61c",
+      "parent_git_blob": "4350f4b9750b081e019c8e208a8a9ba82164b61c",
+      "base_sha256": "1a1dd54d73eda5b171ac7e6a4bae250268082e1656d4dbc101d60e4d3ab88305",
+      "parent_sha256": "1a1dd54d73eda5b171ac7e6a4bae250268082e1656d4dbc101d60e4d3ab88305",
+      "bytes": 3589
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.3/CMP-FD-06-OBSERVABILITY.md",
+      "base_git_blob": "d0b22814bd7d40e6731491abea4f07a00bb7727a",
+      "parent_git_blob": "d0b22814bd7d40e6731491abea4f07a00bb7727a",
+      "base_sha256": "b7e5cb0b1404418950eba8cf8dcdad9bbe4e0952816c7eb437313b75efea0560",
+      "parent_sha256": "b7e5cb0b1404418950eba8cf8dcdad9bbe4e0952816c7eb437313b75efea0560",
+      "bytes": 3900
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.3/CMP-FD-07-STORIES-ORACLES-FIXTURES.md",
+      "base_git_blob": "0f5e95090b56c957f99d290405bf754370b2cf0e",
+      "parent_git_blob": "0f5e95090b56c957f99d290405bf754370b2cf0e",
+      "base_sha256": "a9a413e40ec674e93c4e53206b9ee968dbf4de60ae8c75d51f05834fc1826cb4",
+      "parent_sha256": "a9a413e40ec674e93c4e53206b9ee968dbf4de60ae8c75d51f05834fc1826cb4",
+      "bytes": 31054
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.3/CMP-FD-08-TRACEABILITY.md",
+      "base_git_blob": "8994f35fae7523ca09ec4d29f86bc1d9ccef570d",
+      "parent_git_blob": "8994f35fae7523ca09ec4d29f86bc1d9ccef570d",
+      "base_sha256": "1d25c4c6c780b1a67096a98ae76225574cc2040f36608a38f0bdfa64b35b83d3",
+      "parent_sha256": "1d25c4c6c780b1a67096a98ae76225574cc2040f36608a38f0bdfa64b35b83d3",
+      "bytes": 2290
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.3/CMP-FD-09-CHANGE-REPORT.md",
+      "base_git_blob": "05af59e83ad0733965787f984ae0bb5ea257a35b",
+      "parent_git_blob": "05af59e83ad0733965787f984ae0bb5ea257a35b",
+      "base_sha256": "e70f808559bf25d5f030adaa776d5057a768c36366bf263dcf57f4f885b45092",
+      "parent_sha256": "e70f808559bf25d5f030adaa776d5057a768c36366bf263dcf57f4f885b45092",
+      "bytes": 2300
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.3/CMP-FD-10-FINDING-DISPOSITION.md",
+      "base_git_blob": "9983d9082b2c43f4afbcf825d6b45c4e13525fa6",
+      "parent_git_blob": "9983d9082b2c43f4afbcf825d6b45c4e13525fa6",
+      "base_sha256": "3f5e34a887f26de6327ea243c73d2b932e6f7c1535de5029d68938eeb06ff557",
+      "parent_sha256": "3f5e34a887f26de6327ea243c73d2b932e6f7c1535de5029d68938eeb06ff557",
+      "bytes": 1854
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.3/CMP-FD-11-OPEN-QUESTIONS.md",
+      "base_git_blob": "f59a7d059e7af04770747e2a1785cd3e12ec2729",
+      "parent_git_blob": "f59a7d059e7af04770747e2a1785cd3e12ec2729",
+      "base_sha256": "20737bd0e4d7639dcbaf7f3ccaf45c97ac0b86f675818ea906429cfc0c0587cc",
+      "parent_sha256": "20737bd0e4d7639dcbaf7f3ccaf45c97ac0b86f675818ea906429cfc0c0587cc",
+      "bytes": 1330
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.3/CMP-FD-12-CONSISTENCY-REPORT.md",
+      "base_git_blob": "bdbed9c9e500c5e5d61def921f1ddc7d177c686a",
+      "parent_git_blob": "bdbed9c9e500c5e5d61def921f1ddc7d177c686a",
+      "base_sha256": "fdd3772fc8cce43eea56a8d0dca9c30502559f0e81e82609caec24b38a46fcd6",
+      "parent_sha256": "fdd3772fc8cce43eea56a8d0dca9c30502559f0e81e82609caec24b38a46fcd6",
+      "bytes": 2156
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.3/CMP-FD-13-MIGRATION-ROLLBACK.md",
+      "base_git_blob": "38f9abd043e5941104dd866c3e93ebdfe82b8f59",
+      "parent_git_blob": "38f9abd043e5941104dd866c3e93ebdfe82b8f59",
+      "base_sha256": "0240d5d6deb2b081d2aff66aa77b5b27e5ee75c2181f0bd4c7471524ef468e3f",
+      "parent_sha256": "0240d5d6deb2b081d2aff66aa77b5b27e5ee75c2181f0bd4c7471524ef468e3f",
+      "bytes": 5695
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.4/CMP-FD-00-INDEX.md",
+      "base_git_blob": "0bdd1584d46968ab7145c86d239fe7b5698e3720",
+      "parent_git_blob": "0bdd1584d46968ab7145c86d239fe7b5698e3720",
+      "base_sha256": "7802c1d20809e250441662cf3cad70eb888bf378f19a701fa16a554e3f8cfb31",
+      "parent_sha256": "7802c1d20809e250441662cf3cad70eb888bf378f19a701fa16a554e3f8cfb31",
+      "bytes": 3954
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.4/CMP-FD-01-LEDGER-SETTLEMENT-TENANT-CAS.md",
+      "base_git_blob": "6b9c7e8cbd38992d0046e235f062e2fb5a34eafd",
+      "parent_git_blob": "6b9c7e8cbd38992d0046e235f062e2fb5a34eafd",
+      "base_sha256": "1b3a66ee02806b750919c8c27b6f1e8b5ff1a87e719e3235f58bad9b44c94da2",
+      "parent_sha256": "1b3a66ee02806b750919c8c27b6f1e8b5ff1a87e719e3235f58bad9b44c94da2",
+      "bytes": 11213
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.4/CMP-FD-02-MEDIA-CONTRACT.md",
+      "base_git_blob": "1c1e1adf465d7eafbb660de9dacda8c4218abfd3",
+      "parent_git_blob": "1c1e1adf465d7eafbb660de9dacda8c4218abfd3",
+      "base_sha256": "763a5f4d30bcec298135f47338f08e613398e141a4f25d84edde24f43cf35fd1",
+      "parent_sha256": "763a5f4d30bcec298135f47338f08e613398e141a4f25d84edde24f43cf35fd1",
+      "bytes": 18102
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.4/CMP-FD-03-LIFECYCLE.md",
+      "base_git_blob": "1de7cea44940b7dca0d5f60920a3f27bca08846b",
+      "parent_git_blob": "1de7cea44940b7dca0d5f60920a3f27bca08846b",
+      "base_sha256": "3e17730f0b922f0c650aff488899df9ad9d17d361f9dc288527d1fdee68c27bf",
+      "parent_sha256": "3e17730f0b922f0c650aff488899df9ad9d17d361f9dc288527d1fdee68c27bf",
+      "bytes": 1230
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.4/CMP-FD-04-POLICY.md",
+      "base_git_blob": "bee62f44542d7fb2773ae9d64437ba6732eca40e",
+      "parent_git_blob": "bee62f44542d7fb2773ae9d64437ba6732eca40e",
+      "base_sha256": "9b5724d64338ab547fd8d72e6df1b39b4c6fa3399f5502dbdbff8c770907664d",
+      "parent_sha256": "9b5724d64338ab547fd8d72e6df1b39b4c6fa3399f5502dbdbff8c770907664d",
+      "bytes": 2037
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.4/CMP-FD-05-UX.md",
+      "base_git_blob": "fded3d6f4016588405219d9540d717f1eb9ad865",
+      "parent_git_blob": "fded3d6f4016588405219d9540d717f1eb9ad865",
+      "base_sha256": "c4503635faf44919a0b842655285724bb5f8b3269ebc4b3850283ddc7a2f0f38",
+      "parent_sha256": "c4503635faf44919a0b842655285724bb5f8b3269ebc4b3850283ddc7a2f0f38",
+      "bytes": 959
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.4/CMP-FD-06-OBSERVABILITY.md",
+      "base_git_blob": "1d18c3e20d6617e1881e2a1ed4595bc7eeba318c",
+      "parent_git_blob": "1d18c3e20d6617e1881e2a1ed4595bc7eeba318c",
+      "base_sha256": "bb0afe85631795addbe5f14aed7d5350e375cc30add9949da734648d3c386222",
+      "parent_sha256": "bb0afe85631795addbe5f14aed7d5350e375cc30add9949da734648d3c386222",
+      "bytes": 2180
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.4/CMP-FD-07-ORACLES.md",
+      "base_git_blob": "d6cf44528529ae55fb9232b473392c579be400fa",
+      "parent_git_blob": "d6cf44528529ae55fb9232b473392c579be400fa",
+      "base_sha256": "b57dd891b7c4bbc128a75136600092488ce619ae2bc75766717e04d26b290a7a",
+      "parent_sha256": "b57dd891b7c4bbc128a75136600092488ce619ae2bc75766717e04d26b290a7a",
+      "bytes": 8145
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.4/CMP-FD-08-TRACEABILITY.md",
+      "base_git_blob": "8a93cf5341877f77dacb2c64cf6691b569158e34",
+      "parent_git_blob": "8a93cf5341877f77dacb2c64cf6691b569158e34",
+      "base_sha256": "61ee90cfaf2e4db8fc2966a8250cfa717485aefd36743c536f027d449425a0a8",
+      "parent_sha256": "61ee90cfaf2e4db8fc2966a8250cfa717485aefd36743c536f027d449425a0a8",
+      "bytes": 3313
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.4/CMP-FD-09-CHANGE-REPORT.md",
+      "base_git_blob": "43fa75f57fe5d5d5226a0e8c7e7b740aefdf9f28",
+      "parent_git_blob": "43fa75f57fe5d5d5226a0e8c7e7b740aefdf9f28",
+      "base_sha256": "9d2db7787b41df15aebc8af36926a40c651dfe9aba62cbf4a52c2d5dbb03c441",
+      "parent_sha256": "9d2db7787b41df15aebc8af36926a40c651dfe9aba62cbf4a52c2d5dbb03c441",
+      "bytes": 2413
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.4/CMP-FD-10-FINDING-DISPOSITION.md",
+      "base_git_blob": "d93bf97a86e663765d6390a7bf6a1918c1d2c8bf",
+      "parent_git_blob": "d93bf97a86e663765d6390a7bf6a1918c1d2c8bf",
+      "base_sha256": "8379a35aeedaca66ea24b3e9f0d65e9653cda5711f4493f9658431622f2d65d1",
+      "parent_sha256": "8379a35aeedaca66ea24b3e9f0d65e9653cda5711f4493f9658431622f2d65d1",
+      "bytes": 6537
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.4/CMP-FD-11-OPEN-QUESTIONS.md",
+      "base_git_blob": "180d3a1cc1dbdaa20d98c2ebbecbde89d87bd163",
+      "parent_git_blob": "180d3a1cc1dbdaa20d98c2ebbecbde89d87bd163",
+      "base_sha256": "18b144d2d6743df05f33e1f7d3754ce531d3052ffd6cbe013d4019f87fdbfb6b",
+      "parent_sha256": "18b144d2d6743df05f33e1f7d3754ce531d3052ffd6cbe013d4019f87fdbfb6b",
+      "bytes": 1766
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.4/CMP-FD-12-CONSISTENCY-REPORT.md",
+      "base_git_blob": "7ef7f793434f26da51f86223600a6e9756a4cf58",
+      "parent_git_blob": "7ef7f793434f26da51f86223600a6e9756a4cf58",
+      "base_sha256": "2a0cdc7f8ba04585c2cc2e4b1ad1ebc7bb85393c036cf0ce23ebf5b9871db8ff",
+      "parent_sha256": "2a0cdc7f8ba04585c2cc2e4b1ad1ebc7bb85393c036cf0ce23ebf5b9871db8ff",
+      "bytes": 3620
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.4/CMP-FD-13-MIGRATION-ROLLBACK.md",
+      "base_git_blob": "78d46781027e54efa616d7dfaa951bb7a22eb657",
+      "parent_git_blob": "78d46781027e54efa616d7dfaa951bb7a22eb657",
+      "base_sha256": "143359fb784077d8e0bb2a1d4140dd68e5953916582e91489e70fc1a386e890a",
+      "parent_sha256": "143359fb784077d8e0bb2a1d4140dd68e5953916582e91489e70fc1a386e890a",
+      "bytes": 2222
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.4/fixtures/CMP-FD-FX-01-digest-vectors.json",
+      "base_git_blob": "382b79f2f6db23120b721d2d7f2079ac66cb5b37",
+      "parent_git_blob": "382b79f2f6db23120b721d2d7f2079ac66cb5b37",
+      "base_sha256": "f552c3094916989289e6b1ee485f407c52cdc6de91ecb94b6857b959f218376f",
+      "parent_sha256": "f552c3094916989289e6b1ee485f407c52cdc6de91ecb94b6857b959f218376f",
+      "bytes": 17907
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.4/fixtures/CMP-FD-FX-01-events.json",
+      "base_git_blob": "7c007d54cdcbb1673fa9beeaca8ae08072ad5e7c",
+      "parent_git_blob": "7c007d54cdcbb1673fa9beeaca8ae08072ad5e7c",
+      "base_sha256": "0552b043f15c20b1915dded70271bc8da19d646ff1c373054a722ba81dc2751d",
+      "parent_sha256": "0552b043f15c20b1915dded70271bc8da19d646ff1c373054a722ba81dc2751d",
+      "bytes": 18513
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.4/tools/check_fd_fx01_digests.py",
+      "base_git_blob": "6ef518dece7c9aa40876b4e43fdd333f2dd44e73",
+      "parent_git_blob": "6ef518dece7c9aa40876b4e43fdd333f2dd44e73",
+      "base_sha256": "bfd85c33bdf6a42c8701f7a415d8393e24108b894e2493a9e9db83a7df70f5ce",
+      "parent_sha256": "bfd85c33bdf6a42c8701f7a415d8393e24108b894e2493a9e9db83a7df70f5ce",
+      "bytes": 1997
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.5/CMP-FD-00-INDEX.md",
+      "base_git_blob": "e81306035a44e00755d7960e168e110ca03875e6",
+      "parent_git_blob": "e81306035a44e00755d7960e168e110ca03875e6",
+      "base_sha256": "6897a281e18a303e9c103837d60e6b2144ce6021f9269fd44e90a4f5caed932f",
+      "parent_sha256": "6897a281e18a303e9c103837d60e6b2144ce6021f9269fd44e90a4f5caed932f",
+      "bytes": 2224
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.5/CMP-FD-01-LEDGER-SETTLEMENT.md",
+      "base_git_blob": "29420519ffa95a6ab4ee618d600b0ef8b290de65",
+      "parent_git_blob": "29420519ffa95a6ab4ee618d600b0ef8b290de65",
+      "base_sha256": "3ebcaf09e6c4144b792684983c37b34c65b8d846e794134d9eb71b49544ef472",
+      "parent_sha256": "3ebcaf09e6c4144b792684983c37b34c65b8d846e794134d9eb71b49544ef472",
+      "bytes": 13388
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.5/CMP-FD-02-MEDIA-ACK.md",
+      "base_git_blob": "c8e458b100b4b149e66143a50300fcd53c618054",
+      "parent_git_blob": "c8e458b100b4b149e66143a50300fcd53c618054",
+      "base_sha256": "a7f509464197e6164b9e4bc0ea85e19a0ded272c90cdd47979908acdb2888f7a",
+      "parent_sha256": "a7f509464197e6164b9e4bc0ea85e19a0ded272c90cdd47979908acdb2888f7a",
+      "bytes": 5985
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.5/CMP-FD-03-LIFECYCLE.md",
+      "base_git_blob": "572459def6ef7ed76fcceb63f912207a493c64f7",
+      "parent_git_blob": "572459def6ef7ed76fcceb63f912207a493c64f7",
+      "base_sha256": "11d9e48843f198a42bfc2c12c580d94486c1d1cb427a0722e9693db6772aa930",
+      "parent_sha256": "11d9e48843f198a42bfc2c12c580d94486c1d1cb427a0722e9693db6772aa930",
+      "bytes": 1249
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.5/CMP-FD-04-POLICY.md",
+      "base_git_blob": "84fd07773d378ffb7073909f1ed88a01628c6017",
+      "parent_git_blob": "84fd07773d378ffb7073909f1ed88a01628c6017",
+      "base_sha256": "b56d57d0ae768364c205fb6b731be301adca23c92176c9972d46c48b9de14d95",
+      "parent_sha256": "b56d57d0ae768364c205fb6b731be301adca23c92176c9972d46c48b9de14d95",
+      "bytes": 1802
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.5/CMP-FD-05-UX.md",
+      "base_git_blob": "0dcb5a97af33f448c3ae82616ae6392cfd7b0eb2",
+      "parent_git_blob": "0dcb5a97af33f448c3ae82616ae6392cfd7b0eb2",
+      "base_sha256": "c8ecce9751237eeb52f801e21476ea3e1dc9e8b47c36a0273e29edb035898571",
+      "parent_sha256": "c8ecce9751237eeb52f801e21476ea3e1dc9e8b47c36a0273e29edb035898571",
+      "bytes": 893
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.5/CMP-FD-06-OBSERVABILITY.md",
+      "base_git_blob": "85dd75bd055f6643484c0997ee792d6b02583522",
+      "parent_git_blob": "85dd75bd055f6643484c0997ee792d6b02583522",
+      "base_sha256": "f4bcd55010f3de2f5ea529e0f865542c6a4349c8bdb17f123cdb33e6804c3aef",
+      "parent_sha256": "f4bcd55010f3de2f5ea529e0f865542c6a4349c8bdb17f123cdb33e6804c3aef",
+      "bytes": 1410
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.5/CMP-FD-07-ORACLES.md",
+      "base_git_blob": "2fe7fcb129ed277e7bbaf89e3f3408ee6979e258",
+      "parent_git_blob": "2fe7fcb129ed277e7bbaf89e3f3408ee6979e258",
+      "base_sha256": "4aca3a284ec876fa939854572afc25f7860b26662a6d6d5edd229d6b74bbe7d5",
+      "parent_sha256": "4aca3a284ec876fa939854572afc25f7860b26662a6d6d5edd229d6b74bbe7d5",
+      "bytes": 9993
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.5/CMP-FD-08-TRACEABILITY.md",
+      "base_git_blob": "2b8e12c1d626255f0e5e8c5bcfd67224c1d8d2ad",
+      "parent_git_blob": "2b8e12c1d626255f0e5e8c5bcfd67224c1d8d2ad",
+      "base_sha256": "fb7df47b7a25e98d95d0180267b88b92896d0498366a284f87d6e80c3acb8821",
+      "parent_sha256": "fb7df47b7a25e98d95d0180267b88b92896d0498366a284f87d6e80c3acb8821",
+      "bytes": 1771
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.5/CMP-FD-09-CHANGE-REPORT.md",
+      "base_git_blob": "bab8a9c62baf98cd3970996299851279bd825366",
+      "parent_git_blob": "bab8a9c62baf98cd3970996299851279bd825366",
+      "base_sha256": "1570028602db5e671c8640c74571b8afef5da72993d9aaecc815c97d5f9efa8f",
+      "parent_sha256": "1570028602db5e671c8640c74571b8afef5da72993d9aaecc815c97d5f9efa8f",
+      "bytes": 1628
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.5/CMP-FD-10-FINDING-DISPOSITION.md",
+      "base_git_blob": "fb55e1ba40494316b5c674f3fd51ea23d42ce675",
+      "parent_git_blob": "fb55e1ba40494316b5c674f3fd51ea23d42ce675",
+      "base_sha256": "787d8311da4f5e7fb1361df3e6cd8006117d227d3c2119e1cd04cf4029295a8a",
+      "parent_sha256": "787d8311da4f5e7fb1361df3e6cd8006117d227d3c2119e1cd04cf4029295a8a",
+      "bytes": 4014
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.5/CMP-FD-11-OPEN-QUESTIONS.md",
+      "base_git_blob": "42b91a2a643f0dff4cde13cf4a1b79639088b9eb",
+      "parent_git_blob": "42b91a2a643f0dff4cde13cf4a1b79639088b9eb",
+      "base_sha256": "09a44dff6c7b250c85c3e04c1a913ab22fe8cf006301d75f06fb70a6d9b775c3",
+      "parent_sha256": "09a44dff6c7b250c85c3e04c1a913ab22fe8cf006301d75f06fb70a6d9b775c3",
+      "bytes": 1160
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.5/CMP-FD-12-CONSISTENCY-REPORT.md",
+      "base_git_blob": "a5f7587c41dcbc3e5dd4db8a8d823a742bcd0e40",
+      "parent_git_blob": "a5f7587c41dcbc3e5dd4db8a8d823a742bcd0e40",
+      "base_sha256": "f58aef48068f0daf83bf62488d8ba7248296d621b11783cd5eb789b6760433d3",
+      "parent_sha256": "f58aef48068f0daf83bf62488d8ba7248296d621b11783cd5eb789b6760433d3",
+      "bytes": 2919
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.5/CMP-FD-13-MIGRATION.md",
+      "base_git_blob": "c0044c7eb39bc25f3ec7d00efd4ce87e8f30d7de",
+      "parent_git_blob": "c0044c7eb39bc25f3ec7d00efd4ce87e8f30d7de",
+      "base_sha256": "abeada4a0a099e842e0d382fab215acf5a6d04d2992de1ca0ef314821316f52c",
+      "parent_sha256": "abeada4a0a099e842e0d382fab215acf5a6d04d2992de1ca0ef314821316f52c",
+      "bytes": 6000
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.5/fixtures/CMP-FD-FX-01-digest-vectors.json",
+      "base_git_blob": "a969d4bd15d4a13529ef518ca4f56fabff773b15",
+      "parent_git_blob": "a969d4bd15d4a13529ef518ca4f56fabff773b15",
+      "base_sha256": "ca98bdb66ac79054f8e1a00114f2d17588eeaafbf1b52d3f39a4a2ba89cde94c",
+      "parent_sha256": "ca98bdb66ac79054f8e1a00114f2d17588eeaafbf1b52d3f39a4a2ba89cde94c",
+      "bytes": 18091
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.5/fixtures/CMP-FD-FX-01-events.json",
+      "base_git_blob": "0e0ade3aa078b7654cab5f6f32a5d5548d29b242",
+      "parent_git_blob": "0e0ade3aa078b7654cab5f6f32a5d5548d29b242",
+      "base_sha256": "2512d3fa53828fd92ab994ef8f61d59a34775b15a948cfb0b63e95b0cd53dff5",
+      "parent_sha256": "2512d3fa53828fd92ab994ef8f61d59a34775b15a948cfb0b63e95b0cd53dff5",
+      "bytes": 18729
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.5/fixtures/CMP-FD-FX-02-ack.json",
+      "base_git_blob": "5c0b31ad3978821b1680e7cccd31d021dfb7a140",
+      "parent_git_blob": "5c0b31ad3978821b1680e7cccd31d021dfb7a140",
+      "base_sha256": "89577d7f8c80c8bfe54046b9880b348c6c5d31e059e7bd49a5824fb123206b13",
+      "parent_sha256": "89577d7f8c80c8bfe54046b9880b348c6c5d31e059e7bd49a5824fb123206b13",
+      "bytes": 3991
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.5/fixtures/negative/bad-length-type.json",
+      "base_git_blob": "0f834bc2f91008090a1c11a815fbf29107f117f6",
+      "parent_git_blob": "0f834bc2f91008090a1c11a815fbf29107f117f6",
+      "base_sha256": "06139d48eff491dcb9f27cdf6c8e259a4f9df645c297893222fa1af55ae77894",
+      "parent_sha256": "06139d48eff491dcb9f27cdf6c8e259a4f9df645c297893222fa1af55ae77894",
+      "bytes": 18092
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.5/fixtures/negative/bad-sha256.json",
+      "base_git_blob": "8230507c51ca9bb47ff8cb610cae8fb2df7452b8",
+      "parent_git_blob": "8230507c51ca9bb47ff8cb610cae8fb2df7452b8",
+      "base_sha256": "4aa5b9f8ba0348e5113135ed5d5b9117eb10abc7d4839b94018b6cc6ce640b8d",
+      "parent_sha256": "4aa5b9f8ba0348e5113135ed5d5b9117eb10abc7d4839b94018b6cc6ce640b8d",
+      "bytes": 18037
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.5/fixtures/negative/duplicate-event-id.json",
+      "base_git_blob": "0f4a4bc9fc4b7d867714f1b3953db49bdfaaded4",
+      "parent_git_blob": "0f4a4bc9fc4b7d867714f1b3953db49bdfaaded4",
+      "base_sha256": "daa8c7d119dc96b6c0dc5ceafc340060e56d9632ac2f02e2972d151e5ef37380",
+      "parent_sha256": "daa8c7d119dc96b6c0dc5ceafc340060e56d9632ac2f02e2972d151e5ef37380",
+      "bytes": 21156
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.5/fixtures/negative/duplicate-key.json",
+      "base_git_blob": "6c68ce78ec36f325503438e9266ffc4c614ead2a",
+      "parent_git_blob": "6c68ce78ec36f325503438e9266ffc4c614ead2a",
+      "base_sha256": "2665765c445115afea4d44892c087db90bf632fafdc44abb5d11125096e828ce",
+      "parent_sha256": "2665765c445115afea4d44892c087db90bf632fafdc44abb5d11125096e828ce",
+      "bytes": 102
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.5/fixtures/negative/orphan-vector.json",
+      "base_git_blob": "cf6553c14554b6028aedb75b36f810c123c6d228",
+      "parent_git_blob": "cf6553c14554b6028aedb75b36f810c123c6d228",
+      "base_sha256": "ed8d0d2817362566904cb4fa2fa2caa0c342e5b2b35b3d1275bdc4717a373de1",
+      "parent_sha256": "ed8d0d2817362566904cb4fa2fa2caa0c342e5b2b35b3d1275bdc4717a373de1",
+      "bytes": 18320
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.5/tools/check_fd_aec_arithmetic.py",
+      "base_git_blob": "279887ef181c0f5784f5f0dc73ec50502058a813",
+      "parent_git_blob": "279887ef181c0f5784f5f0dc73ec50502058a813",
+      "base_sha256": "ea8ed7939b4092c75374c2be011f9be6eeff853f6e9940417eeabb1c70ed4843",
+      "parent_sha256": "ea8ed7939b4092c75374c2be011f9be6eeff853f6e9940417eeabb1c70ed4843",
+      "bytes": 1202
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.5/tools/check_fd_fx01_digests.py",
+      "base_git_blob": "43a882ab20b25d44c35ff535493da2663b21be67",
+      "parent_git_blob": "43a882ab20b25d44c35ff535493da2663b21be67",
+      "base_sha256": "f8c78b9b85414f62ee475faa4eeb51181cfb26a9bfeeffe3f8df0276bbab5e1e",
+      "parent_sha256": "f8c78b9b85414f62ee475faa4eeb51181cfb26a9bfeeffe3f8df0276bbab5e1e",
+      "bytes": 4702
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.5/tools/check_fd_fx01_static_suite.py",
+      "base_git_blob": "4b28e78acc358acf6de9fa3be98ccd08663e474f",
+      "parent_git_blob": "4b28e78acc358acf6de9fa3be98ccd08663e474f",
+      "base_sha256": "5a4db98dcc091bba4721eaa119c10c3796cf598b4dc77d05298eccd82fd93922",
+      "parent_sha256": "5a4db98dcc091bba4721eaa119c10c3796cf598b4dc77d05298eccd82fd93922",
+      "bytes": 3170
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.5/tools/check_fd_fx02_ack.py",
+      "base_git_blob": "88ba2bfcf58925262f973ade360b56d9b8cfd03c",
+      "parent_git_blob": "88ba2bfcf58925262f973ade360b56d9b8cfd03c",
+      "base_sha256": "d3436f114f3345ae022ab9910b7c68392a87ae9980ea7cb1e76fff7e52df007e",
+      "parent_sha256": "d3436f114f3345ae022ab9910b7c68392a87ae9980ea7cb1e76fff7e52df007e",
+      "bytes": 3451
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.6/CMP-FD-00-INDEX.md",
+      "base_git_blob": "86f1901b21e395e8b827a3d1b7a05a234a6c1103",
+      "parent_git_blob": "86f1901b21e395e8b827a3d1b7a05a234a6c1103",
+      "base_sha256": "d263b59eec84a65beb3541a6efbe2c69b8cac8f9c8d3ae74b5aab6bcce2cc6f2",
+      "parent_sha256": "d263b59eec84a65beb3541a6efbe2c69b8cac8f9c8d3ae74b5aab6bcce2cc6f2",
+      "bytes": 1742
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.6/CMP-FD-02-ACK-MONOTONIC.md",
+      "base_git_blob": "f075a82f5103f64f4b2e209bfe805c34eddabaea",
+      "parent_git_blob": "f075a82f5103f64f4b2e209bfe805c34eddabaea",
+      "base_sha256": "cba8530f9940ede3775a151acb96e1eaa869f3325197a0f2d83aeb719e55ef4d",
+      "parent_sha256": "cba8530f9940ede3775a151acb96e1eaa869f3325197a0f2d83aeb719e55ef4d",
+      "bytes": 6012
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.6/CMP-FD-07-ORACLES.md",
+      "base_git_blob": "b165aac8aaea9a396e802dd54106bb270cfde1d2",
+      "parent_git_blob": "b165aac8aaea9a396e802dd54106bb270cfde1d2",
+      "base_sha256": "b21b3fce40f4466833449a9ec926e6b0ce8ffaf525d5f1e26690c0ea2be3a00d",
+      "parent_sha256": "b21b3fce40f4466833449a9ec926e6b0ce8ffaf525d5f1e26690c0ea2be3a00d",
+      "bytes": 3486
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.6/CMP-FD-08-TRACEABILITY.md",
+      "base_git_blob": "005156af71ce4cb438d8d8928a6c592998923387",
+      "parent_git_blob": "005156af71ce4cb438d8d8928a6c592998923387",
+      "base_sha256": "26df5c51ffa181b2040e72d72865ceb55f01eb9285e43ece9273dafaf8716f33",
+      "parent_sha256": "26df5c51ffa181b2040e72d72865ceb55f01eb9285e43ece9273dafaf8716f33",
+      "bytes": 1162
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.6/CMP-FD-09-CHANGE-REPORT.md",
+      "base_git_blob": "4d10768cabdae60c20e9e4b0e85ee0e1698f2d71",
+      "parent_git_blob": "4d10768cabdae60c20e9e4b0e85ee0e1698f2d71",
+      "base_sha256": "fa4d9a503795e78d0fe4caecffa018583e5db29e8ec391eb6f854c4fe98a624e",
+      "parent_sha256": "fa4d9a503795e78d0fe4caecffa018583e5db29e8ec391eb6f854c4fe98a624e",
+      "bytes": 1105
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.6/CMP-FD-10-FINDING-DISPOSITION.md",
+      "base_git_blob": "5410e0d2ed0407db802193089787359a15708659",
+      "parent_git_blob": "5410e0d2ed0407db802193089787359a15708659",
+      "base_sha256": "65419d6f121fdaca3f03a8c17b671b90e7f43e67ebec97545c3187f9efbcd952",
+      "parent_sha256": "65419d6f121fdaca3f03a8c17b671b90e7f43e67ebec97545c3187f9efbcd952",
+      "bytes": 2106
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.6/CMP-FD-11-OPEN-QUESTIONS.md",
+      "base_git_blob": "289f298bd6f5e920c51a91db45d25cfb373f950a",
+      "parent_git_blob": "289f298bd6f5e920c51a91db45d25cfb373f950a",
+      "base_sha256": "d6b9d6087c0c5dc7b9b345a24aa56b9340c5f85c89be04138b93cfdf5d004d47",
+      "parent_sha256": "d6b9d6087c0c5dc7b9b345a24aa56b9340c5f85c89be04138b93cfdf5d004d47",
+      "bytes": 846
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.6/CMP-FD-12-CONSISTENCY-REPORT.md",
+      "base_git_blob": "322787fd138e620d88877d56d8419152da81deff",
+      "parent_git_blob": "322787fd138e620d88877d56d8419152da81deff",
+      "base_sha256": "beb7cbf948587c79b3e13d5d0a6e1bbefcc9abdd19726405fc90c3557ba56947",
+      "parent_sha256": "beb7cbf948587c79b3e13d5d0a6e1bbefcc9abdd19726405fc90c3557ba56947",
+      "bytes": 2156
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.6/CMP-FD-13-MIGRATION-SESSION-ID.md",
+      "base_git_blob": "e0e6c49562c0a408d87fa446f2458d42449b5170",
+      "parent_git_blob": "e0e6c49562c0a408d87fa446f2458d42449b5170",
+      "base_sha256": "884f0d22f8726a3c511e4398ff9a36d9d2890b780588b05d064e6cb29ae1dd71",
+      "parent_sha256": "884f0d22f8726a3c511e4398ff9a36d9d2890b780588b05d064e6cb29ae1dd71",
+      "bytes": 3824
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.6/fixtures/CMP-FD-FX-03-ack.json",
+      "base_git_blob": "cc1f6dee73eceafa9b95b98e15ce6ddaae5e9360",
+      "parent_git_blob": "cc1f6dee73eceafa9b95b98e15ce6ddaae5e9360",
+      "base_sha256": "bfa4db2def7073dd10b48b0feeef02dfad92d8b1c7af201180a36f347ce4df45",
+      "parent_sha256": "bfa4db2def7073dd10b48b0feeef02dfad92d8b1c7af201180a36f347ce4df45",
+      "bytes": 4696
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.6/tools/check_fd_fx03_ack.py",
+      "base_git_blob": "fce1ced8628fb1f177584426d01e4ae154910a51",
+      "parent_git_blob": "fce1ced8628fb1f177584426d01e4ae154910a51",
+      "base_sha256": "790a3cd2bc61485614d5bae8c753f1b35525bee23c3799a90b6b6f0ef4e67c34",
+      "parent_sha256": "790a3cd2bc61485614d5bae8c753f1b35525bee23c3799a90b6b6f0ef4e67c34",
+      "bytes": 4548
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.7/CMP-FD-00-INDEX.md",
+      "base_git_blob": "579cc730815fa36ee5bfa82b769790b0e198a5e4",
+      "parent_git_blob": "579cc730815fa36ee5bfa82b769790b0e198a5e4",
+      "base_sha256": "856422e6a75f08502f9d074566fd3e02e1f9909612b5ce0ff7a14b8bf49e0ecd",
+      "parent_sha256": "856422e6a75f08502f9d074566fd3e02e1f9909612b5ce0ff7a14b8bf49e0ecd",
+      "bytes": 1831
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.7/CMP-FD-02-ACK-NULL-PAIR.md",
+      "base_git_blob": "4af15a9b7b64fb8f72fb503916b64cbc9baa2942",
+      "parent_git_blob": "4af15a9b7b64fb8f72fb503916b64cbc9baa2942",
+      "base_sha256": "5ce1d77380ab5e25a1cc59b6a79ed93a46de6a9d2422bf1f65a0489717466588",
+      "parent_sha256": "5ce1d77380ab5e25a1cc59b6a79ed93a46de6a9d2422bf1f65a0489717466588",
+      "bytes": 4241
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.7/CMP-FD-07-ORACLES.md",
+      "base_git_blob": "901885284e30f04fb67abd24073e1e8ed37666c6",
+      "parent_git_blob": "901885284e30f04fb67abd24073e1e8ed37666c6",
+      "base_sha256": "202e698959e00ead6f942242fe094cf4837cef9769d0d327144284c19a40ca9e",
+      "parent_sha256": "202e698959e00ead6f942242fe094cf4837cef9769d0d327144284c19a40ca9e",
+      "bytes": 2380
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.7/CMP-FD-08-TRACEABILITY.md",
+      "base_git_blob": "da68d18c166fe4047ff23249c10a7d8f3d1b768c",
+      "parent_git_blob": "da68d18c166fe4047ff23249c10a7d8f3d1b768c",
+      "base_sha256": "95a9a4664d2fc3c4433f1f574fd1952cb9bca6fa84ef4cec8a9c737d9f13e57e",
+      "parent_sha256": "95a9a4664d2fc3c4433f1f574fd1952cb9bca6fa84ef4cec8a9c737d9f13e57e",
+      "bytes": 1674
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.7/CMP-FD-09-CHANGE-REPORT.md",
+      "base_git_blob": "e4c67e94827ff3e97b36cdb0cf9427190742bfc2",
+      "parent_git_blob": "e4c67e94827ff3e97b36cdb0cf9427190742bfc2",
+      "base_sha256": "751f205d401982e0ca413782f5289c0ef2c3a8305ba758afddb213c58cd084ba",
+      "parent_sha256": "751f205d401982e0ca413782f5289c0ef2c3a8305ba758afddb213c58cd084ba",
+      "bytes": 1340
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.7/CMP-FD-10-FINDING-DISPOSITION.md",
+      "base_git_blob": "4da12a5c228b53b295c55a766c6a8776cde56d62",
+      "parent_git_blob": "4da12a5c228b53b295c55a766c6a8776cde56d62",
+      "base_sha256": "814dc81176dddb081969a0f40569fb41d81b2f6d760b5fdfaea98bd17bc1f3fd",
+      "parent_sha256": "814dc81176dddb081969a0f40569fb41d81b2f6d760b5fdfaea98bd17bc1f3fd",
+      "bytes": 2767
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.7/CMP-FD-11-OPEN-QUESTIONS.md",
+      "base_git_blob": "b7a45130cefda34c60fc26e62f3980f9f5fed896",
+      "parent_git_blob": "b7a45130cefda34c60fc26e62f3980f9f5fed896",
+      "base_sha256": "ecf62ea296f93afbde0a7a95515655fa8ee88e6594e08a13d1686082a2b0b7c3",
+      "parent_sha256": "ecf62ea296f93afbde0a7a95515655fa8ee88e6594e08a13d1686082a2b0b7c3",
+      "bytes": 978
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.7/CMP-FD-12-CONSISTENCY-REPORT.md",
+      "base_git_blob": "87998fe2097ef78fe3c40a665289c68852dea06b",
+      "parent_git_blob": "87998fe2097ef78fe3c40a665289c68852dea06b",
+      "base_sha256": "955587ce8546764065fd1e69068978c61c88de7c60f38d05b82d56a9685bbc77",
+      "parent_sha256": "955587ce8546764065fd1e69068978c61c88de7c60f38d05b82d56a9685bbc77",
+      "bytes": 3131
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.7/fixtures/CMP-FD-FX-03-ack.json",
+      "base_git_blob": "b281558d0a186e334b2dd252976da19a5064b2be",
+      "parent_git_blob": "b281558d0a186e334b2dd252976da19a5064b2be",
+      "base_sha256": "b1fa437014271289c02974e65f60d8df33174f96f55686d0e2aacdf13d317438",
+      "parent_sha256": "b1fa437014271289c02974e65f60d8df33174f96f55686d0e2aacdf13d317438",
+      "bytes": 6440
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.7/tools/check_fd_fx03_ack.py",
+      "base_git_blob": "a42f7a2b2bf97551a06c1e80dc984ddb11456a12",
+      "parent_git_blob": "a42f7a2b2bf97551a06c1e80dc984ddb11456a12",
+      "base_sha256": "b394a4f2558f2dbcf8ef7ce7a796e37cffcccc3e72d69ed0563a6f722aab7002",
+      "parent_sha256": "b394a4f2558f2dbcf8ef7ce7a796e37cffcccc3e72d69ed0563a6f722aab7002",
+      "bytes": 8227
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.8/CMP-FD-00-INDEX.md",
+      "base_git_blob": "1ba92ce6df958b0a1bb4e13c30aeffffeae1e2a1",
+      "parent_git_blob": "1ba92ce6df958b0a1bb4e13c30aeffffeae1e2a1",
+      "base_sha256": "0603e307b0e6aa561d9fe9d4f0d0d262523cd94e2bded3a285f94da2719ed4f6",
+      "parent_sha256": "0603e307b0e6aa561d9fe9d4f0d0d262523cd94e2bded3a285f94da2719ed4f6",
+      "bytes": 2036
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.8/CMP-FD-02-ACK-ISOLATION.md",
+      "base_git_blob": "1d1a2c2acd8c610a5bdfb3413e5fa94e14e5ce91",
+      "parent_git_blob": "1d1a2c2acd8c610a5bdfb3413e5fa94e14e5ce91",
+      "base_sha256": "1cbbc96d925c6a1418653ba0e1795ba79457a86a3746c8091165c1e7b9bf3c45",
+      "parent_sha256": "1cbbc96d925c6a1418653ba0e1795ba79457a86a3746c8091165c1e7b9bf3c45",
+      "bytes": 6455
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.8/CMP-FD-07-ORACLES.md",
+      "base_git_blob": "2bdfd21aefd70c8bfad45fc2b12f8be7b3e2cf6c",
+      "parent_git_blob": "2bdfd21aefd70c8bfad45fc2b12f8be7b3e2cf6c",
+      "base_sha256": "240d72d52fb33795eac88a1868e15f6004d290895d692893037d27d410707445",
+      "parent_sha256": "240d72d52fb33795eac88a1868e15f6004d290895d692893037d27d410707445",
+      "bytes": 3210
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.8/CMP-FD-08-TRACEABILITY.md",
+      "base_git_blob": "ccb0136d630638b2c431567b13fb6d431ab2c0b7",
+      "parent_git_blob": "ccb0136d630638b2c431567b13fb6d431ab2c0b7",
+      "base_sha256": "c9492b3d80a77c562dc8e3d58da89a9d19f710ff83ff828810b42518babf23a6",
+      "parent_sha256": "c9492b3d80a77c562dc8e3d58da89a9d19f710ff83ff828810b42518babf23a6",
+      "bytes": 1548
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.8/CMP-FD-09-CHANGE-REPORT.md",
+      "base_git_blob": "543424508d2c1dd0380114a89071eca8ae7c4f37",
+      "parent_git_blob": "543424508d2c1dd0380114a89071eca8ae7c4f37",
+      "base_sha256": "875860f604c4db9dac9d4811dde7eda46ab4cd43a9f081c4339d5ffdac583332",
+      "parent_sha256": "875860f604c4db9dac9d4811dde7eda46ab4cd43a9f081c4339d5ffdac583332",
+      "bytes": 1346
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.8/CMP-FD-10-FINDING-DISPOSITION.md",
+      "base_git_blob": "b9b95b13489224ebcd3eaaea552125fa1c30f460",
+      "parent_git_blob": "b9b95b13489224ebcd3eaaea552125fa1c30f460",
+      "base_sha256": "7e74eee198f53816a1e895a1e13f77dd19e57c640e228c3a5cb8ed6253e73f74",
+      "parent_sha256": "7e74eee198f53816a1e895a1e13f77dd19e57c640e228c3a5cb8ed6253e73f74",
+      "bytes": 3772
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.8/CMP-FD-11-OPEN-QUESTIONS.md",
+      "base_git_blob": "83bb83773f041a3bbf0f782e46c8567eafb3d52b",
+      "parent_git_blob": "83bb83773f041a3bbf0f782e46c8567eafb3d52b",
+      "base_sha256": "93fe9552a6335c5596072a57e7b7a366c02be37728f90ba29090c0025ed7bc54",
+      "parent_sha256": "93fe9552a6335c5596072a57e7b7a366c02be37728f90ba29090c0025ed7bc54",
+      "bytes": 1271
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.8/CMP-FD-12-CONSISTENCY-REPORT.md",
+      "base_git_blob": "f6bdac59d46d02810224e693b0017133c453d866",
+      "parent_git_blob": "f6bdac59d46d02810224e693b0017133c453d866",
+      "base_sha256": "22bf16b56a409a0fee789c70f8c568476bf96454dbe92c8c274f6a43abe357b4",
+      "parent_sha256": "22bf16b56a409a0fee789c70f8c568476bf96454dbe92c8c274f6a43abe357b4",
+      "bytes": 4551
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.8/CMP-FD-13-CONCURRENCY-SPEC.md",
+      "base_git_blob": "d25ed3dedb68fe216dc62d60a6fff34a01f53a27",
+      "parent_git_blob": "d25ed3dedb68fe216dc62d60a6fff34a01f53a27",
+      "base_sha256": "0ab0fee5b3631a776a89e1e44c137ec652857c877bb1bcc3cfc1df3a5a3a1181",
+      "parent_sha256": "0ab0fee5b3631a776a89e1e44c137ec652857c877bb1bcc3cfc1df3a5a3a1181",
+      "bytes": 3189
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.8/CMP-FD-14-HISTORICAL-CHAIN.md",
+      "base_git_blob": "745926ffa223ff9fb7bcc61c98cac114224cccfd",
+      "parent_git_blob": "745926ffa223ff9fb7bcc61c98cac114224cccfd",
+      "base_sha256": "7b32cb214333d9b67c1ad2f25658baa51d777bdbad08aa20e797f16cefc2bbd6",
+      "parent_sha256": "7b32cb214333d9b67c1ad2f25658baa51d777bdbad08aa20e797f16cefc2bbd6",
+      "bytes": 2028
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.8/fixtures/CMP-FD-FX-03-ack.json",
+      "base_git_blob": "44e96a59a2fc855e1774b18e02c3096982a4742a",
+      "parent_git_blob": "44e96a59a2fc855e1774b18e02c3096982a4742a",
+      "base_sha256": "36031e0cbc9bab56d68ffefa9f9be7b7491426e0f502f6fe02277e71a5e9f218",
+      "parent_sha256": "36031e0cbc9bab56d68ffefa9f9be7b7491426e0f502f6fe02277e71a5e9f218",
+      "bytes": 36963
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.8/fixtures/CMP-FD-FX-04-historical-manifest.json",
+      "base_git_blob": "0f3db3a6efb8e84a3a3d3d2e58b27af4476bba45",
+      "parent_git_blob": "0f3db3a6efb8e84a3a3d3d2e58b27af4476bba45",
+      "base_sha256": "5cbb453bad7b4bb0473bf04b50e5f6a0c9fadae711bd7afbb08ac30df822f37f",
+      "parent_sha256": "5cbb453bad7b4bb0473bf04b50e5f6a0c9fadae711bd7afbb08ac30df822f37f",
+      "bytes": 31500
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.8/tools/check_fd_fx03_ack.py",
+      "base_git_blob": "e649cfca7e272037a0bc7f64f7e569afcd1ae1d3",
+      "parent_git_blob": "e649cfca7e272037a0bc7f64f7e569afcd1ae1d3",
+      "base_sha256": "a21e744fd7ea3739ad7072698275cca22f409618b5741d1d1f0ab7400e9968c1",
+      "parent_sha256": "a21e744fd7ea3739ad7072698275cca22f409618b5741d1d1f0ab7400e9968c1",
+      "bytes": 24664
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.8/tools/check_fd_historical_manifest.py",
+      "base_git_blob": "b40071403c8a7a74994e3ab598e78b8a44812f8d",
+      "parent_git_blob": "b40071403c8a7a74994e3ab598e78b8a44812f8d",
+      "base_sha256": "afbb5ddd0359dffec30a405deae2ca6bfc50a94c0b67f03b0bfca1dd7649273c",
+      "parent_sha256": "afbb5ddd0359dffec30a405deae2ca6bfc50a94c0b67f03b0bfca1dd7649273c",
+      "bytes": 4129
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.9/CMP-FD-00-INDEX.md",
+      "base_git_blob": "e60868b664b15f12e2c84160f039c4f3e267769a",
+      "parent_git_blob": "e60868b664b15f12e2c84160f039c4f3e267769a",
+      "base_sha256": "4f1ed7925720511e3167f7e7eb464d84e527fd0e01974b477abe3514e7b14031",
+      "parent_sha256": "4f1ed7925720511e3167f7e7eb464d84e527fd0e01974b477abe3514e7b14031",
+      "bytes": 1954
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.9/CMP-FD-02-ACK-REPLAY.md",
+      "base_git_blob": "da3cb47085827ad927711a07a4e7efee618d8efe",
+      "parent_git_blob": "da3cb47085827ad927711a07a4e7efee618d8efe",
+      "base_sha256": "b518c11e399d8625cfa95416cefdeed717605e4c32285e0aa3e4e01ca21209c5",
+      "parent_sha256": "b518c11e399d8625cfa95416cefdeed717605e4c32285e0aa3e4e01ca21209c5",
+      "bytes": 3873
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.9/CMP-FD-07-ORACLES.md",
+      "base_git_blob": "fc65d4a45b29a4a0658270ffe45b8b5ec6992bbb",
+      "parent_git_blob": "fc65d4a45b29a4a0658270ffe45b8b5ec6992bbb",
+      "base_sha256": "16e4548dc8754b43d0ebdc835b1dc32edadeff0439833dd4a410e62a33f1dd28",
+      "parent_sha256": "16e4548dc8754b43d0ebdc835b1dc32edadeff0439833dd4a410e62a33f1dd28",
+      "bytes": 1719
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.9/CMP-FD-08-TRACEABILITY.md",
+      "base_git_blob": "ed816c721a3af28f679191b7646f269b9891e530",
+      "parent_git_blob": "ed816c721a3af28f679191b7646f269b9891e530",
+      "base_sha256": "6294a1a7916388546712f3881ea7fbfa3f422fe3a755671bc9b586836e167917",
+      "parent_sha256": "6294a1a7916388546712f3881ea7fbfa3f422fe3a755671bc9b586836e167917",
+      "bytes": 1287
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.9/CMP-FD-09-CHANGE-REPORT.md",
+      "base_git_blob": "3102197deb8bc7e32ba47ef498bd2abca661ba99",
+      "parent_git_blob": "3102197deb8bc7e32ba47ef498bd2abca661ba99",
+      "base_sha256": "62a07fa95161c1955450a6c090f9ef2a05744fee59a9b95900717a97cc164459",
+      "parent_sha256": "62a07fa95161c1955450a6c090f9ef2a05744fee59a9b95900717a97cc164459",
+      "bytes": 1471
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.9/CMP-FD-10-FINDING-DISPOSITION.md",
+      "base_git_blob": "67944167220e47e638a18b156b116f288822fdd5",
+      "parent_git_blob": "67944167220e47e638a18b156b116f288822fdd5",
+      "base_sha256": "7ad3c8ec2b823a34593c921d9ef684bb13409eba7854d311c8a12b9833e529aa",
+      "parent_sha256": "7ad3c8ec2b823a34593c921d9ef684bb13409eba7854d311c8a12b9833e529aa",
+      "bytes": 3401
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.9/CMP-FD-11-OPEN-QUESTIONS.md",
+      "base_git_blob": "503864cf6bf86909b2781b4aea7dd13e4c8b534a",
+      "parent_git_blob": "503864cf6bf86909b2781b4aea7dd13e4c8b534a",
+      "base_sha256": "89a2e86cd7b3753f5ff6e90bd241a59d5574ede1f148735b34d5016b5f46a5e0",
+      "parent_sha256": "89a2e86cd7b3753f5ff6e90bd241a59d5574ede1f148735b34d5016b5f46a5e0",
+      "bytes": 1223
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.9/CMP-FD-12-CONSISTENCY-REPORT.md",
+      "base_git_blob": "bd72db462b73d6840fc03a8285362f4ff5ec4bad",
+      "parent_git_blob": "bd72db462b73d6840fc03a8285362f4ff5ec4bad",
+      "base_sha256": "e952cd8371c99f25bedc762ac77c96e3ae109ad204d162ea6f8dd0bb30040a63",
+      "parent_sha256": "e952cd8371c99f25bedc762ac77c96e3ae109ad204d162ea6f8dd0bb30040a63",
+      "bytes": 5118
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.9/CMP-FD-13-CONCURRENCY-SPEC.md",
+      "base_git_blob": "ff97bab00c24489255a95341b9bdcb756b58935d",
+      "parent_git_blob": "ff97bab00c24489255a95341b9bdcb756b58935d",
+      "base_sha256": "c376ced8f5e9ec6728d695bae92af21cd0c71f040b73f4755f1c9db313362d99",
+      "parent_sha256": "c376ced8f5e9ec6728d695bae92af21cd0c71f040b73f4755f1c9db313362d99",
+      "bytes": 1968
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.9/CMP-FD-14-HISTORICAL-CHAIN.md",
+      "base_git_blob": "a64a51cf5f0790efc3afb672bd7efa19b3bc91e3",
+      "parent_git_blob": "a64a51cf5f0790efc3afb672bd7efa19b3bc91e3",
+      "base_sha256": "984567119f636f7b5d6517aaa866837847715b2f21765bff7f11e55180884c48",
+      "parent_sha256": "984567119f636f7b5d6517aaa866837847715b2f21765bff7f11e55180884c48",
+      "bytes": 1936
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.9/fixtures/CMP-FD-FX-03-ack.json",
+      "base_git_blob": "dfa45aed54ac59e81a6af466bf0d29e920c91fbe",
+      "parent_git_blob": "dfa45aed54ac59e81a6af466bf0d29e920c91fbe",
+      "base_sha256": "ed7992e71696a63dfe2623ee04390c12acc06bbe726ee85facaae998702a11ab",
+      "parent_sha256": "ed7992e71696a63dfe2623ee04390c12acc06bbe726ee85facaae998702a11ab",
+      "bytes": 46208
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.9/fixtures/CMP-FD-FX-04-historical-manifest.json",
+      "base_git_blob": "239bfa5e0f4d9a5a351dd3a0c6b83ba647133b73",
+      "parent_git_blob": "239bfa5e0f4d9a5a351dd3a0c6b83ba647133b73",
+      "base_sha256": "01f3585fe296a8bad72102f26228eec0432cbe5f6bb06a5397500e745987fbc3",
+      "parent_sha256": "01f3585fe296a8bad72102f26228eec0432cbe5f6bb06a5397500e745987fbc3",
+      "bytes": 51947
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.9/tools/check_fd_fx03_ack.py",
+      "base_git_blob": "4ea5091c849528b72339d5508b6e0e72239dc124",
+      "parent_git_blob": "4ea5091c849528b72339d5508b6e0e72239dc124",
+      "base_sha256": "665cbebec86cb8952c69a30466218d0260df575e7f6a68304205ffbef9142824",
+      "parent_sha256": "665cbebec86cb8952c69a30466218d0260df575e7f6a68304205ffbef9142824",
+      "bytes": 42622
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex-v0.9/tools/check_fd_historical_manifest.py",
+      "base_git_blob": "c0a92640985b9b77b933797a2916ff1df15cc36f",
+      "parent_git_blob": "c0a92640985b9b77b933797a2916ff1df15cc36f",
+      "base_sha256": "f4d16de2c4522ed53bee1302435f66afe227fe6d539d1a99fa3f1a35ab90746a",
+      "parent_sha256": "f4d16de2c4522ed53bee1302435f66afe227fe6d539d1a99fa3f1a35ab90746a",
+      "bytes": 5704
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex/CMP-FD-00-INDEX.md",
+      "base_git_blob": "f958f9af052aee3113c7de4fafa50b07aacc8855",
+      "parent_git_blob": "f958f9af052aee3113c7de4fafa50b07aacc8855",
+      "base_sha256": "4d3c2a9f6a077bd81bc0f4581eb7d5b5a5fe315067cb16ea3e848c75acb10189",
+      "parent_sha256": "4d3c2a9f6a077bd81bc0f4581eb7d5b5a5fe315067cb16ea3e848c75acb10189",
+      "bytes": 1168
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex/CMP-FD-01-FULL-DUPLEX-ARCHITECTURE.md",
+      "base_git_blob": "22acd18be8cb2b22b6dbf03a720fc3d6f90c8b1d",
+      "parent_git_blob": "22acd18be8cb2b22b6dbf03a720fc3d6f90c8b1d",
+      "base_sha256": "542c17146c495d11b0f744bb33071231fc391c51110eec41a79c82f7a1a792c0",
+      "parent_sha256": "542c17146c495d11b0f744bb33071231fc391c51110eec41a79c82f7a1a792c0",
+      "bytes": 5489
+    },
+    {
+      "path": "docs/planning/conversational-full-duplex/CMP-FD-02-ADDITIVE-STORIES-AND-ORACLES.md",
+      "base_git_blob": "d7b4d20c66b270c8e9496ce97c6a02eb25921f5c",
+      "parent_git_blob": "d7b4d20c66b270c8e9496ce97c6a02eb25921f5c",
+      "base_sha256": "ed6a89108ea3bb3415bd2fee1851d03a7f776561ed2c9c3e32bb0438962f01f2",
+      "parent_sha256": "ed6a89108ea3bb3415bd2fee1851d03a7f776561ed2c9c3e32bb0438962f01f2",
+      "bytes": 3225
+    }
+  ],
+  "parecer_chain": [
+    {
+      "package": "v0.1",
+      "parecer_incorporated": true,
+      "path": "docs/reviews/PARECER-CODEX-FULL-DUPLEX-v0.1-2026-10-13.md",
+      "present_in_base_commit": true,
+      "present_in_parent_commit": true,
+      "statement": "lido do blob. A data no nome não é a versão.",
+      "sha_label": "SHA congelado auditado",
+      "audited_sha": "97ee817ca8262b3a0bae996c510b935435b2e575",
+      "sha_status": "VERIFIED",
+      "verdict_label": "Veredito",
+      "header_verdict": "FAIL — DOCUMENT-ONLY",
+      "final_verdict": "FAIL — DOCUMENT-ONLY",
+      "verdict_status": "VERIFIED",
+      "duplicate_header_count": 1
+    },
+    {
+      "package": "v0.2",
+      "parecer_incorporated": true,
+      "path": "docs/reviews/PARECER-CODEX-FULL-DUPLEX-v0.2-2026-10-13.md",
+      "present_in_base_commit": true,
+      "present_in_parent_commit": true,
+      "statement": "lido do blob. A data no nome não é a versão.",
+      "sha_label": "SHA declarado do checkout",
+      "audited_sha": "18aa352e7bf987aa3a2550b2e2b3251ce71c1f7d",
+      "sha_status": "VERIFIED",
+      "verdict_label": "Veredito",
+      "header_verdict": "FAIL",
+      "final_verdict": "FAIL — DOCUMENT-ONLY",
+      "verdict_status": "NOT_VERIFIED",
+      "duplicate_header_count": 2,
+      "reason": "o cabeçalho e o veredito final não são a mesma string. Nenhum dos dois é escolhido."
+    },
+    {
+      "package": "v0.3",
+      "parecer_incorporated": true,
+      "path": "docs/reviews/PARECER-CODEX-FULL-DUPLEX-v0.3-2026-10-14.md",
+      "present_in_base_commit": true,
+      "present_in_parent_commit": true,
+      "statement": "lido do blob. A data no nome não é a versão.",
+      "sha_label": "SHA auditado",
+      "audited_sha": "2fe0b0b2b75f2fc1430f639839e2d29d563f6dcb",
+      "sha_status": "VERIFIED",
+      "verdict_label": "Veredito exclusivo",
+      "header_verdict": "FAIL DOCUMENT-ONLY",
+      "final_verdict": "FAIL DOCUMENT-ONLY",
+      "verdict_status": "VERIFIED",
+      "duplicate_header_count": 1
+    },
+    {
+      "package": "v0.4",
+      "parecer_incorporated": true,
+      "path": "docs/reviews/PARECER-CODEX-FULL-DUPLEX-v0.4-2026-10-14.md",
+      "present_in_base_commit": true,
+      "present_in_parent_commit": true,
+      "statement": "lido do blob. A data no nome não é a versão.",
+      "sha_label": "SHA auditado",
+      "audited_sha": "90fc21c90402805959bab2fc4ae6b43dc758c66d",
+      "sha_status": "VERIFIED",
+      "verdict_label": "Veredito exclusivo",
+      "header_verdict": "FAIL DOCUMENT-ONLY",
+      "final_verdict": "FAIL DOCUMENT-ONLY",
+      "verdict_status": "VERIFIED",
+      "duplicate_header_count": 1
+    },
+    {
+      "package": "v0.5",
+      "parecer_incorporated": false,
+      "path": null,
+      "audited_sha": null,
+      "sha_status": "ABSENT_LEGITIMATE",
+      "header_verdict": null,
+      "final_verdict": null,
+      "verdict_status": "ABSENT_LEGITIMATE",
+      "present_in_base_commit": false,
+      "present_in_parent_commit": false,
+      "statement": "ausência legítima: nenhum arquivo PARECER-CODEX-FULL-DUPLEX-v0.5 em base_sha nem em parent_sha"
+    },
+    {
+      "package": "v0.6",
+      "parecer_incorporated": false,
+      "path": null,
+      "audited_sha": null,
+      "sha_status": "ABSENT_LEGITIMATE",
+      "header_verdict": null,
+      "final_verdict": null,
+      "verdict_status": "ABSENT_LEGITIMATE",
+      "present_in_base_commit": false,
+      "present_in_parent_commit": false,
+      "statement": "ausência legítima: nenhum arquivo PARECER-CODEX-FULL-DUPLEX-v0.6 em base_sha nem em parent_sha"
+    },
+    {
+      "package": "v0.7",
+      "parecer_incorporated": true,
+      "path": "docs/reviews/PARECER-CODEX-FULL-DUPLEX-v0.7-2026-10-15.md",
+      "present_in_base_commit": true,
+      "present_in_parent_commit": true,
+      "statement": "lido do blob. A data no nome não é a versão.",
+      "sha_label": "SHA auditado",
+      "audited_sha": "1a71dfa44fc2c88174c113e5c68eddc18d6cfad3",
+      "sha_status": "VERIFIED",
+      "verdict_label": "Veredito",
+      "header_verdict": "FAIL DOCUMENT-ONLY",
+      "final_verdict": null,
+      "verdict_status": "VERIFIED",
+      "duplicate_header_count": 1
+    },
+    {
+      "package": "v0.8",
+      "parecer_incorporated": true,
+      "path": "docs/reviews/PARECER-CODEX-FULL-DUPLEX-v0.8-2026-10-15.md",
+      "present_in_base_commit": true,
+      "present_in_parent_commit": true,
+      "statement": "lido do blob. A data no nome não é a versão.",
+      "sha_label": "Checkout submetido",
+      "audited_sha": "9fd88bb03e4cca4a1ee5126d5b595e028e2602b2",
+      "sha_status": "VERIFIED",
+      "verdict_label": "Veredito",
+      "header_verdict": "FAIL DOCUMENT-ONLY",
+      "final_verdict": "FAIL DOCUMENT-ONLY",
+      "verdict_status": "VERIFIED",
+      "duplicate_header_count": 1
+    },
+    {
+      "package": "v0.9",
+      "parecer_incorporated": true,
+      "path": "docs/reviews/PARECER-CODEX-FULL-DUPLEX-v0.9-2026-10-15.md",
+      "present_in_base_commit": true,
+      "present_in_parent_commit": true,
+      "statement": "lido do blob. A data no nome não é a versão.",
+      "sha_label": "Checkout auditado",
+      "audited_sha": "422277f82efbc001140b5857095c4840e668e270",
+      "sha_status": "VERIFIED",
+      "verdict_label": "Veredito",
+      "header_verdict": "FAIL DOCUMENT-ONLY",
+      "final_verdict": "FAIL DOCUMENT-ONLY",
+      "verdict_status": "VERIFIED",
+      "duplicate_header_count": 1
+    },
+    {
+      "package": "v0.10",
+      "parecer_incorporated": true,
+      "path": "docs/reviews/PARECER-CODEX-FULL-DUPLEX-v0.10-2026-10-15.md",
+      "present_in_base_commit": false,
+      "present_in_parent_commit": true,
+      "statement": "lido do blob. A data no nome não é a versão.",
+      "sha_label": "Checkout auditado",
+      "audited_sha": "a5d7e8fc85cb5b5f0605937b43075ce1a0c19e08",
+      "sha_status": "VERIFIED",
+      "verdict_label": "Veredito",
+      "header_verdict": "FAIL DOCUMENT-ONLY",
+      "final_verdict": "FAIL DOCUMENT-ONLY",
+      "verdict_status": "VERIFIED",
+      "duplicate_header_count": 1
+    }
+  ],
+  "full_duplex_prompts_present_at_parent": [
+    "docs/reviews/PROMPT-GROK-FULL-DUPLEX-v0.10-CORRECTIVE.md",
+    "docs/reviews/PROMPT-GROK-FULL-DUPLEX-v0.11-CORRECTIVE.md",
+    "docs/reviews/PROMPT-GROK-FULL-DUPLEX-v0.2-CORRECTIVE.md",
+    "docs/reviews/PROMPT-GROK-FULL-DUPLEX-v0.3-CORRECTIVE.md",
+    "docs/reviews/PROMPT-GROK-FULL-DUPLEX-v0.4-CORRECTIVE.md",
+    "docs/reviews/PROMPT-GROK-FULL-DUPLEX-v0.5-CORRECTIVE.md",
+    "docs/reviews/PROMPT-GROK-FULL-DUPLEX-v0.8-CORRECTIVE.md",
+    "docs/reviews/PROMPT-GROK-FULL-DUPLEX-v0.9-CORRECTIVE.md"
+  ],
+  "full_duplex_prompts_absent": [
+    "docs/reviews/PROMPT-GROK-FULL-DUPLEX-v0.6-CORRECTIVE.md",
+    "docs/reviews/PROMPT-GROK-FULL-DUPLEX-v0.7-CORRECTIVE.md"
+  ]
+}
