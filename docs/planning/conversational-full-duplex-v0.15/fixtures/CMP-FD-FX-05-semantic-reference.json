@@ -1,0 +1,1943 @@
+{
+  "id": "cmp.fd.fx05.semantic-reference.v0.15",
+  "ratification": "PENDING_HUMAN_APPROVAL",
+  "independence": "NOT_RATIFIED",
+  "proves_product": false,
+  "full_product_coverage": false,
+  "new_gov_01": "OPEN",
+  "generator": "tools/draft_semantic_reference.py",
+  "compared_by": "tools/check_fd_fx03_ack.py literal_bindings",
+  "same_function_as_checker": false,
+  "authority": "Candidate literal anchor drafted in this authoring session from the v0.15 schema text. Not a Founder-ratified golden. Not produced by the mutation checker. It binds only the contracts inside this package. It does not prove the product.",
+  "what_one_sided_edit_detects": [
+    "const",
+    "minItems",
+    "minLength",
+    "ref",
+    "required",
+    "allowed",
+    "type"
+  ],
+  "what_same_author_edit_of_every_side_does_not_detect": "If the same author changes the schema, the fixture, this file's expected value, and this file's digests together, the comparator has no external ratified source left. That residual is SAME_AUTHOR_BOTH_SIDES not_detected. It keeps NEW-GOV-01 OPEN.",
+  "schema_sha256": "addbe8ccf59ee549646e69c1c79b76ac81f03273f497932ff75959847bb2706e",
+  "fixture_sha256": "29decb258c3da98622e600f29a543279bcb2a12b2640123a2d2a26f17ce935b4",
+  "synthetic_sha256": "e92aa0d083a596783b323208614ec832c8a47224280a943235f0a426222a18a5",
+  "bindings_sha256": "7bfa4c4624a8935e56d6de52894545fb82fe32c2749ca1d95573026ef1a59aa2",
+  "binding_count": 308,
+  "bindings": [
+    {
+      "path": "attempt.ack_of_sequence.type",
+      "constraint": "type",
+      "expected": "nullable_int"
+    },
+    {
+      "path": "attempt.ack_stream_id.type",
+      "constraint": "type",
+      "expected": "nullable_uuid"
+    },
+    {
+      "path": "attempt.allowed",
+      "constraint": "allowed",
+      "expected": [
+        "ack_of_sequence",
+        "ack_stream_id",
+        "stream_id",
+        "organization_id",
+        "project_id",
+        "session_id",
+        "receiver_participant_id",
+        "command_id",
+        "event_id"
+      ]
+    },
+    {
+      "path": "attempt.command_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "attempt.event_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "attempt.organization_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "attempt.project_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "attempt.receiver_participant_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "attempt.required",
+      "constraint": "required",
+      "expected": [
+        "ack_of_sequence",
+        "ack_stream_id",
+        "stream_id",
+        "organization_id",
+        "project_id",
+        "session_id",
+        "receiver_participant_id",
+        "command_id",
+        "event_id"
+      ]
+    },
+    {
+      "path": "attempt.session_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "attempt.stream_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "channel.allowed",
+      "constraint": "allowed",
+      "expected": [
+        "organization_id",
+        "project_id"
+      ]
+    },
+    {
+      "path": "channel.organization_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "channel.project_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "channel.required",
+      "constraint": "required",
+      "expected": [
+        "organization_id",
+        "project_id"
+      ]
+    },
+    {
+      "path": "counter.allowed",
+      "constraint": "allowed",
+      "expected": [
+        "money_movements",
+        "mic_opens",
+        "transport_effects",
+        "outbox_appends",
+        "financial_audits",
+        "command_commit_rows"
+      ]
+    },
+    {
+      "path": "counter.command_commit_rows.type",
+      "constraint": "type",
+      "expected": "int"
+    },
+    {
+      "path": "counter.financial_audits.type",
+      "constraint": "type",
+      "expected": "int"
+    },
+    {
+      "path": "counter.mic_opens.type",
+      "constraint": "type",
+      "expected": "int"
+    },
+    {
+      "path": "counter.money_movements.type",
+      "constraint": "type",
+      "expected": "int"
+    },
+    {
+      "path": "counter.outbox_appends.type",
+      "constraint": "type",
+      "expected": "int"
+    },
+    {
+      "path": "counter.required",
+      "constraint": "required",
+      "expected": [
+        "money_movements",
+        "mic_opens",
+        "transport_effects",
+        "outbox_appends",
+        "financial_audits",
+        "command_commit_rows"
+      ]
+    },
+    {
+      "path": "counter.transport_effects.type",
+      "constraint": "type",
+      "expected": "int"
+    },
+    {
+      "path": "document.allocated_by_session.type",
+      "constraint": "type",
+      "expected": "uuid_map"
+    },
+    {
+      "path": "document.allowed",
+      "constraint": "allowed",
+      "expected": [
+        "schema",
+        "coverage",
+        "half_duplex_allowed",
+        "ledger",
+        "note",
+        "channel",
+        "primary_session_id",
+        "allocated_by_session",
+        "participants",
+        "initial_keys",
+        "cases",
+        "proves_product"
+      ]
+    },
+    {
+      "path": "document.cases.minItems",
+      "constraint": "minItems",
+      "expected": 1
+    },
+    {
+      "path": "document.cases.type",
+      "constraint": "type",
+      "expected": "array"
+    },
+    {
+      "path": "document.channel.ref",
+      "constraint": "ref",
+      "expected": "channel"
+    },
+    {
+      "path": "document.channel.type",
+      "constraint": "type",
+      "expected": "object"
+    },
+    {
+      "path": "document.coverage.const",
+      "constraint": "const",
+      "expected": "fixture_decision_rows_only"
+    },
+    {
+      "path": "document.coverage.minLength",
+      "constraint": "minLength",
+      "expected": 1
+    },
+    {
+      "path": "document.coverage.type",
+      "constraint": "type",
+      "expected": "string"
+    },
+    {
+      "path": "document.half_duplex_allowed.const",
+      "constraint": "const",
+      "expected": false
+    },
+    {
+      "path": "document.half_duplex_allowed.type",
+      "constraint": "type",
+      "expected": "bool"
+    },
+    {
+      "path": "document.initial_keys.items.ref",
+      "constraint": "ref",
+      "expected": "initial_key"
+    },
+    {
+      "path": "document.initial_keys.items.type",
+      "constraint": "type",
+      "expected": "object"
+    },
+    {
+      "path": "document.initial_keys.minItems",
+      "constraint": "minItems",
+      "expected": 6
+    },
+    {
+      "path": "document.initial_keys.type",
+      "constraint": "type",
+      "expected": "array"
+    },
+    {
+      "path": "document.ledger.const",
+      "constraint": "const",
+      "expected": "forge.command_commit+forge.event.v1"
+    },
+    {
+      "path": "document.ledger.minLength",
+      "constraint": "minLength",
+      "expected": 1
+    },
+    {
+      "path": "document.ledger.type",
+      "constraint": "type",
+      "expected": "string"
+    },
+    {
+      "path": "document.note.minLength",
+      "constraint": "minLength",
+      "expected": 1
+    },
+    {
+      "path": "document.note.type",
+      "constraint": "type",
+      "expected": "string"
+    },
+    {
+      "path": "document.participants.type",
+      "constraint": "type",
+      "expected": "uuid_map"
+    },
+    {
+      "path": "document.primary_session_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "document.proves_product.const",
+      "constraint": "const",
+      "expected": false
+    },
+    {
+      "path": "document.proves_product.type",
+      "constraint": "type",
+      "expected": "bool"
+    },
+    {
+      "path": "document.required",
+      "constraint": "required",
+      "expected": [
+        "schema",
+        "coverage",
+        "half_duplex_allowed",
+        "ledger",
+        "note",
+        "channel",
+        "primary_session_id",
+        "allocated_by_session",
+        "participants",
+        "initial_keys",
+        "cases",
+        "proves_product"
+      ]
+    },
+    {
+      "path": "document.schema.const",
+      "constraint": "const",
+      "expected": "cmp.fd.fx03.ack.v0.15"
+    },
+    {
+      "path": "document.schema.minLength",
+      "constraint": "minLength",
+      "expected": 1
+    },
+    {
+      "path": "document.schema.type",
+      "constraint": "type",
+      "expected": "string"
+    },
+    {
+      "path": "initial_key.ack_stream_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "initial_key.allowed",
+      "constraint": "allowed",
+      "expected": [
+        "organization_id",
+        "project_id",
+        "session_id",
+        "ack_stream_id",
+        "receiver_participant_id",
+        "peer_ack_high_water",
+        "emitted_high_water"
+      ]
+    },
+    {
+      "path": "initial_key.emitted_high_water.type",
+      "constraint": "type",
+      "expected": "int"
+    },
+    {
+      "path": "initial_key.organization_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "initial_key.peer_ack_high_water.type",
+      "constraint": "type",
+      "expected": "int"
+    },
+    {
+      "path": "initial_key.project_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "initial_key.receiver_participant_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "initial_key.required",
+      "constraint": "required",
+      "expected": [
+        "organization_id",
+        "project_id",
+        "session_id",
+        "ack_stream_id",
+        "receiver_participant_id",
+        "peer_ack_high_water",
+        "emitted_high_water"
+      ]
+    },
+    {
+      "path": "initial_key.session_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "interleave.allowed",
+      "constraint": "allowed",
+      "expected": [
+        "case_id",
+        "concurrency",
+        "kind",
+        "not_a_postgresql_test",
+        "steps"
+      ]
+    },
+    {
+      "path": "interleave.case_id.minLength",
+      "constraint": "minLength",
+      "expected": 1
+    },
+    {
+      "path": "interleave.case_id.type",
+      "constraint": "type",
+      "expected": "string"
+    },
+    {
+      "path": "interleave.concurrency.const",
+      "constraint": "const",
+      "expected": false
+    },
+    {
+      "path": "interleave.concurrency.type",
+      "constraint": "type",
+      "expected": "bool"
+    },
+    {
+      "path": "interleave.kind.const",
+      "constraint": "const",
+      "expected": "interleave"
+    },
+    {
+      "path": "interleave.kind.minLength",
+      "constraint": "minLength",
+      "expected": 1
+    },
+    {
+      "path": "interleave.kind.type",
+      "constraint": "type",
+      "expected": "string"
+    },
+    {
+      "path": "interleave.not_a_postgresql_test.const",
+      "constraint": "const",
+      "expected": true
+    },
+    {
+      "path": "interleave.not_a_postgresql_test.type",
+      "constraint": "type",
+      "expected": "bool"
+    },
+    {
+      "path": "interleave.required",
+      "constraint": "required",
+      "expected": [
+        "case_id",
+        "concurrency",
+        "kind",
+        "not_a_postgresql_test",
+        "steps"
+      ]
+    },
+    {
+      "path": "interleave.steps.items.ref",
+      "constraint": "ref",
+      "expected": "step"
+    },
+    {
+      "path": "interleave.steps.items.type",
+      "constraint": "type",
+      "expected": "object"
+    },
+    {
+      "path": "interleave.steps.minItems",
+      "constraint": "minItems",
+      "expected": 1
+    },
+    {
+      "path": "interleave.steps.type",
+      "constraint": "type",
+      "expected": "array"
+    },
+    {
+      "path": "negative.GROUP.0.group",
+      "constraint": "group",
+      "expected": [
+        "expected_original_outcome_code",
+        "expected_original_outcome_body",
+        "expected_outcome_digest"
+      ]
+    },
+    {
+      "path": "negative.GROUP.1.group",
+      "constraint": "group",
+      "expected": [
+        "expected_stored_outcome_code",
+        "expected_stored_error_code"
+      ]
+    },
+    {
+      "path": "negative.GROUP.2.group",
+      "constraint": "group",
+      "expected": [
+        "witness_organization_id",
+        "witness_project_id",
+        "witness_session_id",
+        "witness_ack_stream_id",
+        "witness_receiver_participant_id"
+      ]
+    },
+    {
+      "path": "negative.ack_of_sequence.type",
+      "constraint": "type",
+      "expected": "nullable_int"
+    },
+    {
+      "path": "negative.ack_stream_id.type",
+      "constraint": "type",
+      "expected": "nullable_uuid"
+    },
+    {
+      "path": "negative.allowed",
+      "constraint": "allowed",
+      "expected": [
+        "ack_of_sequence",
+        "ack_stream_id",
+        "case_id",
+        "command_id",
+        "counter_delta",
+        "event_id",
+        "expected_code",
+        "expected_stage",
+        "kind",
+        "opaque",
+        "opens_mic",
+        "organization_id",
+        "peer_ack_high_water_after",
+        "peer_ack_high_water_before",
+        "project_id",
+        "receiver_participant_id",
+        "session_id",
+        "stream_id",
+        "writes_high_water",
+        "zero_effect",
+        "zero_money",
+        "zero_new_effect",
+        "expected_original_outcome_body",
+        "expected_original_outcome_code",
+        "expected_outcome_digest",
+        "expected_stored_error_code",
+        "expected_stored_outcome_code",
+        "expected_transport_status",
+        "setup",
+        "water_override",
+        "witness_ack_stream_id",
+        "witness_organization_id",
+        "witness_project_id",
+        "witness_receiver_participant_id",
+        "witness_session_id"
+      ]
+    },
+    {
+      "path": "negative.case_id.minLength",
+      "constraint": "minLength",
+      "expected": 1
+    },
+    {
+      "path": "negative.case_id.type",
+      "constraint": "type",
+      "expected": "string"
+    },
+    {
+      "path": "negative.command_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "negative.counter_delta.ref",
+      "constraint": "ref",
+      "expected": "counter"
+    },
+    {
+      "path": "negative.counter_delta.type",
+      "constraint": "type",
+      "expected": "object"
+    },
+    {
+      "path": "negative.event_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "negative.expected_code.minLength",
+      "constraint": "minLength",
+      "expected": 1
+    },
+    {
+      "path": "negative.expected_code.type",
+      "constraint": "type",
+      "expected": "string"
+    },
+    {
+      "path": "negative.expected_original_outcome_body.allowed",
+      "constraint": "allowed",
+      "expected": [
+        "error_code",
+        "opaque",
+        "retryable",
+        "terminal",
+        "peer_ack_high_water"
+      ]
+    },
+    {
+      "path": "negative.expected_original_outcome_body.error_code.minLength",
+      "constraint": "minLength",
+      "expected": 1
+    },
+    {
+      "path": "negative.expected_original_outcome_body.error_code.type",
+      "constraint": "type",
+      "expected": "string"
+    },
+    {
+      "path": "negative.expected_original_outcome_body.opaque.type",
+      "constraint": "type",
+      "expected": "bool"
+    },
+    {
+      "path": "negative.expected_original_outcome_body.peer_ack_high_water.type",
+      "constraint": "type",
+      "expected": "int"
+    },
+    {
+      "path": "negative.expected_original_outcome_body.required",
+      "constraint": "required",
+      "expected": [
+        "error_code"
+      ]
+    },
+    {
+      "path": "negative.expected_original_outcome_body.retryable.type",
+      "constraint": "type",
+      "expected": "bool"
+    },
+    {
+      "path": "negative.expected_original_outcome_body.terminal.type",
+      "constraint": "type",
+      "expected": "bool"
+    },
+    {
+      "path": "negative.expected_original_outcome_body.type",
+      "constraint": "type",
+      "expected": "object"
+    },
+    {
+      "path": "negative.expected_original_outcome_code.type",
+      "constraint": "type",
+      "expected": "int"
+    },
+    {
+      "path": "negative.expected_outcome_digest.type",
+      "constraint": "type",
+      "expected": "sha256"
+    },
+    {
+      "path": "negative.expected_stage.minLength",
+      "constraint": "minLength",
+      "expected": 1
+    },
+    {
+      "path": "negative.expected_stage.type",
+      "constraint": "type",
+      "expected": "string"
+    },
+    {
+      "path": "negative.expected_stored_error_code.minLength",
+      "constraint": "minLength",
+      "expected": 1
+    },
+    {
+      "path": "negative.expected_stored_error_code.type",
+      "constraint": "type",
+      "expected": "string"
+    },
+    {
+      "path": "negative.expected_stored_outcome_code.type",
+      "constraint": "type",
+      "expected": "int"
+    },
+    {
+      "path": "negative.expected_transport_status.type",
+      "constraint": "type",
+      "expected": "int"
+    },
+    {
+      "path": "negative.kind.const",
+      "constraint": "const",
+      "expected": "negative"
+    },
+    {
+      "path": "negative.kind.minLength",
+      "constraint": "minLength",
+      "expected": 1
+    },
+    {
+      "path": "negative.kind.type",
+      "constraint": "type",
+      "expected": "string"
+    },
+    {
+      "path": "negative.opaque.type",
+      "constraint": "type",
+      "expected": "bool"
+    },
+    {
+      "path": "negative.opens_mic.const",
+      "constraint": "const",
+      "expected": false
+    },
+    {
+      "path": "negative.opens_mic.type",
+      "constraint": "type",
+      "expected": "bool"
+    },
+    {
+      "path": "negative.organization_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "negative.peer_ack_high_water_after.type",
+      "constraint": "type",
+      "expected": "int"
+    },
+    {
+      "path": "negative.peer_ack_high_water_before.type",
+      "constraint": "type",
+      "expected": "int"
+    },
+    {
+      "path": "negative.project_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "negative.receiver_participant_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "negative.required",
+      "constraint": "required",
+      "expected": [
+        "ack_of_sequence",
+        "ack_stream_id",
+        "case_id",
+        "command_id",
+        "counter_delta",
+        "event_id",
+        "expected_code",
+        "expected_stage",
+        "kind",
+        "opaque",
+        "opens_mic",
+        "organization_id",
+        "peer_ack_high_water_after",
+        "peer_ack_high_water_before",
+        "project_id",
+        "receiver_participant_id",
+        "session_id",
+        "stream_id",
+        "writes_high_water",
+        "zero_effect",
+        "zero_money",
+        "zero_new_effect"
+      ]
+    },
+    {
+      "path": "negative.session_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "negative.setup.items.ref",
+      "constraint": "ref",
+      "expected": "setup"
+    },
+    {
+      "path": "negative.setup.items.type",
+      "constraint": "type",
+      "expected": "object"
+    },
+    {
+      "path": "negative.setup.minItems",
+      "constraint": "minItems",
+      "expected": 1
+    },
+    {
+      "path": "negative.setup.type",
+      "constraint": "type",
+      "expected": "array"
+    },
+    {
+      "path": "negative.stream_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "negative.water_override.type",
+      "constraint": "type",
+      "expected": "int"
+    },
+    {
+      "path": "negative.witness_ack_stream_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "negative.witness_organization_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "negative.witness_project_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "negative.witness_receiver_participant_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "negative.witness_session_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "negative.writes_high_water.type",
+      "constraint": "type",
+      "expected": "bool"
+    },
+    {
+      "path": "negative.zero_effect.type",
+      "constraint": "type",
+      "expected": "bool"
+    },
+    {
+      "path": "negative.zero_money.const",
+      "constraint": "const",
+      "expected": true
+    },
+    {
+      "path": "negative.zero_money.type",
+      "constraint": "type",
+      "expected": "bool"
+    },
+    {
+      "path": "negative.zero_new_effect.type",
+      "constraint": "type",
+      "expected": "bool"
+    },
+    {
+      "path": "positive.ack_of_sequence.type",
+      "constraint": "type",
+      "expected": "nullable_int"
+    },
+    {
+      "path": "positive.ack_stream_id.type",
+      "constraint": "type",
+      "expected": "nullable_uuid"
+    },
+    {
+      "path": "positive.allowed",
+      "constraint": "allowed",
+      "expected": [
+        "ack_of_sequence",
+        "ack_stream_id",
+        "stream_id",
+        "organization_id",
+        "project_id",
+        "session_id",
+        "receiver_participant_id",
+        "command_id",
+        "event_id",
+        "case_id",
+        "expected_code",
+        "expected_stage",
+        "peer_ack_high_water_before",
+        "peer_ack_high_water_after",
+        "writes_high_water",
+        "zero_effect",
+        "zero_new_effect",
+        "zero_money",
+        "opens_mic",
+        "opaque",
+        "counter_delta",
+        "water_override",
+        "setup",
+        "expected_transport_status",
+        "expected_original_outcome_code",
+        "expected_original_outcome_body",
+        "expected_outcome_digest",
+        "expected_stored_outcome_code",
+        "expected_stored_error_code",
+        "witness_organization_id",
+        "witness_project_id",
+        "witness_session_id",
+        "witness_ack_stream_id",
+        "witness_receiver_participant_id",
+        "kind"
+      ]
+    },
+    {
+      "path": "positive.case_id.minLength",
+      "constraint": "minLength",
+      "expected": 1
+    },
+    {
+      "path": "positive.case_id.type",
+      "constraint": "type",
+      "expected": "string"
+    },
+    {
+      "path": "positive.command_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "positive.counter_delta.ref",
+      "constraint": "ref",
+      "expected": "counter"
+    },
+    {
+      "path": "positive.counter_delta.type",
+      "constraint": "type",
+      "expected": "object"
+    },
+    {
+      "path": "positive.event_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "positive.expected_code.minLength",
+      "constraint": "minLength",
+      "expected": 1
+    },
+    {
+      "path": "positive.expected_code.type",
+      "constraint": "type",
+      "expected": "string"
+    },
+    {
+      "path": "positive.expected_original_outcome_body.allowed",
+      "constraint": "allowed",
+      "expected": [
+        "error_code",
+        "opaque",
+        "retryable",
+        "terminal",
+        "peer_ack_high_water"
+      ]
+    },
+    {
+      "path": "positive.expected_original_outcome_body.error_code.minLength",
+      "constraint": "minLength",
+      "expected": 1
+    },
+    {
+      "path": "positive.expected_original_outcome_body.error_code.type",
+      "constraint": "type",
+      "expected": "string"
+    },
+    {
+      "path": "positive.expected_original_outcome_body.opaque.type",
+      "constraint": "type",
+      "expected": "bool"
+    },
+    {
+      "path": "positive.expected_original_outcome_body.peer_ack_high_water.type",
+      "constraint": "type",
+      "expected": "int"
+    },
+    {
+      "path": "positive.expected_original_outcome_body.required",
+      "constraint": "required",
+      "expected": [
+        "error_code"
+      ]
+    },
+    {
+      "path": "positive.expected_original_outcome_body.retryable.type",
+      "constraint": "type",
+      "expected": "bool"
+    },
+    {
+      "path": "positive.expected_original_outcome_body.terminal.type",
+      "constraint": "type",
+      "expected": "bool"
+    },
+    {
+      "path": "positive.expected_original_outcome_body.type",
+      "constraint": "type",
+      "expected": "object"
+    },
+    {
+      "path": "positive.expected_original_outcome_code.type",
+      "constraint": "type",
+      "expected": "int"
+    },
+    {
+      "path": "positive.expected_outcome_digest.type",
+      "constraint": "type",
+      "expected": "sha256"
+    },
+    {
+      "path": "positive.expected_stage.minLength",
+      "constraint": "minLength",
+      "expected": 1
+    },
+    {
+      "path": "positive.expected_stage.type",
+      "constraint": "type",
+      "expected": "string"
+    },
+    {
+      "path": "positive.expected_stored_error_code.minLength",
+      "constraint": "minLength",
+      "expected": 1
+    },
+    {
+      "path": "positive.expected_stored_error_code.type",
+      "constraint": "type",
+      "expected": "string"
+    },
+    {
+      "path": "positive.expected_stored_outcome_code.type",
+      "constraint": "type",
+      "expected": "int"
+    },
+    {
+      "path": "positive.expected_transport_status.type",
+      "constraint": "type",
+      "expected": "int"
+    },
+    {
+      "path": "positive.kind.const",
+      "constraint": "const",
+      "expected": "positive"
+    },
+    {
+      "path": "positive.kind.minLength",
+      "constraint": "minLength",
+      "expected": 1
+    },
+    {
+      "path": "positive.kind.type",
+      "constraint": "type",
+      "expected": "string"
+    },
+    {
+      "path": "positive.opaque.type",
+      "constraint": "type",
+      "expected": "bool"
+    },
+    {
+      "path": "positive.opens_mic.const",
+      "constraint": "const",
+      "expected": false
+    },
+    {
+      "path": "positive.opens_mic.type",
+      "constraint": "type",
+      "expected": "bool"
+    },
+    {
+      "path": "positive.organization_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "positive.peer_ack_high_water_after.type",
+      "constraint": "type",
+      "expected": "int"
+    },
+    {
+      "path": "positive.peer_ack_high_water_before.type",
+      "constraint": "type",
+      "expected": "int"
+    },
+    {
+      "path": "positive.project_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "positive.receiver_participant_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "positive.required",
+      "constraint": "required",
+      "expected": [
+        "ack_of_sequence",
+        "ack_stream_id",
+        "case_id",
+        "command_id",
+        "counter_delta",
+        "event_id",
+        "expected_code",
+        "expected_stage",
+        "kind",
+        "opaque",
+        "opens_mic",
+        "organization_id",
+        "peer_ack_high_water_after",
+        "peer_ack_high_water_before",
+        "project_id",
+        "receiver_participant_id",
+        "session_id",
+        "stream_id",
+        "writes_high_water",
+        "zero_effect",
+        "zero_money",
+        "zero_new_effect"
+      ]
+    },
+    {
+      "path": "positive.session_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "positive.setup.items.ref",
+      "constraint": "ref",
+      "expected": "setup"
+    },
+    {
+      "path": "positive.setup.items.type",
+      "constraint": "type",
+      "expected": "object"
+    },
+    {
+      "path": "positive.setup.minItems",
+      "constraint": "minItems",
+      "expected": 1
+    },
+    {
+      "path": "positive.setup.type",
+      "constraint": "type",
+      "expected": "array"
+    },
+    {
+      "path": "positive.stream_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "positive.water_override.type",
+      "constraint": "type",
+      "expected": "int"
+    },
+    {
+      "path": "positive.witness_ack_stream_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "positive.witness_organization_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "positive.witness_project_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "positive.witness_receiver_participant_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "positive.witness_session_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "positive.writes_high_water.type",
+      "constraint": "type",
+      "expected": "bool"
+    },
+    {
+      "path": "positive.zero_effect.type",
+      "constraint": "type",
+      "expected": "bool"
+    },
+    {
+      "path": "positive.zero_money.const",
+      "constraint": "const",
+      "expected": true
+    },
+    {
+      "path": "positive.zero_money.type",
+      "constraint": "type",
+      "expected": "bool"
+    },
+    {
+      "path": "positive.zero_new_effect.type",
+      "constraint": "type",
+      "expected": "bool"
+    },
+    {
+      "path": "replay_cross_tenant.allowed",
+      "constraint": "allowed",
+      "expected": [
+        "case_id",
+        "kind",
+        "probe",
+        "setup"
+      ]
+    },
+    {
+      "path": "replay_cross_tenant.case_id.minLength",
+      "constraint": "minLength",
+      "expected": 1
+    },
+    {
+      "path": "replay_cross_tenant.case_id.type",
+      "constraint": "type",
+      "expected": "string"
+    },
+    {
+      "path": "replay_cross_tenant.kind.const",
+      "constraint": "const",
+      "expected": "replay_cross_tenant"
+    },
+    {
+      "path": "replay_cross_tenant.kind.minLength",
+      "constraint": "minLength",
+      "expected": 1
+    },
+    {
+      "path": "replay_cross_tenant.kind.type",
+      "constraint": "type",
+      "expected": "string"
+    },
+    {
+      "path": "replay_cross_tenant.probe.ref",
+      "constraint": "ref",
+      "expected": "attempt"
+    },
+    {
+      "path": "replay_cross_tenant.probe.type",
+      "constraint": "type",
+      "expected": "object"
+    },
+    {
+      "path": "replay_cross_tenant.required",
+      "constraint": "required",
+      "expected": [
+        "case_id",
+        "kind",
+        "probe",
+        "setup"
+      ]
+    },
+    {
+      "path": "replay_cross_tenant.setup.items.ref",
+      "constraint": "ref",
+      "expected": "setup"
+    },
+    {
+      "path": "replay_cross_tenant.setup.items.type",
+      "constraint": "type",
+      "expected": "object"
+    },
+    {
+      "path": "replay_cross_tenant.setup.minItems",
+      "constraint": "minItems",
+      "expected": 1
+    },
+    {
+      "path": "replay_cross_tenant.setup.type",
+      "constraint": "type",
+      "expected": "array"
+    },
+    {
+      "path": "replay_receiver_removed.allowed",
+      "constraint": "allowed",
+      "expected": [
+        "case_id",
+        "fresh",
+        "kind",
+        "replay",
+        "setup"
+      ]
+    },
+    {
+      "path": "replay_receiver_removed.case_id.minLength",
+      "constraint": "minLength",
+      "expected": 1
+    },
+    {
+      "path": "replay_receiver_removed.case_id.type",
+      "constraint": "type",
+      "expected": "string"
+    },
+    {
+      "path": "replay_receiver_removed.fresh.ref",
+      "constraint": "ref",
+      "expected": "attempt"
+    },
+    {
+      "path": "replay_receiver_removed.fresh.type",
+      "constraint": "type",
+      "expected": "object"
+    },
+    {
+      "path": "replay_receiver_removed.kind.const",
+      "constraint": "const",
+      "expected": "replay_receiver_removed"
+    },
+    {
+      "path": "replay_receiver_removed.kind.minLength",
+      "constraint": "minLength",
+      "expected": 1
+    },
+    {
+      "path": "replay_receiver_removed.kind.type",
+      "constraint": "type",
+      "expected": "string"
+    },
+    {
+      "path": "replay_receiver_removed.replay.ref",
+      "constraint": "ref",
+      "expected": "attempt"
+    },
+    {
+      "path": "replay_receiver_removed.replay.type",
+      "constraint": "type",
+      "expected": "object"
+    },
+    {
+      "path": "replay_receiver_removed.required",
+      "constraint": "required",
+      "expected": [
+        "case_id",
+        "fresh",
+        "kind",
+        "replay",
+        "setup"
+      ]
+    },
+    {
+      "path": "replay_receiver_removed.setup.items.ref",
+      "constraint": "ref",
+      "expected": "setup"
+    },
+    {
+      "path": "replay_receiver_removed.setup.items.type",
+      "constraint": "type",
+      "expected": "object"
+    },
+    {
+      "path": "replay_receiver_removed.setup.minItems",
+      "constraint": "minItems",
+      "expected": 1
+    },
+    {
+      "path": "replay_receiver_removed.setup.type",
+      "constraint": "type",
+      "expected": "array"
+    },
+    {
+      "path": "rollback_model.allowed",
+      "constraint": "allowed",
+      "expected": [
+        "attempt",
+        "case_id",
+        "command_stored_after_rollback",
+        "executed_database",
+        "kind",
+        "opens_mic",
+        "oracle_status",
+        "zero_money",
+        "zero_new_effect_after_rollback"
+      ]
+    },
+    {
+      "path": "rollback_model.attempt.ref",
+      "constraint": "ref",
+      "expected": "attempt"
+    },
+    {
+      "path": "rollback_model.attempt.type",
+      "constraint": "type",
+      "expected": "object"
+    },
+    {
+      "path": "rollback_model.case_id.minLength",
+      "constraint": "minLength",
+      "expected": 1
+    },
+    {
+      "path": "rollback_model.case_id.type",
+      "constraint": "type",
+      "expected": "string"
+    },
+    {
+      "path": "rollback_model.command_stored_after_rollback.const",
+      "constraint": "const",
+      "expected": false
+    },
+    {
+      "path": "rollback_model.command_stored_after_rollback.type",
+      "constraint": "type",
+      "expected": "bool"
+    },
+    {
+      "path": "rollback_model.executed_database.const",
+      "constraint": "const",
+      "expected": false
+    },
+    {
+      "path": "rollback_model.executed_database.type",
+      "constraint": "type",
+      "expected": "bool"
+    },
+    {
+      "path": "rollback_model.kind.const",
+      "constraint": "const",
+      "expected": "rollback_model"
+    },
+    {
+      "path": "rollback_model.kind.minLength",
+      "constraint": "minLength",
+      "expected": 1
+    },
+    {
+      "path": "rollback_model.kind.type",
+      "constraint": "type",
+      "expected": "string"
+    },
+    {
+      "path": "rollback_model.opens_mic.const",
+      "constraint": "const",
+      "expected": false
+    },
+    {
+      "path": "rollback_model.opens_mic.type",
+      "constraint": "type",
+      "expected": "bool"
+    },
+    {
+      "path": "rollback_model.oracle_status.const",
+      "constraint": "const",
+      "expected": "NOT_RUN"
+    },
+    {
+      "path": "rollback_model.oracle_status.minLength",
+      "constraint": "minLength",
+      "expected": 1
+    },
+    {
+      "path": "rollback_model.oracle_status.type",
+      "constraint": "type",
+      "expected": "string"
+    },
+    {
+      "path": "rollback_model.required",
+      "constraint": "required",
+      "expected": [
+        "attempt",
+        "case_id",
+        "command_stored_after_rollback",
+        "executed_database",
+        "kind",
+        "opens_mic",
+        "oracle_status",
+        "zero_money",
+        "zero_new_effect_after_rollback"
+      ]
+    },
+    {
+      "path": "rollback_model.zero_money.const",
+      "constraint": "const",
+      "expected": true
+    },
+    {
+      "path": "rollback_model.zero_money.type",
+      "constraint": "type",
+      "expected": "bool"
+    },
+    {
+      "path": "rollback_model.zero_new_effect_after_rollback.const",
+      "constraint": "const",
+      "expected": true
+    },
+    {
+      "path": "rollback_model.zero_new_effect_after_rollback.type",
+      "constraint": "type",
+      "expected": "bool"
+    },
+    {
+      "path": "sequential_replay.SAME_LENGTH.0.same_length",
+      "constraint": "same_length",
+      "expected": [
+        "commit_order",
+        "expected_steps"
+      ]
+    },
+    {
+      "path": "sequential_replay.ack_stream_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "sequential_replay.allowed",
+      "constraint": "allowed",
+      "expected": [
+        "ack_stream_id",
+        "case_id",
+        "commit_order",
+        "concurrency",
+        "decreases",
+        "expected_final",
+        "expected_steps",
+        "kind",
+        "not_a_postgresql_test",
+        "opens_mic",
+        "organization_id",
+        "project_id",
+        "receiver_participant_id",
+        "session_id",
+        "stream_id",
+        "zero_money"
+      ]
+    },
+    {
+      "path": "sequential_replay.case_id.minLength",
+      "constraint": "minLength",
+      "expected": 1
+    },
+    {
+      "path": "sequential_replay.case_id.type",
+      "constraint": "type",
+      "expected": "string"
+    },
+    {
+      "path": "sequential_replay.commit_order.items.type",
+      "constraint": "type",
+      "expected": "int"
+    },
+    {
+      "path": "sequential_replay.commit_order.minItems",
+      "constraint": "minItems",
+      "expected": 1
+    },
+    {
+      "path": "sequential_replay.commit_order.type",
+      "constraint": "type",
+      "expected": "array"
+    },
+    {
+      "path": "sequential_replay.concurrency.const",
+      "constraint": "const",
+      "expected": false
+    },
+    {
+      "path": "sequential_replay.concurrency.type",
+      "constraint": "type",
+      "expected": "bool"
+    },
+    {
+      "path": "sequential_replay.decreases.const",
+      "constraint": "const",
+      "expected": false
+    },
+    {
+      "path": "sequential_replay.decreases.type",
+      "constraint": "type",
+      "expected": "bool"
+    },
+    {
+      "path": "sequential_replay.expected_final.type",
+      "constraint": "type",
+      "expected": "int"
+    },
+    {
+      "path": "sequential_replay.expected_steps.items.minLength",
+      "constraint": "minLength",
+      "expected": 1
+    },
+    {
+      "path": "sequential_replay.expected_steps.items.type",
+      "constraint": "type",
+      "expected": "string"
+    },
+    {
+      "path": "sequential_replay.expected_steps.minItems",
+      "constraint": "minItems",
+      "expected": 1
+    },
+    {
+      "path": "sequential_replay.expected_steps.type",
+      "constraint": "type",
+      "expected": "array"
+    },
+    {
+      "path": "sequential_replay.kind.const",
+      "constraint": "const",
+      "expected": "sequential_replay"
+    },
+    {
+      "path": "sequential_replay.kind.minLength",
+      "constraint": "minLength",
+      "expected": 1
+    },
+    {
+      "path": "sequential_replay.kind.type",
+      "constraint": "type",
+      "expected": "string"
+    },
+    {
+      "path": "sequential_replay.not_a_postgresql_test.const",
+      "constraint": "const",
+      "expected": true
+    },
+    {
+      "path": "sequential_replay.not_a_postgresql_test.type",
+      "constraint": "type",
+      "expected": "bool"
+    },
+    {
+      "path": "sequential_replay.opens_mic.const",
+      "constraint": "const",
+      "expected": false
+    },
+    {
+      "path": "sequential_replay.opens_mic.type",
+      "constraint": "type",
+      "expected": "bool"
+    },
+    {
+      "path": "sequential_replay.organization_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "sequential_replay.project_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "sequential_replay.receiver_participant_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "sequential_replay.required",
+      "constraint": "required",
+      "expected": [
+        "ack_stream_id",
+        "case_id",
+        "commit_order",
+        "concurrency",
+        "decreases",
+        "expected_final",
+        "expected_steps",
+        "kind",
+        "not_a_postgresql_test",
+        "opens_mic",
+        "organization_id",
+        "project_id",
+        "receiver_participant_id",
+        "session_id",
+        "stream_id",
+        "zero_money"
+      ]
+    },
+    {
+      "path": "sequential_replay.session_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "sequential_replay.stream_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "sequential_replay.zero_money.const",
+      "constraint": "const",
+      "expected": true
+    },
+    {
+      "path": "sequential_replay.zero_money.type",
+      "constraint": "type",
+      "expected": "bool"
+    },
+    {
+      "path": "setup.ack_of_sequence.type",
+      "constraint": "type",
+      "expected": "nullable_int"
+    },
+    {
+      "path": "setup.ack_stream_id.type",
+      "constraint": "type",
+      "expected": "nullable_uuid"
+    },
+    {
+      "path": "setup.allowed",
+      "constraint": "allowed",
+      "expected": [
+        "ack_of_sequence",
+        "ack_stream_id",
+        "stream_id",
+        "organization_id",
+        "project_id",
+        "session_id",
+        "receiver_participant_id",
+        "command_id",
+        "event_id",
+        "expected_code"
+      ]
+    },
+    {
+      "path": "setup.command_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "setup.event_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "setup.expected_code.minLength",
+      "constraint": "minLength",
+      "expected": 1
+    },
+    {
+      "path": "setup.expected_code.type",
+      "constraint": "type",
+      "expected": "string"
+    },
+    {
+      "path": "setup.organization_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "setup.project_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "setup.receiver_participant_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "setup.required",
+      "constraint": "required",
+      "expected": [
+        "ack_of_sequence",
+        "ack_stream_id",
+        "stream_id",
+        "organization_id",
+        "project_id",
+        "session_id",
+        "receiver_participant_id",
+        "command_id",
+        "event_id",
+        "expected_code"
+      ]
+    },
+    {
+      "path": "setup.session_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "setup.stream_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "step.ack_of_sequence.type",
+      "constraint": "type",
+      "expected": "nullable_int"
+    },
+    {
+      "path": "step.ack_stream_id.type",
+      "constraint": "type",
+      "expected": "nullable_uuid"
+    },
+    {
+      "path": "step.allowed",
+      "constraint": "allowed",
+      "expected": [
+        "ack_of_sequence",
+        "ack_stream_id",
+        "stream_id",
+        "organization_id",
+        "project_id",
+        "session_id",
+        "receiver_participant_id",
+        "command_id",
+        "event_id",
+        "step_id",
+        "expected_code",
+        "expected_stage",
+        "expected_target_water",
+        "writes_high_water",
+        "counter_delta"
+      ]
+    },
+    {
+      "path": "step.command_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "step.counter_delta.ref",
+      "constraint": "ref",
+      "expected": "counter"
+    },
+    {
+      "path": "step.counter_delta.type",
+      "constraint": "type",
+      "expected": "object"
+    },
+    {
+      "path": "step.event_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "step.expected_code.minLength",
+      "constraint": "minLength",
+      "expected": 1
+    },
+    {
+      "path": "step.expected_code.type",
+      "constraint": "type",
+      "expected": "string"
+    },
+    {
+      "path": "step.expected_stage.minLength",
+      "constraint": "minLength",
+      "expected": 1
+    },
+    {
+      "path": "step.expected_stage.type",
+      "constraint": "type",
+      "expected": "string"
+    },
+    {
+      "path": "step.expected_target_water.type",
+      "constraint": "type",
+      "expected": "int"
+    },
+    {
+      "path": "step.organization_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "step.project_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "step.receiver_participant_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "step.required",
+      "constraint": "required",
+      "expected": [
+        "ack_of_sequence",
+        "ack_stream_id",
+        "stream_id",
+        "organization_id",
+        "project_id",
+        "session_id",
+        "receiver_participant_id",
+        "command_id",
+        "event_id",
+        "step_id",
+        "expected_code",
+        "expected_stage",
+        "expected_target_water",
+        "writes_high_water",
+        "counter_delta"
+      ]
+    },
+    {
+      "path": "step.session_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "step.step_id.minLength",
+      "constraint": "minLength",
+      "expected": 1
+    },
+    {
+      "path": "step.step_id.type",
+      "constraint": "type",
+      "expected": "string"
+    },
+    {
+      "path": "step.stream_id.type",
+      "constraint": "type",
+      "expected": "uuid"
+    },
+    {
+      "path": "step.writes_high_water.type",
+      "constraint": "type",
+      "expected": "bool"
+    }
+  ]
+}

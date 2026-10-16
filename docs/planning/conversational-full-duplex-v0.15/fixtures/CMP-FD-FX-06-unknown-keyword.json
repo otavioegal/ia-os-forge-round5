@@ -1,0 +1,16 @@
+{
+  "id": "cmp.fd.fx06.unknown-keyword.v0.15",
+  "authority": "Negative fixture. Not the authority schema. allOf is not a keyword of this DSL. The checker must reject this file.",
+  "objects": {
+    "document": {
+      "required": ["schema"],
+      "allowed": ["schema"],
+      "fields": {
+        "schema": {
+          "type": "string",
+          "allOf": [{"type": "string"}]
+        }
+      }
+    }
+  }
+}

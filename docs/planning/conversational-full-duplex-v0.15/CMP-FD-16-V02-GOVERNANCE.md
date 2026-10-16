@@ -1,0 +1,13 @@
+# CMP-FD-16 v0.15 — Proposta de governança do parecer v0.2
+
+**Estado:** PENDING HUMAN APPROVAL. Não é resolução. Não é PASS. Não edita o parecer original e não escolhe um veredito.
+
+O arquivo `docs/reviews/PARECER-CODEX-FULL-DUPLEX-v0.2-2026-10-13.md` permanece como está. O blob Git é `2d992a9cf0ab38d639b95f69df1571eb97f444b4`. O SHA-256 do conteúdo é `575e149c3e29203c9c5b7c6532f15b06af6c562551372077502eaf50b246daef`. O commit desse blob não é alterado por esta pasta.
+
+O cabeçalho diz `FAIL`. O veredito final diz `FAIL — DOCUMENT-ONLY`. O corpo está duplicado. As duas strings ficam registradas. `chosen_verdict` é null. `duplicate_header_count` é 2. `verdict_status` é NOT_VERIFIED.
+
+Somente um ato humano do Founder ou do autor do parecer pode escolher uma string. Esta pasta não tem essa autoridade. Enquanto isso, o parecer v0.2 permanece NOT_VERIFIED e a cadeia permanece `PARECER_CHAIN NOT_FULLY_VERIFIED`.
+
+Promover `verdict_status` para VERIFIED devolve `FAIL_NOMENCLATURE` em `check_fd_historical_manifest.py:209`. Preencher `chosen_verdict` ou mudar `approval` devolve `FAIL_NOMENCLATURE` em `check_fd_historical_manifest.py:207`. As mutações negativas estão em `check_fd_historical_manifest.py:328` e `check_fd_historical_manifest.py:331`. As linhas 314 e 317 testam path e omissão, não nomenclatura.
+
+NEW-GOV-01 é outro gate humano. A referência semântica da v0.15 também fica `PENDING_HUMAN_APPROVAL`. Uma não ratifica a outra.
